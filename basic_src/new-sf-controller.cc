@@ -7,6 +7,7 @@ namespace kaldi {
 SFController* SFController::instance;
 
 void SFController::my_log(string s) {
+	using namespace std;
 	char currentTime[84];
 	get_timestamp(currentTime);
 	while (writeLock) {}
@@ -299,7 +300,7 @@ int diff_ms(timeval t1, timeval t2)
 }
 
 void SFController::start_impl() {
-
+	using namespace std;
 
 	while (true) {
 		char buf[255];

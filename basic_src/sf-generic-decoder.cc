@@ -137,6 +137,7 @@ void SFGenericDecoder::stop() {
 }
 
 void SFGenericDecoder::hearPrev(RingBuffer* buf) {
+	using namespace std;
 	cerr << "Hear prev" << endl;
 	for (int i=0;i<buf->length();++i) {
 		Vector<BaseFloat>* prev = buf->read(i);

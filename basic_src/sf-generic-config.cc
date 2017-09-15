@@ -2,6 +2,7 @@
 
 namespace kaldi {
 SFGenericConfig::SFGenericConfig(int argc, char* argv[]) {
+	using namespace std;
 	utt = argv[f(argc, 0)];
 	source = argv[f(argc, 1)];
 	output_path = argv[f(argc, 2)];

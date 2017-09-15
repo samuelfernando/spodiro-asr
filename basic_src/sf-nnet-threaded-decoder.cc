@@ -7,6 +7,7 @@ namespace kaldi {
 
 
 SFNnetThreadedDecoder::SFNnetThreadedDecoder(SFController* controller, SFNnetThreadedConfig* root_config, const char* keyphrase) {
+	using namespace std;
 	cout << "SFNnetThreadedDecoder constructor" << endl;
 	init(keyphrase);
 	cout << keyphrase << endl;

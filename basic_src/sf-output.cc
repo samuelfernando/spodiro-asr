@@ -7,6 +7,8 @@ namespace kaldi {
 SFOutput::SFOutput(SFController *controller, char* source, const char* base_name, const char* output_path) {
 	//cout << "Output constructor " << source << " " << base_name << " " << output_path << endl; 	
 	this -> controller = controller;
+	using namespace std;
+	
 	string date = controller -> get_date_string();
 	string day = controller -> get_day_string();
 	string out_str(output_path);
@@ -53,6 +55,8 @@ void SFOutput::write_cut_prev(int cut) {
 }*/
 
 void SFOutput::write_readback(MatrixIndexT size) {
+using namespace std;
+	
 	char cur_time[84];
 	controller -> get_timestamp(cur_time);
 	controls << cur_time << " Read back " << size << endl;
@@ -60,6 +64,8 @@ void SFOutput::write_readback(MatrixIndexT size) {
 
 
 void SFOutput::write_segment(MatrixIndexT start, MatrixIndexT end, bool val) {
+	using namespace std;
+	
 	char cur_time[84];
 	controller -> get_timestamp(cur_time);
 	controls << cur_time << " " << start << " " << end << " " << val << endl;
@@ -67,7 +73,9 @@ void SFOutput::write_segment(MatrixIndexT start, MatrixIndexT end, bool val) {
 
 string SFOutput::output_string(fst::SymbolTable* word_syms,
                                       CompactLattice clat, int64* tot_num_frames, double* tot_like, MatrixIndexT num_samples) {
-	if (clat.NumStates() == 0) {
+using namespace std;
+		
+if (clat.NumStates() == 0) {
 		KALDI_WARN << "Empty lattice.";
 		return "";
 	}
@@ -123,7 +131,9 @@ string SFOutput::output_string(fst::SymbolTable* word_syms,
 }
 
 void SFOutput::add_chunk(int size) {
-		char cur_time[84];
+using namespace std;
+	
+	char cur_time[84];
 	controller -> get_timestamp(cur_time);
 //	cout << "output add_chunk" << endl;
 	chunk_lengths << cur_time << " " <<  size << endl;

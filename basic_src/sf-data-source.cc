@@ -65,6 +65,7 @@ void* WavDataSource::startStatic(void* arg) {
 }
 
 void WavDataSource::start_impl() {
+	using namespace std;
 	// simulate online input by splitting data into chunks and sending
 	//cout << "Starting wav source" << endl;
 	active = true;
@@ -191,6 +192,7 @@ void* PortAudioDataSource::startStatic(void* arg) {
 
 void PortAudioDataSource::start_impl() {
 	//cout << "Starting pa source" << endl;
+	using namespace std;
 	active = true;
 	
 	string date = controller -> get_date_string();
