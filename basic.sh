@@ -11,8 +11,8 @@ echo "read_pipe $read_pipe"
 #graph=models/spodiro_graph
 
 #graph=models/tri4a-graph-wsj-pf-nnet
-#graph=models/questions-worksheet-tri4a-nnet
-graph=online-models/graph-commands-gmm
+graph=models/questions-worksheet-tri4a-nnet
+#graph=online-models/graph-commands-gmm
 #graph=models/graph-spodiro_complete-gmm
 #graph=models/graph-healthy_living_complete-gmm
 #graph=models/graph-number_game-gmm

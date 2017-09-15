@@ -19,9 +19,6 @@ echo "KALDI_ROOT=$KALDI_ROOT" > path.mk
 
 sed -i.bak 's/-Wall -I\.\./-Wall -I$(KALDI_ROOT)\/src/g' kaldi.mk
 
-if [ $USER = "samf" ] || [ $USER = "ac1ssf" ]; then
-	svn changelist ignore-on-commit path.sh
-fi
 
 #export KALDI_ROOT=/usr/local/extras/kaldi/kaldi-Nov15/kaldi-trunk
 
