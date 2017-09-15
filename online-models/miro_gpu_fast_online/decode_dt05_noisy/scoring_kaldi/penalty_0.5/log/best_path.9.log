@@ -1,0 +1,832 @@
+# lattice-scale --inv-acoustic-scale=9 "ark:gunzip -c exp_augmented/nnet2_online/nnet_a_gpu_fast_online/decode_dt05_noisy/lat.*.gz|" ark:- | lattice-add-penalty --word-ins-penalty=0.5 ark:- ark:- | lattice-best-path --word-symbol-table=exp_augmented/tri4a/graph/words.txt ark:- ark,t:- | utils/int2sym.pl -f 2- exp_augmented/tri4a/graph/words.txt | local/wer_hyp_filter > exp_augmented/nnet2_online/nnet_a_gpu_fast_online/decode_dt05_noisy/scoring_kaldi/penalty_0.5/9.txt 
+# Started at Mon Feb 27 09:19:34 GMT 2017
+#
+lattice-scale --inv-acoustic-scale=9 'ark:gunzip -c exp_augmented/nnet2_online/nnet_a_gpu_fast_online/decode_dt05_noisy/lat.*.gz|' ark:- 
+lattice-add-penalty --word-ins-penalty=0.5 ark:- ark:- 
+lattice-best-path --word-symbol-table=exp_augmented/tri4a/graph/words.txt ark:- ark,t:- 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c0101_noisy, best cost 45.2464 + -292.033 = -246.787 over 761 frames.
+050c0101_noisy A LAWYER 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c0102_noisy, best cost 49.2489 + -330.07 = -280.821 over 858 frames.
+050c0102_noisy HERE 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c0103_noisy, best cost 38.1761 + -276.532 = -238.356 over 716 frames.
+050c0103_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c0104_noisy, best cost 45.9305 + -340.655 = -294.725 over 897 frames.
+050c0104_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c0105_noisy, best cost 45.3963 + -258.243 = -212.847 over 734 frames.
+050c0105_noisy BOTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c0106_noisy, best cost 36.9707 + -192.76 = -155.789 over 534 frames.
+050c0106_noisy BOTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c0107_noisy, best cost 38.58 + -314.223 = -275.643 over 936 frames.
+050c0107_noisy HE SAYS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c0108_noisy, best cost 40.3112 + -226.027 = -185.715 over 608 frames.
+050c0108_noisy BOTH <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c0109_noisy, best cost 35.9194 + -231.708 = -195.789 over 638 frames.
+050c0109_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c010a_noisy, best cost 24.792 + -126.164 = -101.372 over 361 frames.
+050c010a_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c010b_noisy, best cost 43.5436 + -258.236 = -214.692 over 763 frames.
+050c010b_noisy HE SAID 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c010c_noisy, best cost 21.5602 + -161.969 = -140.409 over 542 frames.
+050c010c_noisy FOR YEARS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c010d_noisy, best cost 36.936 + -275.12 = -238.184 over 639 frames.
+050c010d_noisy <UNK> <UNK> SHARES 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c010e_noisy, best cost 21.9718 + -266.316 = -244.344 over 763 frames.
+050c010e_noisy FOR YEARS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c010f_noisy, best cost 19.6044 + -251.923 = -232.319 over 613 frames.
+050c010f_noisy FEES 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c010g_noisy, best cost 23.5344 + -354.524 = -330.99 over 681 frames.
+050c010g_noisy WAS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c010h_noisy, best cost 22.6043 + -475.941 = -453.336 over 1024 frames.
+050c010h_noisy WAS <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c010i_noisy, best cost 25.2624 + -196.419 = -171.157 over 547 frames.
+050c010i_noisy WATCH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c010j_noisy, best cost 28.9519 + -177.804 = -148.852 over 470 frames.
+050c010j_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c010k_noisy, best cost 38.3545 + -266.014 = -227.659 over 710 frames.
+050c010k_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c010l_noisy, best cost 34.2827 + -226.664 = -192.382 over 612 frames.
+050c010l_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c010m_noisy, best cost 88.3475 + -510.226 = -421.878 over 1194 frames.
+050c010m_noisy HE'LL THEME 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c010n_noisy, best cost 51.8329 + -287.364 = -235.531 over 638 frames.
+050c010n_noisy THIN 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c010o_noisy, best cost 36.4149 + -261.298 = -224.883 over 649 frames.
+050c010o_noisy <UNK> WILL 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c010p_noisy, best cost 31.6856 + -197.179 = -165.494 over 460 frames.
+050c010p_noisy <UNK> WILL 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c010q_noisy, best cost 24.6639 + -95.7703 = -71.1064 over 233 frames.
+050c010q_noisy SALE 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c010r_noisy, best cost 37.1061 + -381.831 = -344.725 over 861 frames.
+050c010r_noisy <UNK> THINGS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c010s_noisy, best cost 28.976 + -205.891 = -176.915 over 494 frames.
+050c010s_noisy <UNK> WILL 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c010t_noisy, best cost 19.9696 + -281.422 = -261.452 over 687 frames.
+050c010t_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c010u_noisy, best cost 17.9738 + -412.304 = -394.33 over 1035 frames.
+050c010u_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c010v_noisy, best cost 19.9612 + -312.887 = -292.926 over 696 frames.
+050c010v_noisy WATCH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c010w_noisy, best cost 24.3006 + -236.54 = -212.24 over 453 frames.
+050c010w_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c010x_noisy, best cost 23.7834 + -122.515 = -98.7321 over 309 frames.
+050c010x_noisy ALLIED 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c010y_noisy, best cost 59.2194 + -479.539 = -420.319 over 1243 frames.
+050c010y_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c010z_noisy, best cost 38.1375 + -229.467 = -191.329 over 604 frames.
+050c010z_noisy A LAW <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c0110_noisy, best cost 36.1311 + -335.611 = -299.48 over 893 frames.
+050c0110_noisy THOUGH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c0111_noisy, best cost 38.2677 + -262.691 = -224.424 over 710 frames.
+050c0111_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c0112_noisy, best cost 31.4868 + -213.648 = -182.161 over 501 frames.
+050c0112_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c0113_noisy, best cost 22.4766 + -256.143 = -233.667 over 670 frames.
+050c0113_noisy THE <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c0114_noisy, best cost 38.0423 + -250.186 = -212.144 over 658 frames.
+050c0114_noisy <UNK> THOUGH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c0115_noisy, best cost 36.3826 + -285.159 = -248.777 over 748 frames.
+050c0115_noisy THE SALE 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 050c0116_noisy, best cost 27.6277 + -129.58 = -101.953 over 325 frames.
+050c0116_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c0201_noisy, best cost 120.949 + -254.89 = -133.941 over 552 frames.
+423c0201_noisy TAXPAYERS OF THE CHIEF ADVANTAGE OF A BETTER CREDIT CARDS WOULD BE EXCHANGES 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c0202_noisy, best cost 118.597 + -267.278 = -148.681 over 529 frames.
+423c0202_noisy PAYMENTS CHARGED AS LATE AS APRIL FIFTEENTH WOULD BE THE I. R. S. SAYS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c0203_noisy, best cost 182.357 + -368.308 = -185.951 over 872 frames.
+423c0203_noisy THE CASE TWO YEARS GENERALLY WOULD HAVE ANOTHER MONTH OF CREDIT CARD BILLS CAME TO ZERO FOR TOP MONEY MANAGERS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c0204_noisy, best cost 99.0683 + -226.879 = -127.811 over 534 frames.
+423c0204_noisy E. SOUTH OF ONLY TWO JAPANESE COMPANIES WERE HIGHER SALES 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c0205_noisy, best cost 89.5952 + -252.932 = -163.337 over 511 frames.
+423c0205_noisy THE OTHER WAS MITSUBISHI MOTORS CORPORATION'S U. S. SALES OPERATIONS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c0206_noisy, best cost 235.278 + -509.086 = -273.808 over 1034 frames.
+423c0206_noisy BOTH COMPANIES OFFERED DEALERS CASH INCENTIVES DURING THE MONTH BE SOFT THREE OF ITS FAST SELLING CARS AND MITSUBISHI ON ALTHOUGH <UNK> ADDS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c0207_noisy, best cost 138.079 + -314.253 = -176.173 over 619 frames.
+423c0207_noisy REPRESENTATIVES FOR THE TWO IMPORTERS SAID THE PROGRAMS OF <UNK> NEW INCENTIVES HAPPENS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c0208_noisy, best cost 91.9679 + -219.099 = -127.131 over 389 frames.
+423c0208_noisy PEOPLE DON'T VOTE PRIMARILY ON THE BASIS OF ISSUES HE SAYS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c0209_noisy, best cost 64.1063 + -130.783 = -66.6771 over 286 frames.
+423c0209_noisy THEY VOTE ON A SENSE OF LEADERSHIP 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c020a_noisy, best cost 122.235 + -237.012 = -114.777 over 572 frames.
+423c020a_noisy IT WON INDEPENDENCE SEE US AS DIRECTION OF CURRENCIES FRIDAY THINGS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c020b_noisy, best cost 91.0354 + -204.485 = -113.449 over 461 frames.
+423c020b_noisy MY POSITION ON CONTRA AID IS ON <UNK> BOTH ACTIONS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c020c_noisy, best cost 205.061 + -465.944 = -260.884 over 918 frames.
+423c020c_noisy PRIOR TO THE FILING THE COMPANY SAID IT HAD BEEN ATTEMPTING TO SETTLE ITS STAFF WITH CREDITORS AND TO GAIN ADDITIONAL BANK FINANCING TO CONTINUE GROWING OPERATIONS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c020d_noisy, best cost 78.6081 + -189.461 = -110.853 over 341 frames.
+423c020d_noisy <UNK> ALL SETTLEMENT TALKS C. STAFF FILES 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c020e_noisy, best cost 105.778 + -326.554 = -220.776 over 610 frames.
+423c020e_noisy THE COMPANY SAID IT HASN'T BEEN ABLE TO OBTAIN THE BANK FINANCING FOR THE CONTINUING OPERATIONS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c020f_noisy, best cost 107.402 + -253.11 = -145.707 over 599 frames.
+423c020f_noisy THE COMPANY HAS THIRTY FOUR STORES THROUGHOUT THE MIDWEST AND SOUTHEAST THURSDAY'S 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c020g_noisy, best cost 141.45 + -328.088 = -186.639 over 670 frames.
+423c020g_noisy THE LATEST GOVERNMENT FIGURES <UNK> SHOW THE PRODUCER PRICE <UNK> FELL ZERO POINT TWO PERCENT LAST <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c020h_noisy, best cost 117.057 + -292.444 = -175.387 over 711 frames.
+423c020h_noisy AFTER EXCLUDING FOOD AND ENERGY THIRD OF ALL <UNK> PRICES ROSE <UNK> THREE YEARS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c020i_noisy, best cost 43.1467 + -167.659 = -124.512 over 525 frames.
+423c020i_noisy SOMETHING OF HIS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c020j_noisy, best cost 27.8344 + -164.668 = -136.833 over 458 frames.
+423c020j_noisy <UNK> <UNK> THINGS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c020k_noisy, best cost 53.2872 + -202.139 = -148.851 over 548 frames.
+423c020k_noisy <UNK> G. THINKING <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c020l_noisy, best cost 68.956 + -245.612 = -176.656 over 648 frames.
+423c020l_noisy BOTH <UNK> CREDITORS EIGHTH <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c020m_noisy, best cost 25.712 + -84.05 = -58.338 over 220 frames.
+423c020m_noisy <UNK> H. <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c020n_noisy, best cost 69.4525 + -308.602 = -239.149 over 732 frames.
+423c020n_noisy <UNK> PRICES HAS A THEORY EIGHTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c020o_noisy, best cost 28.4323 + -136.655 = -108.223 over 287 frames.
+423c020o_noisy <UNK> YOUTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c020p_noisy, best cost 37.9384 + -180.859 = -142.921 over 477 frames.
+423c020p_noisy A THIN <UNK> <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c020q_noisy, best cost 40.5869 + -207.31 = -166.723 over 553 frames.
+423c020q_noisy HE'S ESTABLISHED 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c020r_noisy, best cost 51.2996 + -272.857 = -221.558 over 628 frames.
+423c020r_noisy <UNK> <UNK> THING 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c020s_noisy, best cost 69.2169 + -369.505 = -300.288 over 814 frames.
+423c020s_noisy <UNK> THINKING EIGHTH <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c020t_noisy, best cost 31.6155 + -204.654 = -173.039 over 566 frames.
+423c020t_noisy BOTH <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c020u_noisy, best cost 29.3793 + -254.038 = -224.659 over 677 frames.
+423c020u_noisy BOTH <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c020v_noisy, best cost 33.2629 + -142.355 = -109.092 over 356 frames.
+423c020v_noisy HE THOUGHT <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c020w_noisy, best cost 34.2228 + -198.397 = -164.174 over 512 frames.
+423c020w_noisy BOTH <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c020x_noisy, best cost 42.3127 + -241.211 = -198.899 over 669 frames.
+423c020x_noisy BOTH <UNK> <UNK> <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c020y_noisy, best cost 53.0167 + -331.551 = -278.534 over 975 frames.
+423c020y_noisy A THIN <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c020z_noisy, best cost 28.4185 + -348.183 = -319.764 over 810 frames.
+423c020z_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c0210_noisy, best cost 24.9763 + -245.087 = -220.11 over 512 frames.
+423c0210_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c0211_noisy, best cost 19.366 + -148.294 = -128.928 over 398 frames.
+423c0211_noisy WATCH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c0212_noisy, best cost 27.2924 + -323.891 = -296.599 over 712 frames.
+423c0212_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c0213_noisy, best cost 25.6313 + -169.644 = -144.013 over 403 frames.
+423c0213_noisy A LOT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c0214_noisy, best cost 69.0273 + -369.237 = -300.21 over 1114 frames.
+423c0214_noisy WAS HE THOUGHT GROWTH <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c0215_noisy, best cost 88.6826 + -256.767 = -168.084 over 712 frames.
+423c0215_noisy THINKING EIGHTH LARGE HE THOUGHT <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 423c0216_noisy, best cost 70.1953 + -240.934 = -170.739 over 611 frames.
+423c0216_noisy <UNK> SAID HE THOUGHT <UNK> WORKING WITH <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c0101_noisy, best cost 91.9419 + -230.936 = -138.994 over 561 frames.
+051c0101_noisy A LOAD HE ADVOCATES THINK FARM POLICY 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c0102_noisy, best cost 40.9577 + -134.133 = -93.1758 over 382 frames.
+051c0102_noisy THESE U. S. 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c0103_noisy, best cost 51.202 + -147.202 = -96.0004 over 381 frames.
+051c0103_noisy I THOUGHT ABOUT SOUTH AFRICA 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c0104_noisy, best cost 42.1383 + -145.133 = -102.994 over 342 frames.
+051c0104_noisy HALF OF GROWTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c0105_noisy, best cost 78.2714 + -333.036 = -254.765 over 932 frames.
+051c0105_noisy THE BOND MARKET PRICES LAST MONTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c0106_noisy, best cost 160.911 + -406.8 = -245.889 over 996 frames.
+051c0106_noisy ACTIVE TRADER YEAR BAR PROFIT GROWTH FOR A TEN DOLLAR ONE THOUSAND DOLLAR FACE 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c0107_noisy, best cost 38.1958 + -211.407 = -173.211 over 545 frames.
+051c0107_noisy CORPORATE BOND PRICES 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c0108_noisy, best cost 65.933 + -190.995 = -125.062 over 550 frames.
+051c0108_noisy WITH AUTHORITY WHICH IT DOES 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c0109_noisy, best cost 53.8782 + -284.188 = -230.31 over 816 frames.
+051c0109_noisy BOTH <UNK> PRIZE 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c010a_noisy, best cost 86.8749 + -284.919 = -198.044 over 800 frames.
+051c010a_noisy HE THOUGHT THE MERC THOUGHT GROWTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c010b_noisy, best cost 175.953 + -594.057 = -418.104 over 1571 frames.
+051c010b_noisy THE VOTE WERE DROPPED FOR ONE THING HE SAID OUR ONE HUNDRED NINETY THREE PART 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c010c_noisy, best cost 93.445 + -240.277 = -146.832 over 667 frames.
+051c010c_noisy EUROPE WILL RISE THIS YEAR SAYS <UNK> <UNK> CROP 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c010d_noisy, best cost 123.468 + -409.087 = -285.619 over 1230 frames.
+051c010d_noisy YESTERDAY'S RALLY THEME PARK BOTH <UNK> PRIZE FOR <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c010e_noisy, best cost 27.1248 + -256.697 = -229.572 over 698 frames.
+051c010e_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c010f_noisy, best cost 18.8367 + -256.321 = -237.484 over 592 frames.
+051c010f_noisy WATCH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c010g_noisy, best cost 51.8854 + -382.949 = -331.063 over 919 frames.
+051c010g_noisy THINK OF 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c010h_noisy, best cost 50.6771 + -292.894 = -242.216 over 719 frames.
+051c010h_noisy <UNK> THOUGHT <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c010i_noisy, best cost 51.9432 + -347.768 = -295.825 over 858 frames.
+051c010i_noisy <UNK> BOTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c010j_noisy, best cost 58.514 + -505.825 = -447.311 over 1305 frames.
+051c010j_noisy BOTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c010k_noisy, best cost 57.4039 + -377.822 = -320.418 over 779 frames.
+051c010k_noisy THIN 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c010l_noisy, best cost 37.2605 + -341.679 = -304.418 over 727 frames.
+051c010l_noisy BOTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c010m_noisy, best cost 36.9134 + -334.929 = -298.015 over 718 frames.
+051c010m_noisy BOTH <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c010n_noisy, best cost 43.7704 + -416.083 = -372.312 over 938 frames.
+051c010n_noisy <UNK> WITH <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c010o_noisy, best cost 49.7771 + -396.863 = -347.085 over 964 frames.
+051c010o_noisy SOUTH <UNK> DEAL 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c010p_noisy, best cost 48.0501 + -449.536 = -401.486 over 1132 frames.
+051c010p_noisy <UNK> HE THOUGHT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c010q_noisy, best cost 25.1494 + -321.113 = -295.963 over 619 frames.
+051c010q_noisy A LOT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c010r_noisy, best cost 30.4804 + -541.669 = -511.189 over 988 frames.
+051c010r_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c010s_noisy, best cost 31.2214 + -317.079 = -285.858 over 808 frames.
+051c010s_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c010t_noisy, best cost 18.7138 + -176.493 = -157.78 over 516 frames.
+051c010t_noisy WATCH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c010u_noisy, best cost 26.278 + -133.853 = -107.575 over 378 frames.
+051c010u_noisy A LAW <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c010v_noisy, best cost 55.3091 + -415.657 = -360.348 over 1095 frames.
+051c010v_noisy <UNK> BOTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c010w_noisy, best cost 48.4405 + -262.877 = -214.437 over 725 frames.
+051c010w_noisy <UNK> TRADE WITH <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c010x_noisy, best cost 51.2946 + -346.247 = -294.953 over 989 frames.
+051c010x_noisy <UNK> <UNK> THE <UNK> DEAL 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c010y_noisy, best cost 50.8939 + -284.667 = -233.773 over 839 frames.
+051c010y_noisy <UNK> <UNK> THOUGHT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c010z_noisy, best cost 24.6836 + -214.97 = -190.287 over 557 frames.
+051c010z_noisy A LOT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c0110_noisy, best cost 48.0147 + -232.056 = -184.042 over 547 frames.
+051c0110_noisy SALE OF BOTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c0111_noisy, best cost 35.9546 + -167.955 = -132 over 454 frames.
+051c0111_noisy A LOT OF THINGS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c0112_noisy, best cost 48.891 + -272.673 = -223.782 over 641 frames.
+051c0112_noisy BOTH <UNK> GROWTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c0113_noisy, best cost 38.7996 + -218.815 = -180.016 over 514 frames.
+051c0113_noisy MANY THOUGHT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c0114_noisy, best cost 50.8835 + -390.766 = -339.883 over 1022 frames.
+051c0114_noisy BOTH <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 051c0115_noisy, best cost 48.5699 + -315.645 = -267.076 over 753 frames.
+051c0115_noisy SOUTH <UNK> DEAL 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c0101_noisy, best cost 102.398 + -308.498 = -206.1 over 905 frames.
+052c0101_noisy A LEVERAGED ECONOMY HAS ALSO HELPED <UNK> THE SURVEY 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c0102_noisy, best cost 99.6098 + -404.971 = -305.361 over 1113 frames.
+052c0102_noisy FOR EXAMPLE LIKE FOR ABOUT HALF YEARS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c0103_noisy, best cost 105.908 + -292.899 = -186.991 over 837 frames.
+052c0103_noisy WITH SUCH KNOWLEDGE BETTER TERM GROWTH WAS <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c0104_noisy, best cost 107.62 + -263.733 = -156.113 over 731 frames.
+052c0104_noisy STERLING DRUG FOR A QUARTERLY DIVIDEND THIRTY EIGHTH TO THIRTY THREE 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c0105_noisy, best cost 111.938 + -307.776 = -195.837 over 854 frames.
+052c0105_noisy NEW YORK PHARMACEUTICAL PRODUCTS CONCERN SAID THE RATE FOR PROFIT GROWTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c0106_noisy, best cost 71.5556 + -172.462 = -100.906 over 454 frames.
+052c0106_noisy THE DIVIDEND IS PAYABLE JUNE FIRST TO STOCK OF RECORD MAY EIGHTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c0107_noisy, best cost 125.615 + -238.362 = -112.747 over 660 frames.
+052c0107_noisy REGIONAL BANKS HERE WILL THINK WAS THE FACT THAT THE PRESSURE ON THE MATTER 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c0108_noisy, best cost 84.601 + -198.248 = -113.647 over 445 frames.
+052c0108_noisy ALSO TWO BANKS BOTH FOR LOAN LOSS RESERVE 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c0109_noisy, best cost 72.8351 + -176.234 = -103.399 over 508 frames.
+052c0109_noisy MEANWHILE TEXACO THINK THAT WHEN HE SAID 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c010a_noisy, best cost 139.093 + -275.805 = -136.712 over 635 frames.
+052c010a_noisy THE HUDSON SAID MR. SELLS IT HAPPENED FOR EQUITIES A COMPANY HE IS <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c010b_noisy, best cost 158.198 + -350.936 = -192.737 over 734 frames.
+052c010b_noisy MR. SELLS WASN'T AVAILABLE FOR COMMENT SAID A STATE OF ALL WITH WATER RUN MY OWN COMPANY 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c010c_noisy, best cost 68.3014 + -119.954 = -51.6527 over 303 frames.
+052c010c_noisy NOW I GET <UNK> AND VERY EXCITED 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c010d_noisy, best cost 142.142 + -319.477 = -177.335 over 792 frames.
+052c010d_noisy OF THE TOTAL FACE AMOUNT OUTSTANDING WHILE WESTERN UNION THE EIGHTEENTH <UNK> WITH OTHERS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c010e_noisy, best cost 100.775 + -199.55 = -98.7753 over 468 frames.
+052c010e_noisy THE SWAP OFFER APART LEAST EIGHTY PERCENT OF THE TOTAL WEEK 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c010f_noisy, best cost 23.5439 + -165.274 = -141.731 over 388 frames.
+052c010f_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c010g_noisy, best cost 45.203 + -372.677 = -327.474 over 1046 frames.
+052c010g_noisy WANT THINGS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c010h_noisy, best cost 44.6543 + -323.249 = -278.595 over 878 frames.
+052c010h_noisy BOTH <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c010i_noisy, best cost 58.1413 + -286.634 = -228.492 over 822 frames.
+052c010i_noisy GROWTH IN BOTH <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c010j_noisy, best cost 53.3297 + -403.269 = -349.94 over 1046 frames.
+052c010j_noisy A I THOUGHT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c010k_noisy, best cost 24.6738 + -133.892 = -109.219 over 402 frames.
+052c010k_noisy A LOT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c010l_noisy, best cost 27.2926 + -317.942 = -290.649 over 766 frames.
+052c010l_noisy A LOT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c010m_noisy, best cost 58.6733 + -395.823 = -337.15 over 931 frames.
+052c010m_noisy THEME 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c010n_noisy, best cost 37.0821 + -235.851 = -198.769 over 609 frames.
+052c010n_noisy SOUTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c010o_noisy, best cost 24.2248 + -232.716 = -208.492 over 587 frames.
+052c010o_noisy A LOT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c010p_noisy, best cost 52.0954 + -282.7 = -230.605 over 787 frames.
+052c010p_noisy <UNK> <UNK> BOTH <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c010q_noisy, best cost 46.6766 + -232.424 = -185.748 over 620 frames.
+052c010q_noisy HE <UNK> BOTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c010r_noisy, best cost 19.2278 + -111.719 = -92.4911 over 318 frames.
+052c010r_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c010s_noisy, best cost 27.2404 + -140.501 = -113.26 over 339 frames.
+052c010s_noisy BOTH <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c010t_noisy, best cost 26.0124 + -287.443 = -261.431 over 607 frames.
+052c010t_noisy A LOT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c010u_noisy, best cost 30.9467 + -309.14 = -278.193 over 581 frames.
+052c010u_noisy A I 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c010v_noisy, best cost 27.4944 + -465.098 = -437.603 over 730 frames.
+052c010v_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c010w_noisy, best cost 32.9913 + -505.874 = -472.883 over 758 frames.
+052c010w_noisy A I 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c010x_noisy, best cost 25.4086 + -315.167 = -289.759 over 574 frames.
+052c010x_noisy A LOT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c010y_noisy, best cost 22.8193 + -125.878 = -103.059 over 280 frames.
+052c010y_noisy A LOT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c010z_noisy, best cost 23.7858 + -268.522 = -244.737 over 549 frames.
+052c010z_noisy A LOT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c0110_noisy, best cost 24.0169 + -311.937 = -287.92 over 569 frames.
+052c0110_noisy A LOT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c0111_noisy, best cost 38.5945 + -233 = -194.406 over 598 frames.
+052c0111_noisy A LUCKY 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c0112_noisy, best cost 32.7616 + -404.504 = -371.743 over 1054 frames.
+052c0112_noisy A LOT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c0113_noisy, best cost 25.763 + -323.594 = -297.831 over 583 frames.
+052c0113_noisy A LOT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c0114_noisy, best cost 28.0014 + -379.757 = -351.756 over 837 frames.
+052c0114_noisy A LOT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c0115_noisy, best cost 27.2644 + -215.875 = -188.611 over 467 frames.
+052c0115_noisy A LAW <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 052c0116_noisy, best cost 26.2297 + -276.181 = -249.951 over 620 frames.
+052c0116_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c0101_noisy, best cost 85.2994 + -269.203 = -183.903 over 691 frames.
+053c0101_noisy A I HEALTH <UNK> LAST MONTH <UNK> OUT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c0102_noisy, best cost 57.7909 + -150.059 = -92.2676 over 487 frames.
+053c0102_noisy A FEDERAL LAW THE JUSTICE DEPARTMENT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c0103_noisy, best cost 41.7928 + -186.75 = -144.957 over 523 frames.
+053c0103_noisy BOTH ARE <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c0104_noisy, best cost 42.283 + -165.063 = -122.78 over 492 frames.
+053c0104_noisy IN ADDITION <UNK> SAID 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c0105_noisy, best cost 52.9705 + -282.426 = -229.456 over 877 frames.
+053c0105_noisy FOR THEM 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c0106_noisy, best cost 89.3311 + -284.387 = -195.056 over 881 frames.
+053c0106_noisy ONE OF THE <UNK> THEORY AUTHORITY WITH <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c0107_noisy, best cost 108.233 + -273.389 = -165.156 over 860 frames.
+053c0107_noisy I'D BE PRICED HIGHER FRIDAY G. THING HE SAYS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c0108_noisy, best cost 39.1079 + -130.734 = -91.6265 over 403 frames.
+053c0108_noisy IT HAD THOUGHT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c0109_noisy, best cost 75.1872 + -232.394 = -157.207 over 753 frames.
+053c0109_noisy THAT'S HOW HE THOUGHT HE THOUGHT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c010a_noisy, best cost 63.2429 + -241.954 = -178.711 over 776 frames.
+053c010a_noisy CANADA HAS <UNK> BETTER 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c010b_noisy, best cost 106.918 + -318.087 = -211.169 over 948 frames.
+053c010b_noisy AT A THREE YEAR TREASURY BONDS PLUNGED THIRTY DOLLARS EACH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c010c_noisy, best cost 91.2498 + -209.009 = -117.759 over 519 frames.
+053c010c_noisy PRICES FOR THREE DAYS THURSDAY GROWTH LATELY 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c010d_noisy, best cost 100.799 + -266.294 = -165.494 over 842 frames.
+053c010d_noisy THE OFFER LATER TREASURY <UNK> G. THINGS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c010e_noisy, best cost 110.996 + -396.607 = -285.611 over 1110 frames.
+053c010e_noisy THE HUGE IS TRYING TO REACH AGE RANGE MARGINS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c010f_noisy, best cost 34.0338 + -281.68 = -247.646 over 748 frames.
+053c010f_noisy TAKING HIS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c010g_noisy, best cost 20.0616 + -164.242 = -144.181 over 360 frames.
+053c010g_noisy THINGS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c010h_noisy, best cost 53.2998 + -386.045 = -332.745 over 996 frames.
+053c010h_noisy BOTH <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c010i_noisy, best cost 45.0688 + -297.118 = -252.049 over 830 frames.
+053c010i_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c010j_noisy, best cost 42.35 + -300.303 = -257.953 over 802 frames.
+053c010j_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c010k_noisy, best cost 39.3528 + -262.671 = -223.318 over 734 frames.
+053c010k_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c010l_noisy, best cost 35.1138 + -202.393 = -167.279 over 564 frames.
+053c010l_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c010m_noisy, best cost 45.6386 + -337.071 = -291.432 over 895 frames.
+053c010m_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c010n_noisy, best cost 42.2616 + -290.295 = -248.034 over 816 frames.
+053c010n_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c010o_noisy, best cost 40.7363 + -286.312 = -245.575 over 782 frames.
+053c010o_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c010p_noisy, best cost 21.1968 + -107.456 = -86.2597 over 281 frames.
+053c010p_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c010q_noisy, best cost 47.4082 + -213.937 = -166.529 over 569 frames.
+053c010q_noisy THEME 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c010r_noisy, best cost 53.3965 + -366.354 = -312.958 over 996 frames.
+053c010r_noisy <UNK> OF <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c010s_noisy, best cost 31.4896 + -303.458 = -271.969 over 628 frames.
+053c010s_noisy A I 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c010t_noisy, best cost 35.7635 + -504.619 = -468.856 over 998 frames.
+053c010t_noisy A I 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c010u_noisy, best cost 29.5564 + -497.692 = -468.136 over 908 frames.
+053c010u_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c010v_noisy, best cost 34.4977 + -302.482 = -267.984 over 672 frames.
+053c010v_noisy A LOT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c010w_noisy, best cost 34.1117 + -379.44 = -345.328 over 855 frames.
+053c010w_noisy A I 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c010x_noisy, best cost 51.0591 + -382.757 = -331.698 over 1032 frames.
+053c010x_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c010y_noisy, best cost 41.3923 + -295.873 = -254.48 over 777 frames.
+053c010y_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c010z_noisy, best cost 28.9557 + -379.253 = -350.297 over 856 frames.
+053c010z_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c0110_noisy, best cost 28.9483 + -187.932 = -158.983 over 408 frames.
+053c0110_noisy A I 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c0111_noisy, best cost 30.3166 + -380.34 = -350.024 over 917 frames.
+053c0111_noisy A LOT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c0112_noisy, best cost 44.6669 + -313.114 = -268.447 over 871 frames.
+053c0112_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c0113_noisy, best cost 24.0471 + -126.886 = -102.838 over 336 frames.
+053c0113_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c0114_noisy, best cost 21.5899 + -99.067 = -77.4771 over 270 frames.
+053c0114_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 053c0115_noisy, best cost 28.9642 + -177.737 = -148.773 over 460 frames.
+053c0115_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc0101_noisy, best cost 53.8682 + -367.436 = -313.567 over 1006 frames.
+22gc0101_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc0102_noisy, best cost 23.3684 + -214.729 = -191.361 over 460 frames.
+22gc0102_noisy A LOT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc0103_noisy, best cost 23.8701 + -180.186 = -156.316 over 308 frames.
+22gc0103_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc0104_noisy, best cost 34.531 + -169.946 = -135.415 over 432 frames.
+22gc0104_noisy SHE 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc0105_noisy, best cost 36.0892 + -183.454 = -147.365 over 532 frames.
+22gc0105_noisy BOTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc0106_noisy, best cost 37.2123 + -210.061 = -172.849 over 498 frames.
+22gc0106_noisy GROWTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc0107_noisy, best cost 42.1223 + -252.656 = -210.534 over 650 frames.
+22gc0107_noisy BOTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc0108_noisy, best cost 46.3253 + -313.449 = -267.124 over 828 frames.
+22gc0108_noisy HOW THIN 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc0109_noisy, best cost 31.1662 + -234.127 = -202.961 over 600 frames.
+22gc0109_noisy A I 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc010a_noisy, best cost 23.619 + -146.371 = -122.752 over 394 frames.
+22gc010a_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc010b_noisy, best cost 61.6496 + -477.404 = -415.755 over 1290 frames.
+22gc010b_noisy A LOT OF LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc010c_noisy, best cost 28.4868 + -109.906 = -81.419 over 284 frames.
+22gc010c_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc010d_noisy, best cost 36.4271 + -92.4399 = -56.0128 over 258 frames.
+22gc010d_noisy RATES OF GROWTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc010e_noisy, best cost 37.2902 + -119.088 = -81.7982 over 486 frames.
+22gc010e_noisy THE SOUTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc010f_noisy, best cost 108.046 + -303.366 = -195.319 over 818 frames.
+22gc010f_noisy BOTH TRIED TO REDUCE THE GROWTH OF DOLLARS OF BOTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc010g_noisy, best cost 51.7593 + -227.095 = -175.335 over 638 frames.
+22gc010g_noisy TRADERS SAY BOTH OFFERS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc010h_noisy, best cost 26.5552 + -305.596 = -279.041 over 526 frames.
+22gc010h_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc010i_noisy, best cost 22.3774 + -106.318 = -83.9406 over 186 frames.
+22gc010i_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc010j_noisy, best cost 24.3121 + -262.273 = -237.961 over 454 frames.
+22gc010j_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc010k_noisy, best cost 25.2612 + -154.787 = -129.525 over 308 frames.
+22gc010k_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc010l_noisy, best cost 31.9062 + -543.421 = -511.515 over 1252 frames.
+22gc010l_noisy A LOT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc010m_noisy, best cost 23.388 + -160.598 = -137.21 over 374 frames.
+22gc010m_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc010n_noisy, best cost 42.0155 + -367.284 = -325.268 over 910 frames.
+22gc010n_noisy A I THOUGHT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc010o_noisy, best cost 22.7057 + -76.8405 = -54.1348 over 216 frames.
+22gc010o_noisy BOTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc010p_noisy, best cost 29.7642 + -384.56 = -354.796 over 836 frames.
+22gc010p_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc010q_noisy, best cost 53.1887 + -365.288 = -312.099 over 804 frames.
+22gc010q_noisy A I THINK 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc010r_noisy, best cost 45.2918 + -228.827 = -183.535 over 516 frames.
+22gc010r_noisy THIN 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc010s_noisy, best cost 43.2595 + -388.889 = -345.629 over 896 frames.
+22gc010s_noisy BOTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc010t_noisy, best cost 58.6368 + -488.234 = -429.598 over 1178 frames.
+22gc010t_noisy A I THOUGHT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc010u_noisy, best cost 22.0699 + -292.79 = -270.721 over 868 frames.
+22gc010u_noisy WATCH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc010v_noisy, best cost 31.4449 + -527.215 = -495.77 over 1072 frames.
+22gc010v_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc010w_noisy, best cost 29.8263 + -265.641 = -235.815 over 484 frames.
+22gc010w_noisy A I 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc010x_noisy, best cost 30.1108 + -593.434 = -563.323 over 956 frames.
+22gc010x_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc010y_noisy, best cost 24.2599 + -346.82 = -322.56 over 542 frames.
+22gc010y_noisy A LOT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc010z_noisy, best cost 32.6755 + -551.993 = -519.318 over 1076 frames.
+22gc010z_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc0110_noisy, best cost 32.7949 + -418.814 = -386.019 over 822 frames.
+22gc0110_noisy A LAW <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc0111_noisy, best cost 33.2348 + -521.715 = -488.481 over 1090 frames.
+22gc0111_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc0112_noisy, best cost 33.3775 + -695.674 = -662.297 over 1144 frames.
+22gc0112_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc0113_noisy, best cost 33.1761 + -444.345 = -411.169 over 774 frames.
+22gc0113_noisy A I 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22gc0114_noisy, best cost 30.3952 + -449.622 = -419.226 over 828 frames.
+22gc0114_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc0101_noisy, best cost 175.693 + -439.694 = -264.001 over 932 frames.
+22hc0101_noisy YOUR THEIR G. CORPORATION CLEVELAND SAID IT BEGAN A PUBLIC OFFERING OF FOUR MILLION COMMON SHARES OR TWENTY THREE POINT ONE TWO FIVE DOLLARS A SHARE 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc0102_noisy, best cost 43.3188 + -87.2656 = -43.9468 over 274 frames.
+22hc0102_noisy MORGAN STANLEY AND COMPANY HERE 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc0103_noisy, best cost 63.4618 + -192.616 = -129.154 over 614 frames.
+22hc0103_noisy PROCEEDS TO FINANCE GROWTH <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc0104_noisy, best cost 120.361 + -365.207 = -244.846 over 796 frames.
+22hc0104_noisy NEW YORK STOCK EXCHANGE COMPOSITE TRADING FRIDAY COMPANY'S STOCK CLOSED AT TWENTY THREE POINT ONE TWO FIVE DOLLARS UNCHANGED 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc0105_noisy, best cost 136.373 + -417.812 = -281.439 over 924 frames.
+22hc0105_noisy FOLLOWING OFFICERS DIRECTORS AND LARGE STOCKHOLDERS OF COMPANIES REPORTED CHANGES IN HOLDINGS UNDER THE SECURITIES EXCHANGE NINETEEN THIRTY 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc0106_noisy, best cost 92.0985 + -296.649 = -204.55 over 656 frames.
+22hc0106_noisy THOSE IDENTIFIED AS BENEFICIAL OWNERS HOLD AT LEAST TEN PERCENT OF A COMPANY'S EQUITY SECURITIES 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc0107_noisy, best cost 110.068 + -316.19 = -206.121 over 728 frames.
+22hc0107_noisy UNLESS OTHERWISE NOTED CHANGES INVOLVED DIRECT HOLDINGS OF COMMON STOCK AND TOOK PLACE IN OCTOBER AND NOVEMBER NINETEEN EIGHTY SEVEN 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc0108_noisy, best cost 93.0238 + -278.491 = -185.467 over 656 frames.
+22hc0108_noisy COMPANIES ARE LISTED WHERE TRANSACTIONS GENERALLY AGGREGATE TEN THOUSAND SHARES <UNK> ONE HUNDRED THOUSAND DOLLARS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc0109_noisy, best cost 198.555 + -411.636 = -213.082 over 1004 frames.
+22hc0109_noisy A AND SEVERAL OTHER THINGS THE PROGRAM TRADING INCLUDING CONSOLIDATING REGULATORY AUTHORITY OVER ALL U. S. FINANCIAL MARKETS ONE GOVERNMENT AGENCY 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc010a_noisy, best cost 112.513 + -242.824 = -130.311 over 512 frames.
+22hc010a_noisy IT ALSO PROPOSED RAISING MARGIN OF CAPITAL REQUIREMENTS FOR TRADING FUTURES EXCHANGES 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc010b_noisy, best cost 229.108 + -511.511 = -282.403 over 974 frames.
+22hc010b_noisy IT SAID TRADERS SHOULD BE ABLE TO DELIVER ACTUAL STOCKS TO SELL FUTURES CONTRACT OBLIGATIONS STOCK INDEX FUTURES GROUP HERE SO CASH ON EXPIRATION 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc010c_noisy, best cost 89.7206 + -188.846 = -99.1253 over 390 frames.
+22hc010c_noisy TRADERS SAID THE FIRST ARE BUSY ACTION WITH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc010d_noisy, best cost 131.772 + -327.306 = -195.534 over 738 frames.
+22hc010d_noisy THE DOLLAR IS STILL THE KEY SAID JACK BAKER HEAD OF BLOCK TRADING AT SHEARSON LEHMAN BROTHERS INCORPORATED NEW YORK 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc010e_noisy, best cost 88.7504 + -258.366 = -169.616 over 754 frames.
+22hc010e_noisy YESTERDAY THE DOLLAR EASED SLIGHTLY <UNK> THE JURY SOSNOFF 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc010f_noisy, best cost 19.6151 + -123.693 = -104.078 over 552 frames.
+22hc010f_noisy WATCH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc010g_noisy, best cost 50.7503 + -337.594 = -286.844 over 850 frames.
+22hc010g_noisy A I THOUGHT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc010h_noisy, best cost 18.4162 + -121.42 = -103.004 over 332 frames.
+22hc010h_noisy WATCH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc010i_noisy, best cost 62.1033 + -316.652 = -254.549 over 974 frames.
+22hc010i_noisy BOTH <UNK> SOUTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc010j_noisy, best cost 22.2257 + -69.8252 = -47.5995 over 190 frames.
+22hc010j_noisy ALLIED <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc010k_noisy, best cost 39.7924 + -237.993 = -198.201 over 662 frames.
+22hc010k_noisy BOTH <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc010l_noisy, best cost 36.8156 + -231.618 = -194.802 over 688 frames.
+22hc010l_noisy BOTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc010m_noisy, best cost 14.6578 + -237.419 = -222.761 over 540 frames.
+22hc010m_noisy A 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc010n_noisy, best cost 25.291 + -123.424 = -98.1326 over 302 frames.
+22hc010n_noisy BOTH <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc010o_noisy, best cost 69.5339 + -384.772 = -315.238 over 972 frames.
+22hc010o_noisy THEME 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc010p_noisy, best cost 42.2975 + -295.274 = -252.977 over 810 frames.
+22hc010p_noisy BOTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc010q_noisy, best cost 29.8579 + -326.129 = -296.271 over 932 frames.
+22hc010q_noisy A LOT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc010r_noisy, best cost 30.8026 + -118.95 = -88.1471 over 304 frames.
+22hc010r_noisy HE THOUGHT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc010s_noisy, best cost 24.7278 + -57.1214 = -32.3936 over 160 frames.
+22hc010s_noisy BOTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc010t_noisy, best cost 24.0118 + -150.119 = -126.108 over 428 frames.
+22hc010t_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc010u_noisy, best cost 32.5524 + -295.9 = -263.348 over 720 frames.
+22hc010u_noisy A I 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc010v_noisy, best cost 25.6924 + -402.768 = -377.075 over 574 frames.
+22hc010v_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc010w_noisy, best cost 26.0767 + -430.117 = -404.04 over 640 frames.
+22hc010w_noisy A LAWYER 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc010x_noisy, best cost 26.6628 + -469.714 = -443.051 over 658 frames.
+22hc010x_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc010y_noisy, best cost 21.6322 + -119.036 = -97.4034 over 222 frames.
+22hc010y_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc010z_noisy, best cost 20.9564 + -89.0189 = -68.0625 over 164 frames.
+22hc010z_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc0110_noisy, best cost 23.4342 + -219.51 = -196.076 over 378 frames.
+22hc0110_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc0111_noisy, best cost 26.3475 + -251.594 = -225.246 over 480 frames.
+22hc0111_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc0112_noisy, best cost 32.4788 + -188.672 = -156.194 over 554 frames.
+22hc0112_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc0113_noisy, best cost 21.9036 + -121.844 = -99.94 over 246 frames.
+22hc0113_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 22hc0114_noisy, best cost 21.3721 + -174.349 = -152.977 over 292 frames.
+22hc0114_noisy A LOT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c0201_noisy, best cost 113.925 + -196.703 = -82.778 over 425 frames.
+420c0201_noisy A I FEEL THERE'S A DRAFT A MISTAKE THAT THE COURTS OTHER PROBLEMS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c0202_noisy, best cost 139.942 + -397.111 = -257.169 over 1059 frames.
+420c0202_noisy ACCORDING TO THE U. S. TRADE <UNK> OFFICES OF ONLY FIFTY JUDGES HISTORY 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c0203_noisy, best cost 75.9957 + -281.843 = -205.847 over 881 frames.
+420c0203_noisy HE ALSO RISE SEVEN PERCENT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c0204_noisy, best cost 113.422 + -333.558 = -220.136 over 864 frames.
+420c0204_noisy EXPENSES FOR THE DELAY YEAR ACCOUNTED FOR TWO HUNDRED SIXTY DOLLARS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c0205_noisy, best cost 126.668 + -285.103 = -158.434 over 770 frames.
+420c0205_noisy REGULATORS AREN'T ALLOWED AN EIGHTEEN PERCENT FRIDAY TO PASS THEM ON TO CUSTOMERS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c0206_noisy, best cost 95.12 + -200.314 = -105.194 over 489 frames.
+420c0206_noisy THE FOUR OTHER UTILITY COMPANY WILL ALSO HALF RIGHT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c0207_noisy, best cost 159.362 + -417.768 = -258.406 over 939 frames.
+420c0207_noisy BUT THOSE CHARGES ARE REQUIRED TO PAY UNTIL THE NINETEEN EIGHTY EIGHT FIRST QUARTER FOR A BIGGER SHARE OF CIRCUMSTANCES 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c0208_noisy, best cost 152.569 + -346.34 = -193.771 over 801 frames.
+420c0208_noisy LAST MONTH OVERALL GOODS PRODUCING EMPLOYMENT FELL SIXTY EIGHT THOUSAND AFTER A THIRTY TWO THOUSAND JOB RISE IN FEBRUARY 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c0209_noisy, best cost 117.408 + -314.212 = -196.804 over 750 frames.
+420c0209_noisy THE DEPARTMENT SAID THE DECLINE IN FACTORY JOBS TRADED ELECTRICAL AND ELECTRONIC 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c020a_noisy, best cost 115.841 + -315.608 = -199.767 over 691 frames.
+420c020a_noisy CONSTRUCTION EMPLOYMENT FELL FORTY SEVEN THOUSAND AFTER A FIFTEEN THOUSAND JOB DECLINE 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c020b_noisy, best cost 149.143 + -412.359 = -263.217 over 884 frames.
+420c020b_noisy MINING EMPLOYMENT WHICH INCLUDES THE OIL AND GAS EXTRACTION INDUSTRY THREE THOUSAND AFTER A ONE THOUSAND JOBS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c020c_noisy, best cost 146.416 + -414.883 = -268.466 over 944 frames.
+420c020c_noisy INTERNATIONAL MOBILE MACHINES CORPORATION SOLD ONE MILLION SHARES OF TWO DOLLAR AND FIFTY CENTS PREFERRED AT TWENTY FIVE DOLLARS EACH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c020d_noisy, best cost 36.0069 + -158.585 = -122.578 over 481 frames.
+420c020d_noisy FOR THE YEAR 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c020e_noisy, best cost 75.1466 + -308.766 = -233.62 over 981 frames.
+420c020e_noisy THE STOCK IS AT ISSUE HERE 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c020f_noisy, best cost 27.9658 + -206.797 = -178.831 over 559 frames.
+420c020f_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c020g_noisy, best cost 35.2027 + -228.672 = -193.469 over 633 frames.
+420c020g_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c020h_noisy, best cost 44.8148 + -304.878 = -260.063 over 845 frames.
+420c020h_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c020i_noisy, best cost 31.0921 + -178.006 = -146.914 over 506 frames.
+420c020i_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c020j_noisy, best cost 26.6955 + -166.657 = -139.962 over 459 frames.
+420c020j_noisy A LOT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c020k_noisy, best cost 43.9891 + -266.946 = -222.957 over 713 frames.
+420c020k_noisy HERE 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c020l_noisy, best cost 25.0449 + -253.416 = -228.371 over 658 frames.
+420c020l_noisy A LOT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c020m_noisy, best cost 47.2807 + -318.411 = -271.13 over 934 frames.
+420c020m_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c020n_noisy, best cost 33.6062 + -193.989 = -160.383 over 574 frames.
+420c020n_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c020o_noisy, best cost 18.5601 + -137.235 = -118.674 over 421 frames.
+420c020o_noisy WATCH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c020p_noisy, best cost 34.2887 + -225.783 = -191.494 over 602 frames.
+420c020p_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c020q_noisy, best cost 56.0978 + -429.772 = -373.674 over 1205 frames.
+420c020q_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c020r_noisy, best cost 32.2867 + -400.426 = -368.139 over 697 frames.
+420c020r_noisy A I 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c020s_noisy, best cost 25.3552 + -409.878 = -384.523 over 632 frames.
+420c020s_noisy A LOT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c020t_noisy, best cost 33.6544 + -541.886 = -508.231 over 813 frames.
+420c020t_noisy A I 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c020u_noisy, best cost 28.3551 + -427.8 = -399.445 over 804 frames.
+420c020u_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c020v_noisy, best cost 32.2993 + -420.084 = -387.785 over 1057 frames.
+420c020v_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c020w_noisy, best cost 31.047 + -280.174 = -249.127 over 623 frames.
+420c020w_noisy A LAW <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c020x_noisy, best cost 28.3046 + -222.257 = -193.953 over 610 frames.
+420c020x_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c020y_noisy, best cost 41.8775 + -281.782 = -239.904 over 790 frames.
+420c020y_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c020z_noisy, best cost 28.1723 + -359.969 = -331.796 over 741 frames.
+420c020z_noisy A LOT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c0210_noisy, best cost 26.0852 + -239.206 = -213.121 over 608 frames.
+420c0210_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c0211_noisy, best cost 28.6138 + -222.393 = -193.78 over 548 frames.
+420c0211_noisy A LOT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c0212_noisy, best cost 27.4876 + -289.609 = -262.121 over 648 frames.
+420c0212_noisy A LOT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c0213_noisy, best cost 43.8491 + -238.787 = -194.938 over 689 frames.
+420c0213_noisy <UNK> <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 420c0214_noisy, best cost 54.2341 + -331.306 = -277.072 over 1008 frames.
+420c0214_noisy A <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c0201_noisy, best cost 187.183 + -433.174 = -245.99 over 1320 frames.
+421c0201_noisy UNDERWRITERS LED BY MERRILL LYNCH CAPITAL MARKETS TENTATIVELY PRICED A VOTE OF EIGHTY SIX HE SAID THE HEALTHY RATE MORTGAGE THAT HE THOUGHT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c0202_noisy, best cost 36.5994 + -184.708 = -148.109 over 610 frames.
+421c0202_noisy SHE SAYS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c0203_noisy, best cost 84.4375 + -293.01 = -208.572 over 921 frames.
+421c0203_noisy YIELDS RANGE FROM A NINETEEN EIGHTY SEVEN PERCENT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c0204_noisy, best cost 65.2328 + -201.559 = -136.326 over 550 frames.
+421c0204_noisy LOUIS ADVOCATES OF SUCH LOANS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c0205_noisy, best cost 25.6496 + -115.333 = -89.6838 over 307 frames.
+421c0205_noisy THESE THINGS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c0206_noisy, best cost 47.495 + -122.177 = -74.6819 over 329 frames.
+421c0206_noisy WHAT ABOUT THE SOUTH AFRICA 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c0207_noisy, best cost 36.7284 + -88.1028 = -51.3745 over 224 frames.
+421c0207_noisy THAT SAYS MR. 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c0208_noisy, best cost 62.4132 + -168.069 = -105.656 over 438 frames.
+421c0208_noisy FEW PEOPLE TO THE G. M. 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c0209_noisy, best cost 91.1549 + -229.081 = -137.926 over 656 frames.
+421c0209_noisy ONE INVESTMENT OFFICERS SAYS HE THOUGHT TO BE <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c020a_noisy, best cost 57.2632 + -160.436 = -103.173 over 460 frames.
+421c020a_noisy HE BECAME A SHARE HE SAID 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c020b_noisy, best cost 93.9523 + -201.903 = -107.951 over 519 frames.
+421c020b_noisy SEPARATELY SHOW WELL HE HAD TWENTY HE SAID 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c020c_noisy, best cost 169.024 + -390.598 = -221.574 over 958 frames.
+421c020c_noisy OCCIDENTAL PETROLEUM REACH TWENTY THREE PERCENT PROFIT JUMP THE COMPANY WOULD HAVE HAD A LOSS OF ONE LATER 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c020d_noisy, best cost 109.865 + -288.351 = -178.486 over 779 frames.
+421c020d_noisy PHILLIPS PETROLEUM PROFIT PLUNGED SIXTY THREE PERCENT IN GAS PRICES 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c020e_noisy, best cost 116.898 + -249.306 = -132.408 over 690 frames.
+421c020e_noisy THE COMPANY'S NET TOTALED SEVENTY YEARS A LARGE ONE TIME JOB 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c020f_noisy, best cost 140.065 + -392.408 = -252.343 over 1167 frames.
+421c020f_noisy STOCKS REBOUNDED SHARE SHE THOUGHT HE SAID HE THOUGHT HE HAD HE 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c020g_noisy, best cost 66.2711 + -312.297 = -246.026 over 958 frames.
+421c020g_noisy THE RALLY HE THOUGHT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c020h_noisy, best cost 19.2572 + -354.339 = -335.082 over 852 frames.
+421c020h_noisy WATCH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c020i_noisy, best cost 45.1805 + -285.109 = -239.928 over 775 frames.
+421c020i_noisy EACH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c020j_noisy, best cost 50.1137 + -294.528 = -244.415 over 857 frames.
+421c020j_noisy HERE 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c020k_noisy, best cost 31.4233 + -134.748 = -103.325 over 353 frames.
+421c020k_noisy HERE 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c020l_noisy, best cost 46.7477 + -323.567 = -276.82 over 934 frames.
+421c020l_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c020m_noisy, best cost 60.3148 + -349.138 = -288.823 over 971 frames.
+421c020m_noisy I THINK 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c020n_noisy, best cost 51.5325 + -374.665 = -323.132 over 1025 frames.
+421c020n_noisy <UNK> <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c020o_noisy, best cost 33.3593 + -361.509 = -328.15 over 983 frames.
+421c020o_noisy WATCH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c020p_noisy, best cost 55.4964 + -409.465 = -353.969 over 1125 frames.
+421c020p_noisy <UNK> <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c020q_noisy, best cost 50.143 + -332.069 = -281.926 over 925 frames.
+421c020q_noisy HE <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c020r_noisy, best cost 36.6298 + -547.493 = -510.863 over 1073 frames.
+421c020r_noisy A I 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c020s_noisy, best cost 28.2337 + -458.728 = -430.495 over 794 frames.
+421c020s_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c020t_noisy, best cost 30.1745 + -446.697 = -416.522 over 727 frames.
+421c020t_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c020u_noisy, best cost 29.8956 + -245.37 = -215.474 over 490 frames.
+421c020u_noisy A I 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c020v_noisy, best cost 22.2848 + -127.529 = -105.244 over 279 frames.
+421c020v_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c020w_noisy, best cost 40.161 + -435.086 = -394.925 over 953 frames.
+421c020w_noisy A LAW <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c020x_noisy, best cost 30.5159 + -235.679 = -205.163 over 600 frames.
+421c020x_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c020y_noisy, best cost 51.62 + -361.343 = -309.723 over 1052 frames.
+421c020y_noisy <UNK> <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c020z_noisy, best cost 35.0929 + -306.703 = -271.61 over 818 frames.
+421c020z_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c0210_noisy, best cost 18.1925 + -344.29 = -326.098 over 846 frames.
+421c0210_noisy A 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c0211_noisy, best cost 29.137 + -257.482 = -228.345 over 680 frames.
+421c0211_noisy A LOT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c0212_noisy, best cost 31.7364 + -164.188 = -132.451 over 452 frames.
+421c0212_noisy EACH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c0213_noisy, best cost 24.0957 + -127.173 = -103.077 over 357 frames.
+421c0213_noisy <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 421c0214_noisy, best cost 35.6752 + -152.762 = -117.087 over 432 frames.
+421c0214_noisy HE THOUGHT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c0201_noisy, best cost 133.075 + -369.564 = -236.489 over 897 frames.
+422c0201_noisy A N. A. S. D. HAS SHORT INTEREST FIGURES FOR THE FIRST MONTH ALSO LAST MONTH <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c0202_noisy, best cost 80.273 + -227.66 = -147.387 over 720 frames.
+422c0202_noisy INVESTORS THINKING OF SELLING THOUGHT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c0203_noisy, best cost 104.592 + -220.542 = -115.95 over 522 frames.
+422c0203_noisy A OR SALE OF A SALE OR A SMALL INVESTORS EXPECTING 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c0204_noisy, best cost 111.692 + -265.187 = -153.495 over 662 frames.
+422c0204_noisy INVESTORS EXPECT PROFIT ON THE PRIZE REALIZE SALES GROWTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c0205_noisy, best cost 169.685 + -328.001 = -158.315 over 883 frames.
+422c0205_noisy <UNK> FINANCIAL SERVICES CONCERNS THEORY C. CREATED AND LEERY OF THE TRANSACTION WAS <UNK> ON MARCH NINETEENTH <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c0206_noisy, best cost 91.8519 + -218.149 = -126.297 over 642 frames.
+422c0206_noisy SPOKESMEN FOR BOTH COMPANIES SAID THEY ENDED NEARLY A THIRD YEAR 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c0207_noisy, best cost 54.0384 + -115.986 = -61.9476 over 302 frames.
+422c0207_noisy CREDITORS SAVINGS BASES 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c0208_noisy, best cost 61.5807 + -120.146 = -58.5652 over 340 frames.
+422c0208_noisy THE VOTERS HERE AND LIVE WITH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c0209_noisy, best cost 47.0076 + -108.368 = -61.3599 over 326 frames.
+422c0209_noisy BUSH'S IS NO <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c020a_noisy, best cost 24.9896 + -63.3758 = -38.3862 over 185 frames.
+422c020a_noisy ROBERT <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c020b_noisy, best cost 27.3889 + -71.9317 = -44.5428 over 206 frames.
+422c020b_noisy IN JULY 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c020c_noisy, best cost 94.8491 + -177.327 = -82.4777 over 376 frames.
+422c020c_noisy SHE TRADER IN NEW YORK FOR TOKYO BASED BANK AGREES 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c020d_noisy, best cost 85.4927 + -194.864 = -109.371 over 475 frames.
+422c020d_noisy IN A JAPANESE THOUSAND DOLLARS IS AVAILABLE HE SAYS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c020e_noisy, best cost 78.7827 + -189.314 = -110.531 over 487 frames.
+422c020e_noisy THE TREND IS INEVITABLE UNLESS THE GOVERNMENT AUTHORITIES 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c020f_noisy, best cost 55.4 + -108.003 = -52.6032 over 285 frames.
+422c020f_noisy EVERYTHING IS DONE HE SAID YESTERDAY 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c020g_noisy, best cost 80.4003 + -140.785 = -60.3842 over 338 frames.
+422c020g_noisy IT WAS IMPORTANT TO SAVE HIS COMPANY IS REBUILDING 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c020h_noisy, best cost 141.252 + -323.35 = -182.098 over 737 frames.
+422c020h_noisy FORD'S EFFORTS DREXEL HAD GREAT WESTERN UNION'S PROXY STATEMENT TWENTY FOUR MILLION DOLLARS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c020i_noisy, best cost 97.5004 + -198.322 = -100.821 over 448 frames.
+422c020i_noisy TRADERS SAID THE REASON FOR THE FIRST EVER GROWTH AND THE DOLLAR 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c020j_noisy, best cost 116.069 + -289.889 = -173.82 over 713 frames.
+422c020j_noisy THE DOLLAR IS STILL A THINK <UNK> THE LAW CREATING SHEARSON LEHMAN BROTHERS INCORPORATED 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c020k_noisy, best cost 102.712 + -247.838 = -145.126 over 720 frames.
+422c020k_noisy A LIKELY HE WAS PAID FOR CURRENCY RESERVES ARE MORE YEARS 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c020l_noisy, best cost 39.5033 + -222.771 = -183.267 over 574 frames.
+422c020l_noisy WAS THIN 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c020m_noisy, best cost 18.4776 + -143.622 = -125.144 over 370 frames.
+422c020m_noisy WATCH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c020n_noisy, best cost 22.1987 + -190.865 = -168.666 over 492 frames.
+422c020n_noisy WATCH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c020o_noisy, best cost 41.4736 + -189.533 = -148.06 over 586 frames.
+422c020o_noisy LAST MONTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c020p_noisy, best cost 43.1408 + -254.489 = -211.348 over 781 frames.
+422c020p_noisy BOTH <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c020q_noisy, best cost 40.3707 + -283.661 = -243.29 over 757 frames.
+422c020q_noisy BOTH <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c020r_noisy, best cost 43.1616 + -255.926 = -212.764 over 692 frames.
+422c020r_noisy <UNK> GROWTH 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c020s_noisy, best cost 48.1202 + -324.918 = -276.798 over 710 frames.
+422c020s_noisy A I THINK 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c020t_noisy, best cost 38.8043 + -189.877 = -151.072 over 395 frames.
+422c020t_noisy THIN 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c020u_noisy, best cost 64.5397 + -351.061 = -286.521 over 875 frames.
+422c020u_noisy THIN 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c020v_noisy, best cost 32.4007 + -264.015 = -231.614 over 667 frames.
+422c020v_noisy A LAW <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c020w_noisy, best cost 42.1833 + -244.079 = -201.896 over 673 frames.
+422c020w_noisy <UNK> WITH <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c020x_noisy, best cost 36.86 + -242.408 = -205.548 over 713 frames.
+422c020x_noisy <UNK> 
+LOG (lattice-scale:main():lattice-scale.cc:90) Done 410 lattices.
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c020y_noisy, best cost 46.3758 + -313.661 = -267.286 over 926 frames.
+422c020y_noisy BOTH <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c020z_noisy, best cost 34.3543 + -533.81 = -499.456 over 876 frames.
+422c020z_noisy A I 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c0210_noisy, best cost 28.5787 + -257.71 = -229.131 over 376 frames.
+422c0210_noisy A I 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c0211_noisy, best cost 24.7221 + -313.64 = -288.918 over 490 frames.
+422c0211_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c0212_noisy, best cost 25.2229 + -393.782 = -368.559 over 629 frames.
+422c0212_noisy A LOT 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c0213_noisy, best cost 22.6544 + -148.771 = -126.116 over 311 frames.
+422c0213_noisy A LAW 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c0214_noisy, best cost 22.2444 + -132.312 = -110.068 over 275 frames.
+422c0214_noisy A LAW 
+LOG (lattice-add-penalty:main():lattice-add-penalty.cc:62) Done adding word insertion penalty to 410 lattices.
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c0215_noisy, best cost 45.2134 + -245.203 = -199.99 over 664 frames.
+422c0215_noisy READ 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 422c0216_noisy, best cost 29.2405 + -250.345 = -221.104 over 550 frames.
+422c0216_noisy A LAW <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall cost per frame is -0.32793 = 0.0821347 [graph] + -0.410065 [acoustic] over 275859 frames.
+LOG (lattice-best-path:main():lattice-best-path.cc:128) Done 410 lattices, failed for 0
+# Accounting: time=2 threads=1
+# Ended (code 0) at Mon Feb 27 09:19:36 GMT 2017, elapsed time 2 seconds

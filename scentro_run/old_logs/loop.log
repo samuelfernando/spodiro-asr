@@ -1,0 +1,55 @@
+nohup: ignoring input
+1 0.001 0.0001 1000 100
+nnet-1-0.001-0.0001-1000-100
+steps/nnet2/train_multisplice_accel2.sh --stage -10 --exit-stage -100 --num-epochs 1 --num-jobs-initial 2 --num-jobs-final 8 --num-hidden-layers 1 --splice-indexes layer0/-1:0:1 layer1/-2:1 layer2/-4:2 --feat-type raw --online-ivector-dir /home/samuel/wsj-pf-data/exp/nnet2_online/ivectors_train --cmvn-opts --norm-means=false --norm-vars=false --num-threads 1 --minibatch-size 512 --parallel-opts --gpu 1 --io-opts --max-jobs-run 12 --initial-effective-lrate 0.001 --final-effective-lrate 0.0001 --cmd run.pl --mem 2G --pnorm-input-dim 1000 --pnorm-output-dim 100 --mix-up 12000 /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp/nnet2_online/tri4a_ali /home/samuel/wsj-pf-data/exp/nnet2_online/nnet-1-0.001-0.0001-1000-100
+/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp/nnet2_online/tri4a_ali /home/samuel/wsj-pf-data/exp/nnet2_online/nnet-1-0.001-0.0001-1000-100
+steps/nnet2/make_multisplice_configs.py contexts --splice-indexes layer0/-1:0:1 layer1/-2:1 layer2/-4:2 /home/samuel/wsj-pf-data/exp/nnet2_online/nnet-1-0.001-0.0001-1000-100
+Namespace(bias_stddev=None, initial_learning_rate=None, ivector_dim=None, lda_dim=None, lda_mat=None, mode='contexts', num_hidden_layers=None, num_targets=None, online_preconditioning_opts=None, output_dir='/home/samuel/wsj-pf-data/exp/nnet2_online/nnet-1-0.001-0.0001-1000-100', pnorm_input_dim=None, pnorm_output_dim=None, splice_indexes='layer0/-1:0:1 layer1/-2:1 layer2/-4:2', total_input_dim=None)
+['', '0/-1:0:1 ', '1/-2:1 ', '2/-4:2']
+[-7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4]
+nnet_left_context=7; nnet_right_context=4 first_left_context=1; first_right_context=1
+steps/nnet2/train_multisplice_accel2.sh: calling get_lda.sh
+steps/nnet2/get_lda.sh --cmvn-opts --norm-means=false --norm-vars=false --feat-type raw --online-ivector-dir /home/samuel/wsj-pf-data/exp/nnet2_online/ivectors_train --transform-dir /home/samuel/wsj-pf-data/exp/nnet2_online/tri4a_ali --left-context 1 --right-context 1 --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp/nnet2_online/tri4a_ali /home/samuel/wsj-pf-data/exp/nnet2_online/nnet-1-0.001-0.0001-1000-100
+steps/nnet2/get_lda.sh: feature type is raw
+feat-to-dim 'ark,s,cs:utils/subset_scp.pl --quiet 250 /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/feats.scp | apply-cmvn --norm-means=false --norm-vars=false --utt2spk=ark:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/utt2spk scp:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/cmvn.scp scp:- ark:- |' - 
+apply-cmvn --norm-means=false --norm-vars=false --utt2spk=ark:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/utt2spk scp:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/cmvn.scp scp:- ark:- 
+WARNING (feat-to-dim:Close():kaldi-io.cc:500) Pipe utils/subset_scp.pl --quiet 250 /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/feats.scp | apply-cmvn --norm-means=false --norm-vars=false --utt2spk=ark:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/utt2spk scp:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/cmvn.scp scp:- ark:- | had nonzero return status 36096
+feat-to-dim scp:/home/samuel/wsj-pf-data/exp/nnet2_online/ivectors_train/ivector_online.scp - 
+feat-to-dim "ark,s,cs:utils/subset_scp.pl --quiet 250 /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/feats.scp | apply-cmvn --norm-means=false --norm-vars=false --utt2spk=ark:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/utt2spk scp:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/cmvn.scp scp:- ark:- | splice-feats --left-context=1 --right-context=1 ark:- ark:- | paste-feats --length-tolerance=10 ark:- 'ark,s,cs:utils/filter_scp.pl /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/utt2spk /home/samuel/wsj-pf-data/exp/nnet2_online/ivectors_train/ivector_online.scp | subsample-feats --n=-10 scp:- ark:- | ivector-randomize --randomize-prob=0.0 ark:- ark:- |' ark:- |" - 
+apply-cmvn --norm-means=false --norm-vars=false --utt2spk=ark:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/utt2spk scp:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/cmvn.scp scp:- ark:- 
+splice-feats --left-context=1 --right-context=1 ark:- ark:- 
+subsample-feats --n=-10 scp:- ark:- 
+ivector-randomize --randomize-prob=0.0 ark:- ark:- 
+WARNING (feat-to-dim:Close():kaldi-io.cc:500) Pipe utils/subset_scp.pl --quiet 250 /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/feats.scp | apply-cmvn --norm-means=false --norm-vars=false --utt2spk=ark:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/utt2spk scp:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/cmvn.scp scp:- ark:- | splice-feats --left-context=1 --right-context=1 ark:- ark:- | paste-feats --length-tolerance=10 ark:- 'ark,s,cs:utils/filter_scp.pl /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/utt2spk /home/samuel/wsj-pf-data/exp/nnet2_online/ivectors_train/ivector_online.scp | subsample-feats --n=-10 scp:- ark:- | ivector-randomize --randomize-prob=0.0 ark:- ark:- |' ark:- | had nonzero return status 36096
+steps/nnet2/get_lda.sh: Accumulating LDA statistics.
+steps/nnet2/get_lda.sh: Finished estimating LDA
+steps/nnet2/train_multisplice_accel2.sh: calling get_egs2.sh
+steps/nnet2/get_egs2.sh --cmvn-opts --norm-means=false --norm-vars=false --feat-type raw --online-ivector-dir /home/samuel/wsj-pf-data/exp/nnet2_online/ivectors_train --transform-dir /home/samuel/wsj-pf-data/exp/nnet2_online/tri4a_ali --left-context 7 --right-context 4 --samples-per-iter 400000 --stage 0 --io-opts --max-jobs-run 12 --cmd run.pl --mem 2G --frames-per-eg 8 /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires /home/samuel/wsj-pf-data/exp/nnet2_online/tri4a_ali /home/samuel/wsj-pf-data/exp/nnet2_online/nnet-1-0.001-0.0001-1000-100/egs
+steps/nnet2/get_egs2.sh: feature type is raw
+feat-to-dim scp:/home/samuel/wsj-pf-data/exp/nnet2_online/ivectors_train/ivector_online.scp - 
+steps/nnet2/get_egs2.sh: working out number of frames of training data
+feat-to-len scp:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/feats.scp ark,t:- 
+steps/nnet2/get_egs2.sh: creating 29 archives, each with 388620 egs, with
+steps/nnet2/get_egs2.sh:   8 labels per example, and (left,right) context = (7,4)
+steps/nnet2/get_egs2.sh: Getting validation and training subset examples.
+steps/nnet2/get_egs2.sh: ... extracting validation and training-subset alignments.
+copy-int-vector ark:- ark,t:- 
+LOG (copy-int-vector:main():copy-int-vector.cc:83) Copied 331151 vectors of int32.
+... Getting subsets of validation examples for diagnostics and combination.
+steps/nnet2/get_egs2.sh: Generating training examples on disk
+steps/nnet2/get_egs2.sh: recombining and shuffling order of archives on disk
+steps/nnet2/get_egs2.sh: removing temporary archives
+steps/nnet2/get_egs2.sh: Finished preparing training examples
+steps/nnet2/train_multisplice_accel2.sh: initializing neural net
+steps/nnet2/make_multisplice_configs.py --splice-indexes layer0/-1:0:1 layer1/-2:1 layer2/-4:2 --total-input-dim 140 --ivector-dim 100 --lda-mat /home/samuel/wsj-pf-data/exp/nnet2_online/nnet-1-0.001-0.0001-1000-100/lda.mat --lda-dim 220 --pnorm-input-dim 1000 --pnorm-output-dim 100 --online-preconditioning-opts alpha=4.0 num-samples-history=2000 update-period=4 rank-in=20 rank-out=80 max-change-per-sample=0.075 --initial-learning-rate 0.002 --bias-stddev 0.5 --num-hidden-layers 1 --num-targets 3453 configs /home/samuel/wsj-pf-data/exp/nnet2_online/nnet-1-0.001-0.0001-1000-100
+Namespace(bias_stddev=0.5, initial_learning_rate=0.002, ivector_dim=100, lda_dim='220', lda_mat='/home/samuel/wsj-pf-data/exp/nnet2_online/nnet-1-0.001-0.0001-1000-100/lda.mat', mode='configs', num_hidden_layers=1, num_targets=3453, online_preconditioning_opts='alpha=4.0 num-samples-history=2000 update-period=4 rank-in=20 rank-out=80 max-change-per-sample=0.075', output_dir='/home/samuel/wsj-pf-data/exp/nnet2_online/nnet-1-0.001-0.0001-1000-100', pnorm_input_dim=1000, pnorm_output_dim=100, splice_indexes='layer0/-1:0:1 layer1/-2:1 layer2/-4:2', total_input_dim=140)
+['', '0/-1:0:1 ', '1/-2:1 ', '2/-4:2']
+[-7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4]
+Traceback (most recent call last):
+  File "steps/nnet2/make_multisplice_configs.py", line 137, in <module>
+    create_config_files(params.output_dir, params)
+  File "steps/nnet2/make_multisplice_configs.py", line 72, in create_config_files
+    Splicing is supported only until layer {1}.""".format(params.num_hidden_layers, params.num_hidden_layers - 1, params.splice_indexes))
+Exception: Splice string provided is layer0/-1:0:1 layer1/-2:1 layer2/-4:2.
+    Number of hidden layers 1, is less than the number of context specifications provided.
+    Splicing is supported only until layer 0.

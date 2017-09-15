@@ -1,0 +1,25 @@
+nohup: ignoring input
+tree-info /home/samuel/wsj-pf-data/exp_augmented/tri5a_museum/tree 
+tree-info /home/samuel/wsj-pf-data/exp_augmented/tri5a_museum/tree 
+make-h-transducer --disambig-syms-out=/home/samuel/wsj-pf-data/exp_augmented/tri5a_museum/graph_wsj_pf_museum/disambig_tid.int --transition-scale=1.0 /home/samuel/museum-data/wsj-pfstar-with-museum/tmp/ilabels_3_1 /home/samuel/wsj-pf-data/exp_augmented/tri5a_museum/tree /home/samuel/wsj-pf-data/exp_augmented/tri5a_museum/final.mdl 
+fstrmepslocal 
+fsttablecompose /home/samuel/wsj-pf-data/exp_augmented/tri5a_museum/graph_wsj_pf_museum/Ha.fst /home/samuel/museum-data/wsj-pfstar-with-museum/tmp/CLG_3_1.fst 
+fstdeterminizestar --use-log=true 
+fstminimizeencoded 
+fstrmsymbols /home/samuel/wsj-pf-data/exp_augmented/tri5a_museum/graph_wsj_pf_museum/disambig_tid.int 
+fstisstochastic /home/samuel/wsj-pf-data/exp_augmented/tri5a_museum/graph_wsj_pf_museum/HCLGa.fst 
+0.000486256 -0.15843
+HCLGa is not stochastic
+add-self-loops --self-loop-scale=0.1 --reorder=true /home/samuel/wsj-pf-data/exp_augmented/tri5a_museum/final.mdl 
+steps/decode_fmllr.sh --nj 32 --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/exp_augmented/tri5a_museum/graph_wsj_pf_museum /home/samuel/museum-data/kaldi_data/0 /home/samuel/wsj-pf-data/exp_augmented/tri5a_museum/decode_museum_0_wsj_pf_museum
+steps/decode.sh --scoring-opts  --num-threads 1 --skip-scoring false --acwt 0.083333 --nj 32 --cmd run.pl --mem 2G --beam 10.0 --model /home/samuel/wsj-pf-data/exp_augmented/tri5a_museum/final.alimdl --max-active 2000 /home/samuel/wsj-pf-data/exp_augmented/tri5a_museum/graph_wsj_pf_museum /home/samuel/museum-data/kaldi_data/0 /home/samuel/wsj-pf-data/exp_augmented/tri5a_museum/decode_museum_0_wsj_pf_museum.si
+decode.sh: feature type is lda
+local/score.sh --cmd run.pl --mem 2G /home/samuel/museum-data/kaldi_data/0 /home/samuel/wsj-pf-data/exp_augmented/tri5a_museum/graph_wsj_pf_museum /home/samuel/wsj-pf-data/exp_augmented/tri5a_museum/decode_museum_0_wsj_pf_museum.si
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+steps/decode_fmllr.sh: feature type is lda
+steps/decode_fmllr.sh: getting first-pass fMLLR transforms.
+steps/decode_fmllr.sh: doing main lattice generation phase
+steps/decode_fmllr.sh: estimating fMLLR transforms a second time.
+steps/decode_fmllr.sh: doing a final pass of acoustic rescoring.
+local/score.sh --cmd run.pl --mem 2G /home/samuel/museum-data/kaldi_data/0 /home/samuel/wsj-pf-data/exp_augmented/tri5a_museum/graph_wsj_pf_museum /home/samuel/wsj-pf-data/exp_augmented/tri5a_museum/decode_museum_0_wsj_pf_museum
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0

@@ -1,0 +1,100 @@
+# online2-wav-nnet2-latgen-faster --online=true --do-endpointing=false --config=exp_augmented/nnet2_online/nnet_a_gpu_fast_online/conf/online_nnet2_decoding.conf --max-active=7000 --beam=15.0 --lattice-beam=6.0 --acoustic-scale=0.1 --word-symbol-table=exp_augmented/tri4a/graph/words.txt exp_augmented/nnet2_online/nnet_a_gpu_fast_online/final.mdl exp_augmented/tri4a/graph/HCLG.fst ark:data/new_robot/avg_ch/dt05_miro/split10/9/spk2utt "ark,s,cs:extract-segments scp,p:data/new_robot/avg_ch/dt05_miro/split10/9/wav.scp data/new_robot/avg_ch/dt05_miro/split10/9/segments ark:- |" "ark:|gzip -c > exp_augmented/nnet2_online/nnet_a_gpu_fast_online/decode_dt05_avg/lat.9.gz" 
+# Started at Sat Feb 25 12:03:53 GMT 2017
+#
+online2-wav-nnet2-latgen-faster --online=true --do-endpointing=false --config=exp_augmented/nnet2_online/nnet_a_gpu_fast_online/conf/online_nnet2_decoding.conf --max-active=7000 --beam=15.0 --lattice-beam=6.0 --acoustic-scale=0.1 --word-symbol-table=exp_augmented/tri4a/graph/words.txt exp_augmented/nnet2_online/nnet_a_gpu_fast_online/final.mdl exp_augmented/tri4a/graph/HCLG.fst ark:data/new_robot/avg_ch/dt05_miro/split10/9/spk2utt 'ark,s,cs:extract-segments scp,p:data/new_robot/avg_ch/dt05_miro/split10/9/wav.scp data/new_robot/avg_ch/dt05_miro/split10/9/segments ark:- |' 'ark:|gzip -c > exp_augmented/nnet2_online/nnet_a_gpu_fast_online/decode_dt05_avg/lat.9.gz' 
+LOG (online2-wav-nnet2-latgen-faster:ComputeDerivedVars():ivector-extractor.cc:183) Computing derived variables for iVector extractor
+LOG (online2-wav-nnet2-latgen-faster:ComputeDerivedVars():ivector-extractor.cc:204) Done.
+extract-segments scp,p:data/new_robot/avg_ch/dt05_miro/split10/9/wav.scp data/new_robot/avg_ch/dt05_miro/split10/9/segments ark:- 
+422c0201 THE N. A. S. D. RULE EASE SHORT INTEREST FIGURES FOR THE FIRST TIME EVER TWENTY FIFTH FOR ALL STOCKS CARRIED ON ITS NASDAQ AUTOMATED QUOTATION SYSTEM 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c0201
+422c0202 INVESTORS USE SHORT INTEREST FIGURES TO DETERMINE HOW MUCH SHORT SELLING IS GOING ON IN INDIVIDUAL STOCKS 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c0202
+422c0203 A SHORT SALE IS THE SALE OF BORROWED STOCK BY INVESTORS EXPECTING ITS PRICE TO DROP 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c0203
+422c0204 THE INVESTORS EXPECT A PROFIT ON THE DIFFERENCE BETWEEN THE PRICE REALIZE IN SALES AND THE COST OF REPLACING THE BORROWED SHARES 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c0204
+422c0205 THE TWO FINANCIAL SERVICES CONCERN SAID THEY PREVIOUSLY AGREED TO END THEIR AGREEMENT IF THE TRANSACTION WASN'T COMPLETED BY MARCH TWENTY FOURTH NINETEEN EIGHTY SEVEN 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c0205
+422c0206 SPOKESMEN FOR BOTH COMPANIES SAID THEY ENDED THE NEGOTIATIONS BECAUSE IT APPEARED THAT THE MERGER WOULD BE COMPLETED BY THAT DATE 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c0206
+422c0207 FRENCH OR SAVINGS IS BASED IN LAS VEGAS 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c0207
+422c0208 JUST BEFORE CHRISTMAS SHE FINALLY APPLIED FOR WELFARE 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c0208
+422c0209 BUT SHE INSISTS AND ELIGIBLE OWN WELFARE 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c0209
+422c020a A GOOD WORKER 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c020a
+422c020b A ONE SHOT 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c020b
+422c020c THE CHIEF TRADER IN NEW YORK FOR TOKYO BASED BANK AGREES 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c020c
+422c020d UNIT JAPANESE INVESTORS DON'T SELL DOLLARS SOME <UNK> SALES WILL HE SAYS 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c020d
+422c020e THE TREND IS INEVITABLE UNLESS THE GOVERNMENT HAS AUTHORITY OVER THE WHOLE WORLD 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c020e
+422c020f EVERYTHING IS DONE MR. LEVY SAID YESTERDAY 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c020f
+422c020g WHAT IS IMPORTANT IS WE SAVE HIS COMPANY AND ARE REBUILDING IT 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c020g
+422c020h FORD'S EFFORTS DREXEL GET ACCORDING TO WESTERN UNION'S PROXY STATEMENT FOR TWENTY FIVE POINT FOUR MILLION DOLLAR FEE 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c020h
+422c020i TRADERS SAID THE REASON ON THE FIRST EVER FOCUS IS THE ACTION IN THE DOLLAR 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c020i
+422c020j THE DOLLAR IS STILL A KEY SAID JACK BAKER HEAD OF BLOCK TRADING AT SHEARSON LEHMAN BROTHERS INCORPORATED NEW YORK 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c020j
+422c020k YESTERDAY THE DOLLAR EASED SLIGHTLY AGAINST MOST MAJOR FOREIGN CURRENCIES CHEERING SOME STOCK MARKET PLAYERS WITH ITS RELATIVE STABILITY 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c020k
+422c020l REGIONAL BANKS APPEAR WILLING TO ACCEPT BIG LOSSES AND A MEXICAN DEBT PLAN PUTTING PRESSURE ON BIG BANKS 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c020l
+422c020m ALSO TWO BANKS BOOSTED FOR LOAN LOSS RESERVES 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c020m
+422c020n MEANWHILE TEXACO HAS DONE BETTER THAN OTHER BIG DEBTORS IN WINNING CONCESSIONS 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c020n
+422c020o PLAYS A VOICE STOCK SPLIT IS PAYABLE SEPTEMBER FOURTEENTH TO STOCK OF RECORD ON AUGUST NINETEENTH 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c020o
+422c020p THE COMPANY SAID ITS QUARTERLY CASH DIVIDEND OF FORTY CENTS A SHARE WILL BE PAID FOR THE SPLIT ON SEPTEMBER TENTH TO STOCK OF RECORD ON AUGUST NINETEENTH 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c020p
+422c020q A COMPANY SPOKESMAN SAID THAT AFTER THE SPLIT THE QUARTERLY DIVIDEND WILL BE REDUCED TO TEN CENTS A SHARE CONTINUING THE CURRENT CASH PAYOUT RATE 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c020q
+422c020r IN COMPOSITE TRADING ON THE NEW YORK STOCK EXCHANGE YESTERDAY DUN CLOSE TO FIFTY ONE DOLLARS AND FIFTY CENTS UP ONE DOLLAR AND FIFTY CENTS 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c020r
+422c020s IN NATIONAL OVER THE COUNTER TRADING INFORMATION RESOURCES CLOSED AT TWENTY ONE DOLLARS UP TWO POINT ONE TWO FIVE DOLLARS 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c020s
+422c020t NEWS OF THE F. T. C. ANNOUNCEMENT WAS MADE AFTER THE CLOSE OF TRADING 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c020t
+422c020u DOMESTIC CARS ACCOUNTED FOR SEVENTY THREE POINT FIVE PERCENT IN APRIL ON A SALES WHILE IMPORT SHARE GREW ONE POINT FIVE PERCENT TO TWENTY SIX POINT FIVE PERCENT 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c020u
+422c020v G. M.'S SHARE OF THE TOTAL CAR MARKET FELL TO THIRTY FIVE POINT SIX PERCENT FROM THIRTY NINE POINT TWO PERCENT 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c020v
+422c020w ITS DECLINE WAS APPARENTLY SPLIT BUT FORD CHRYSLER HONDA MOTOR COMPANY IS MARKET SHARES EACH GREW ONE POINT ONE PERCENT 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c020w
+422c020x FORD'S SHARE ROSE TO TWENTY POINT EIGHT PERCENT PRICES TO ELEVEN POINT FOUR PERCENT ECONOMIST TEN POINT TWO PERCENT 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c020x
+422c020y DOFASCO OF HAMILTON ONTARIO SAID ABOUT THREE POINT THREE MILLION CONVERTIBLE PREFERRED SHARES ABOUT EIGHTY SIX PERCENT OF THE TOTAL OUTSTANDING WERE TENDERED 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c020y
+422c020z ALL SHARES TENDERED HAVE AN INDICATED VALUE OF ABOUT FIVE HUNDRED THIRTY EIGHT POINT FIVE MILLION CANADIAN DOLLARS FOUR HUNDRED THIRTY EIGHT MILLION U. S. DOLLARS 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c020z
+422c0210 THE OFFERS FOR BOTH CLASSES OF STOCK EXPIRED FRIDAY 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c0210
+422c0211 THAT IS FELT IT WAS AN APPROPRIATE TIME TO PURSUE BUSINESS IDEAS AMOUNT MR. SAUNDERS SAID 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c0211
+422c0212 AMONG QUARTER ENTIRE BUT AMONG LIKELY TO GO TO ANY LARGE INVESTMENT BANKING FIRM THAT RIVALS MORGAN STANLEY 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c0212
+422c0213 A PREFERRED OUTSTANDING OR GRANT 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c0213
+422c0214 WHAT CAN THE FEDERAL RESERVE DO DOWN 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c0214
+422c0215 MR. GREENSPAN APPEARS TO BELIEVE THAT THE BEST COURSE IT TO PURSUE THE CONTRAS MOVE TOWARD EASE IN THE HOPE FOR A SOFT LANDING 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c0215
+LOG (extract-segments:main():extract-segments.cc:194) Successfully processed 42 lines out of 42 in the segments file. 
+422c0216 SOMETIME NEXT YEAR HE SAID LAST WEEK WILL KNOW WHETHER THE FED'S PLAN HAS BEEN SUCCESSFUL 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 422c0216
+LOG (online2-wav-nnet2-latgen-faster:Print():online-timing.cc:36) Timing stats: real-time factor was 1.03751 (note: this cannot be less than one.)
+LOG (online2-wav-nnet2-latgen-faster:Print():online-timing.cc:38) Average delay was 0.211938 seconds.
+LOG (online2-wav-nnet2-latgen-faster:Print():online-timing.cc:42) Percentage of time spent idling was 39.2139
+LOG (online2-wav-nnet2-latgen-faster:Print():online-timing.cc:44) Longest delay was 0.819588 seconds for utterance '422c0213'
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:279) Decoded 42 utterances, 0 with errors.
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:281) Overall likelihood per frame was 0.336207 per frame over 23646 frames.
+# Accounting: time=160 threads=1
+# Ended (code 0) at Sat Feb 25 12:06:33 GMT 2017, elapsed time 160 seconds

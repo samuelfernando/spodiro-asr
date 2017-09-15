@@ -1,0 +1,6 @@
+nohup: ignoring input
+steps/online/prepare_online_decoding.sh /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf /home/samuel/museum-data/wsj-pfstar-with-museum /home/samuel/wsj-pf-data/exp_augmented/tri5a_museum /home/samuel/wsj-pf-data/exp_augmented/tri5a_museum_online
+steps/online/prepare_online_decoding.sh: feature type is lda
+Doing per-utterance adaptation for purposes of computing the basis.
+steps/online/prepare_online_decoding.sh: Accumulating statistics for basis-fMLLR computation
+run.pl: 32 / 32 failed, log is in /home/samuel/wsj-pf-data/exp_augmented/tri5a_museum_online/log/basis_acc.*.log

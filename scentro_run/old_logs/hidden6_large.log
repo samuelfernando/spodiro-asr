@@ -1,0 +1,184 @@
+nohup: ignoring input
+steps/nnet2/train_multisplice_accel2.sh --stage -10 --exit-stage -100 --num-epochs 1 --num-jobs-initial 2 --num-jobs-final 8 --num-hidden-layers 6 --splice-indexes layer0/-1:0:1 layer1/-2:1 layer2/-4:2 --feat-type raw --online-ivector-dir /home/samuel/wsj-pf-data/exp/nnet2_online/ivectors_train --cmvn-opts --norm-means=false --norm-vars=false --num-threads 1 --minibatch-size 512 --parallel-opts --gpu 1 --io-opts --max-jobs-run 12 --initial-effective-lrate 100.0 --final-effective-lrate 10.0 --cmd run.pl --mem 2G --pnorm-input-dim 2000 --pnorm-output-dim 250 --mix-up 12000 /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp/nnet2_online/tri4a_ali /home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000
+/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp/nnet2_online/tri4a_ali /home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000
+steps/nnet2/make_multisplice_configs.py contexts --splice-indexes layer0/-1:0:1 layer1/-2:1 layer2/-4:2 /home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000
+Namespace(bias_stddev=None, initial_learning_rate=None, ivector_dim=None, lda_dim=None, lda_mat=None, mode='contexts', num_hidden_layers=None, num_targets=None, online_preconditioning_opts=None, output_dir='/home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000', pnorm_input_dim=None, pnorm_output_dim=None, splice_indexes='layer0/-1:0:1 layer1/-2:1 layer2/-4:2', total_input_dim=None)
+['', '0/-1:0:1 ', '1/-2:1 ', '2/-4:2']
+[-7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4]
+nnet_left_context=7; nnet_right_context=4 first_left_context=1; first_right_context=1
+steps/nnet2/train_multisplice_accel2.sh: calling get_lda.sh
+steps/nnet2/get_lda.sh --cmvn-opts --norm-means=false --norm-vars=false --feat-type raw --online-ivector-dir /home/samuel/wsj-pf-data/exp/nnet2_online/ivectors_train --transform-dir /home/samuel/wsj-pf-data/exp/nnet2_online/tri4a_ali --left-context 1 --right-context 1 --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp/nnet2_online/tri4a_ali /home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000
+steps/nnet2/get_lda.sh: feature type is raw
+feat-to-dim 'ark,s,cs:utils/subset_scp.pl --quiet 250 /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/feats.scp | apply-cmvn --norm-means=false --norm-vars=false --utt2spk=ark:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/utt2spk scp:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/cmvn.scp scp:- ark:- |' - 
+apply-cmvn --norm-means=false --norm-vars=false --utt2spk=ark:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/utt2spk scp:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/cmvn.scp scp:- ark:- 
+WARNING (feat-to-dim:Close():kaldi-io.cc:500) Pipe utils/subset_scp.pl --quiet 250 /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/feats.scp | apply-cmvn --norm-means=false --norm-vars=false --utt2spk=ark:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/utt2spk scp:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/cmvn.scp scp:- ark:- | had nonzero return status 36096
+feat-to-dim scp:/home/samuel/wsj-pf-data/exp/nnet2_online/ivectors_train/ivector_online.scp - 
+feat-to-dim "ark,s,cs:utils/subset_scp.pl --quiet 250 /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/feats.scp | apply-cmvn --norm-means=false --norm-vars=false --utt2spk=ark:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/utt2spk scp:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/cmvn.scp scp:- ark:- | splice-feats --left-context=1 --right-context=1 ark:- ark:- | paste-feats --length-tolerance=10 ark:- 'ark,s,cs:utils/filter_scp.pl /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/utt2spk /home/samuel/wsj-pf-data/exp/nnet2_online/ivectors_train/ivector_online.scp | subsample-feats --n=-10 scp:- ark:- | ivector-randomize --randomize-prob=0.0 ark:- ark:- |' ark:- |" - 
+apply-cmvn --norm-means=false --norm-vars=false --utt2spk=ark:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/utt2spk scp:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/cmvn.scp scp:- ark:- 
+splice-feats --left-context=1 --right-context=1 ark:- ark:- 
+paste-feats --length-tolerance=10 ark:- 'ark,s,cs:utils/filter_scp.pl /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/utt2spk /home/samuel/wsj-pf-data/exp/nnet2_online/ivectors_train/ivector_online.scp | subsample-feats --n=-10 scp:- ark:- | ivector-randomize --randomize-prob=0.0 ark:- ark:- |' ark:- 
+subsample-feats --n=-10 scp:- ark:- 
+ivector-randomize --randomize-prob=0.0 ark:- ark:- 
+WARNING (feat-to-dim:Close():kaldi-io.cc:500) Pipe utils/subset_scp.pl --quiet 250 /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/feats.scp | apply-cmvn --norm-means=false --norm-vars=false --utt2spk=ark:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/utt2spk scp:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/cmvn.scp scp:- ark:- | splice-feats --left-context=1 --right-context=1 ark:- ark:- | paste-feats --length-tolerance=10 ark:- 'ark,s,cs:utils/filter_scp.pl /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/utt2spk /home/samuel/wsj-pf-data/exp/nnet2_online/ivectors_train/ivector_online.scp | subsample-feats --n=-10 scp:- ark:- | ivector-randomize --randomize-prob=0.0 ark:- ark:- |' ark:- | had nonzero return status 36096
+steps/nnet2/get_lda.sh: Accumulating LDA statistics.
+steps/nnet2/get_lda.sh: Finished estimating LDA
+steps/nnet2/train_multisplice_accel2.sh: calling get_egs2.sh
+steps/nnet2/get_egs2.sh --cmvn-opts --norm-means=false --norm-vars=false --feat-type raw --online-ivector-dir /home/samuel/wsj-pf-data/exp/nnet2_online/ivectors_train --transform-dir /home/samuel/wsj-pf-data/exp/nnet2_online/tri4a_ali --left-context 7 --right-context 4 --samples-per-iter 400000 --stage 0 --io-opts --max-jobs-run 12 --cmd run.pl --mem 2G --frames-per-eg 8 /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires /home/samuel/wsj-pf-data/exp/nnet2_online/tri4a_ali /home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000/egs
+steps/nnet2/get_egs2.sh: feature type is raw
+feat-to-dim scp:/home/samuel/wsj-pf-data/exp/nnet2_online/ivectors_train/ivector_online.scp - 
+steps/nnet2/get_egs2.sh: working out number of frames of training data
+feat-to-len scp:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/feats.scp ark,t:- 
+steps/nnet2/get_egs2.sh: creating 29 archives, each with 388620 egs, with
+steps/nnet2/get_egs2.sh:   8 labels per example, and (left,right) context = (7,4)
+steps/nnet2/get_egs2.sh: Getting validation and training subset examples.
+steps/nnet2/get_egs2.sh: ... extracting validation and training-subset alignments.
+copy-int-vector ark:- ark,t:- 
+LOG (copy-int-vector:main():copy-int-vector.cc:83) Copied 331151 vectors of int32.
+... Getting subsets of validation examples for diagnostics and combination.
+steps/nnet2/get_egs2.sh: Generating training examples on disk
+steps/nnet2/get_egs2.sh: recombining and shuffling order of archives on disk
+steps/nnet2/get_egs2.sh: removing temporary archives
+steps/nnet2/get_egs2.sh: Finished preparing training examples
+steps/nnet2/train_multisplice_accel2.sh: initializing neural net
+steps/nnet2/make_multisplice_configs.py --splice-indexes layer0/-1:0:1 layer1/-2:1 layer2/-4:2 --total-input-dim 140 --ivector-dim 100 --lda-mat /home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000/lda.mat --lda-dim 220 --pnorm-input-dim 2000 --pnorm-output-dim 250 --online-preconditioning-opts alpha=4.0 num-samples-history=2000 update-period=4 rank-in=20 rank-out=80 max-change-per-sample=0.075 --initial-learning-rate 200 --bias-stddev 0.5 --num-hidden-layers 6 --num-targets 3453 configs /home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000
+Namespace(bias_stddev=0.5, initial_learning_rate=200.0, ivector_dim=100, lda_dim='220', lda_mat='/home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000/lda.mat', mode='configs', num_hidden_layers=6, num_targets=3453, online_preconditioning_opts='alpha=4.0 num-samples-history=2000 update-period=4 rank-in=20 rank-out=80 max-change-per-sample=0.075', output_dir='/home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000', pnorm_input_dim=2000, pnorm_output_dim=250, splice_indexes='layer0/-1:0:1 layer1/-2:1 layer2/-4:2', total_input_dim=140)
+['', '0/-1:0:1 ', '1/-2:1 ', '2/-4:2']
+[-7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4]
+Training transition probabilities and setting priors
+prepare initial vector for FixedScaleComponent before softmax
+use priors^-0.25 and rescale to average 1
+insert an additional layer of FixedScaleComponent before softmax
+nnet-am-info /home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000/0.mdl 
+LOG (nnet-am-info:main():nnet-am-info.cc:76) Printed info about /home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000/0.mdl
+nnet-insert --insert-at=6 --randomize-next-component=false /home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000/0.mdl - /home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000/0.mdl 
+nnet-init /home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000/per_element.config - 
+LOG (nnet-init:main():nnet-init.cc:69) Initialized raw neural net and wrote it to -
+LOG (nnet-insert:main():nnet-insert.cc:106) Inserted 1 components at position 6
+LOG (nnet-insert:main():nnet-insert.cc:132) Write neural-net acoustic model to /home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000/0.mdl
+steps/nnet2/train_multisplice_accel2.sh: Will train for 1 epochs = 46 iterations
+steps/nnet2/train_multisplice_accel2.sh: Will not do mix up
+On iteration 0, learning rate is 200.
+Training neural net (pass 0)
+On iteration 1, learning rate is 196.069168023694.
+Training neural net (pass 1)
+On iteration 2, learning rate is 192.215593247518.
+Training neural net (pass 2)
+nnet-am-info /home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000/2.mdl 
+LOG (nnet-am-info:main():nnet-am-info.cc:76) Printed info about /home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000/2.mdl
+On iteration 3, learning rate is 188.437757246109.
+Training neural net (pass 3)
+On iteration 4, learning rate is 277.101257156216.
+Training neural net (pass 4)
+nnet-am-info /home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000/4.mdl 
+LOG (nnet-am-info:main():nnet-am-info.cc:76) Printed info about /home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000/4.mdl
+On iteration 5, learning rate is 268.97224113056.
+Training neural net (pass 5)
+On iteration 6, learning rate is 261.081697142973.
+Training neural net (pass 6)
+nnet-am-info /home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000/6.mdl 
+LOG (nnet-am-info:main():nnet-am-info.cc:76) Printed info about /home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000/6.mdl
+On iteration 7, learning rate is 253.422629400512.
+Training neural net (pass 7)
+On iteration 8, learning rate is 245.988247338148.
+Training neural net (pass 8)
+nnet-am-info /home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000/8.mdl 
+LOG (nnet-am-info:main():nnet-am-info.cc:76) Printed info about /home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000/8.mdl
+On iteration 9, learning rate is 238.771959598221.
+Training neural net (pass 9)
+On iteration 10, learning rate is 231.767368186509.
+Training neural net (pass 10)
+nnet-am-info /home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000/10.mdl 
+LOG (nnet-am-info:main():nnet-am-info.cc:76) Printed info about /home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000/10.mdl
+On iteration 11, learning rate is 224.968262799737.
+Training neural net (pass 11)
+On iteration 12, learning rate is 291.158153759326.
+Training neural net (pass 12)
+On iteration 13, learning rate is 279.825686268505.
+Training neural net (pass 13)
+On iteration 14, learning rate is 268.934301459973.
+Training neural net (pass 14)
+On iteration 15, learning rate is 258.466831498679.
+Training neural net (pass 15)
+On iteration 16, learning rate is 248.406776756625.
+Training neural net (pass 16)
+On iteration 17, learning rate is 238.738279804892.
+Training neural net (pass 17)
+On iteration 18, learning rate is 229.446100417947.
+Training neural net (pass 18)
+On iteration 19, learning rate is 220.515591550827.
+Training neural net (pass 19)
+On iteration 20, learning rate is 264.915845314186.
+Training neural net (pass 20)
+On iteration 21, learning rate is 252.090344194629.
+Training neural net (pass 21)
+On iteration 22, learning rate is 239.885770369069.
+Training neural net (pass 22)
+On iteration 23, learning rate is 228.272062579015.
+Training neural net (pass 23)
+On iteration 24, learning rate is 217.220614936468.
+Training neural net (pass 24)
+On iteration 25, learning rate is 206.704206464358.
+Training neural net (pass 25)
+On iteration 26, learning rate is 196.696934048163.
+Training neural net (pass 26)
+On iteration 27, learning rate is 224.608978360304.
+Training neural net (pass 27)
+On iteration 28, learning rate is 211.624060697777.
+Training neural net (pass 28)
+On iteration 29, learning rate is 199.389816886018.
+Training neural net (pass 29)
+Warning: the mix up opertion is disabled!
+    Ignore mix up leaves number specified
+On iteration 30, learning rate is 187.862849558568.
+Training neural net (pass 30)
+On iteration 31, learning rate is 177.002270203398.
+Training neural net (pass 31)
+On iteration 32, learning rate is 166.769554122991.
+Training neural net (pass 32)
+On iteration 33, learning rate is 157.12840377935.
+Training neural net (pass 33)
+On iteration 34, learning rate is 148.044620039208.
+Training neural net (pass 34)
+On iteration 35, learning rate is 162.733644339821.
+Training neural net (pass 35)
+On iteration 36, learning rate is 151.811592687526.
+Training neural net (pass 36)
+On iteration 37, learning rate is 141.622586821671.
+Training neural net (pass 37)
+On iteration 38, learning rate is 132.117427549457.
+Training neural net (pass 38)
+On iteration 39, learning rate is 123.250217737267.
+Training neural net (pass 39)
+On iteration 40, learning rate is 114.978140689253.
+Training neural net (pass 40)
+On iteration 41, learning rate is 107.261253400289.
+Training neural net (pass 41)
+On iteration 42, learning rate is 100.062293684979.
+Training neural net (pass 42)
+On iteration 43, learning rate is 106.681714573066.
+Training neural net (pass 43)
+On iteration 44, learning rate is 98.5387907459239.
+Training neural net (pass 44)
+On iteration 45, learning rate is 80.
+Training neural net (pass 45)
+Doing final combination to produce final.mdl
+Getting average posterior for purposes of adjusting the priors.
+Re-adjusting priors based on computed posteriors
+Done
+Cleaning up data
+steps/nnet2/remove_egs.sh: Finished deleting examples in /home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000/egs
+Removing most of the models
+steps/nnet2/decode.sh --nj 13 --cmd run.pl --mem 2G --online-ivector-dir /home/samuel/wsj-pf-data/exp/nnet2_online/ivectors_wsj_head_eval_test_5dB /home/samuel/wsj-pf-data/exp/tri4a/graph /home/samuel/wsj-pf-data/data/wsj/head_eval_test/5dB_hires /home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000/decode_head_5dB
+steps/nnet2/decode.sh: feature type is raw
+score best paths
+local/score.sh --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/wsj/head_eval_test/5dB_hires /home/samuel/wsj-pf-data/exp/tri4a/graph /home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000/decode_head_5dB
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+score confidence and timing with sclite
+Decoding done.
+steps/nnet2/decode.sh --nj 60 --cmd run.pl --mem 2G --online-ivector-dir /home/samuel/wsj-pf-data/exp/nnet2_online/ivectors_pf_head_test_clean /home/samuel/wsj-pf-data/exp/tri4a/graph /home/samuel/wsj-pf-data/data/pf/head_test/clean_hires /home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000/decode_pf_head_clean
+steps/nnet2/decode.sh: feature type is raw
+score best paths
+local/score.sh --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/pf/head_test/clean_hires /home/samuel/wsj-pf-data/exp/tri4a/graph /home/samuel/wsj-pf-data/exp/nnet2_online/decode_6hidden_100000/decode_pf_head_clean
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+score confidence and timing with sclite
+Decoding done.

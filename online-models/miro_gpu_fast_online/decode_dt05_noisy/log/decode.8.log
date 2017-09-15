@@ -1,0 +1,96 @@
+# online2-wav-nnet2-latgen-faster --online=true --do-endpointing=false --config=exp_augmented/nnet2_online/nnet_a_gpu_fast_online/conf/online_nnet2_decoding.conf --max-active=7000 --beam=15.0 --lattice-beam=6.0 --acoustic-scale=0.1 --word-symbol-table=exp_augmented/tri4a/graph/words.txt exp_augmented/nnet2_online/nnet_a_gpu_fast_online/final.mdl exp_augmented/tri4a/graph/HCLG.fst ark:data/new_robot/dev_augmented/split10/8/spk2utt "ark,s,cs:extract-segments scp,p:data/new_robot/dev_augmented/split10/8/wav.scp data/new_robot/dev_augmented/split10/8/segments ark:- |" "ark:|gzip -c > exp_augmented/nnet2_online/nnet_a_gpu_fast_online/decode_dt05_noisy/lat.8.gz" 
+# Started at Mon Feb 27 09:11:04 GMT 2017
+#
+online2-wav-nnet2-latgen-faster --online=true --do-endpointing=false --config=exp_augmented/nnet2_online/nnet_a_gpu_fast_online/conf/online_nnet2_decoding.conf --max-active=7000 --beam=15.0 --lattice-beam=6.0 --acoustic-scale=0.1 --word-symbol-table=exp_augmented/tri4a/graph/words.txt exp_augmented/nnet2_online/nnet_a_gpu_fast_online/final.mdl exp_augmented/tri4a/graph/HCLG.fst ark:data/new_robot/dev_augmented/split10/8/spk2utt 'ark,s,cs:extract-segments scp,p:data/new_robot/dev_augmented/split10/8/wav.scp data/new_robot/dev_augmented/split10/8/segments ark:- |' 'ark:|gzip -c > exp_augmented/nnet2_online/nnet_a_gpu_fast_online/decode_dt05_noisy/lat.8.gz' 
+LOG (online2-wav-nnet2-latgen-faster:ComputeDerivedVars():ivector-extractor.cc:183) Computing derived variables for iVector extractor
+LOG (online2-wav-nnet2-latgen-faster:ComputeDerivedVars():ivector-extractor.cc:204) Done.
+extract-segments scp,p:data/new_robot/dev_augmented/split10/8/wav.scp data/new_robot/dev_augmented/split10/8/segments ark:- 
+421c0201_noisy UNDERWRITERS LED BY MERRILL LYNCH CAPITAL MARKETS TENTATIVELY PRICED A VOTE OF EIGHTY SIX HE SAID THE HEALTHY RATE MORTGAGE THAT HE THOUGHT 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c0201_noisy
+421c0202_noisy SHE SAYS 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c0202_noisy
+421c0203_noisy YIELDS RANGE FROM A NINETEEN EIGHTY SEVEN PERCENT 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c0203_noisy
+421c0204_noisy LOUIS ADVOCATES OF SUCH LOANS 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c0204_noisy
+421c0205_noisy THESE THINGS 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c0205_noisy
+421c0206_noisy WHAT ABOUT THE SOUTH AFRICA 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c0206_noisy
+421c0207_noisy THAT SAYS MR. 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c0207_noisy
+421c0208_noisy FEW PEOPLE TO THE G. M. 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c0208_noisy
+421c0209_noisy ONE INVESTMENT OFFICERS SAYS HE IS THOUGHT TO BE <UNK> 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c0209_noisy
+421c020a_noisy HE BECAME A SHARE HE SAID 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c020a_noisy
+421c020b_noisy SEPARATELY SHOW WELL HE HAD TWENTY HE SAID 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c020b_noisy
+421c020c_noisy OCCIDENTAL PETROLEUM REACH TWENTY THREE PERCENT OF THE JUDGE SAID THE COMPANY WOULD HAVE HAD A LOSS OF ONE 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c020c_noisy
+421c020d_noisy PHILLIPS PETROLEUM PROFIT PLUNGED SIXTY THREE PERCENT OF THE GAS PRICES 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c020d_noisy
+421c020e_noisy THE COMPANY'S TOP HE SAID THE LARGE ONE TIME JOB 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c020e_noisy
+421c020f_noisy STOCKS REBOUNDED SHARE WHICH HAD NET OF SEVENTY FIVE CENTS EACH 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c020f_noisy
+421c020g_noisy THE RALLY HE THOUGHT 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c020g_noisy
+421c020h_noisy WATCH 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c020h_noisy
+421c020i_noisy EACH 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c020i_noisy
+421c020j_noisy HERE 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c020j_noisy
+421c020k_noisy HERE 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c020k_noisy
+421c020l_noisy <UNK> 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c020l_noisy
+421c020m_noisy I THINK 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c020m_noisy
+421c020n_noisy <UNK> <UNK> <UNK> 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c020n_noisy
+421c020o_noisy WATCH 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c020o_noisy
+421c020p_noisy <UNK> <UNK> 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c020p_noisy
+421c020q_noisy <UNK> <UNK> 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c020q_noisy
+421c020r_noisy A LOT 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c020r_noisy
+421c020s_noisy A LAW 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c020s_noisy
+421c020t_noisy A LAW 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c020t_noisy
+421c020u_noisy A I 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c020u_noisy
+421c020v_noisy A LAW 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c020v_noisy
+421c020w_noisy A LAW <UNK> 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c020w_noisy
+421c020x_noisy A LAW 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c020x_noisy
+421c020y_noisy <UNK> <UNK> 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c020y_noisy
+421c020z_noisy A LOT 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c020z_noisy
+421c0210_noisy A 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c0210_noisy
+421c0211_noisy A LOT 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c0211_noisy
+421c0212_noisy HE SAID 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c0212_noisy
+421c0213_noisy <UNK> 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c0213_noisy
+LOG (extract-segments:main():extract-segments.cc:194) Successfully processed 40 lines out of 40 in the segments file. 
+421c0214_noisy HE THOUGHT 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 421c0214_noisy
+LOG (online2-wav-nnet2-latgen-faster:Print():online-timing.cc:36) Timing stats: real-time factor was 1.69367 (note: this cannot be less than one.)
+LOG (online2-wav-nnet2-latgen-faster:Print():online-timing.cc:38) Average delay was 5.08416 seconds.
+LOG (online2-wav-nnet2-latgen-faster:Print():online-timing.cc:42) Percentage of time spent idling was 17.1958
+LOG (online2-wav-nnet2-latgen-faster:Print():online-timing.cc:44) Longest delay was 16.6226 seconds for utterance '421c020n_noisy'
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:279) Decoded 40 utterances, 0 with errors.
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:281) Overall likelihood per frame was 0.271836 per frame over 29239 frames.
+# Accounting: time=453 threads=1
+# Ended (code 0) at Mon Feb 27 09:18:37 GMT 2017, elapsed time 453 seconds

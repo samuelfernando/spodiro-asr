@@ -1,0 +1,384 @@
+01m_catch-0.496-2.068 ref  HELLO  MIRO
+01m_catch-0.496-2.068 hyp  HELLO  MIRO
+01m_catch-0.496-2.068 op     C      C 
+01m_catch-0.496-2.068 #csid 2 0 0 0
+01m_catch-10.875-12.405 ref  STAY  THERE
+01m_catch-10.875-12.405 hyp  STAY  THERE
+01m_catch-10.875-12.405 op     C     C  
+01m_catch-10.875-12.405 #csid 2 0 0 0
+01m_catch-13.480-15.134 ref  WAG  YOUR  TAIL
+01m_catch-13.480-15.134 hyp  ***  WAKE   UP 
+01m_catch-13.480-15.134 op    D     S     S 
+01m_catch-13.480-15.134 #csid 0 2 0 1
+01m_catch-16.127-17.285 ref  NOD  YOUR  HEAD
+01m_catch-16.127-17.285 hyp  NOD  YOUR  HEAD
+01m_catch-16.127-17.285 op    C     C     C 
+01m_catch-16.127-17.285 #csid 3 0 0 0
+01m_catch-18.608-20.096 ref  GO  TO  SLEEP
+01m_catch-18.608-20.096 hyp  GO  TO  SLEEP
+01m_catch-18.608-20.096 op    C   C    C  
+01m_catch-18.608-20.096 #csid 3 0 0 0
+01m_catch-2.564-4.176 ref    HI   MIRO
+01m_catch-2.564-4.176 hyp  HELLO  MIRO
+01m_catch-2.564-4.176 op     S      C 
+01m_catch-2.564-4.176 #csid 1 1 0 0
+01m_catch-21.709-23.156 ref  ARE  YOU  HAPPY
+01m_catch-21.709-23.156 hyp  ARE  YOU  HAPPY
+01m_catch-21.709-23.156 op    C    C     C  
+01m_catch-21.709-23.156 #csid 3 0 0 0
+01m_catch-23.901-25.348 ref  ARE  YOU  SAD
+01m_catch-23.901-25.348 hyp  ARE  YOU  SAD
+01m_catch-23.901-25.348 op    C    C    C 
+01m_catch-23.901-25.348 #csid 3 0 0 0
+01m_catch-26.382-27.912 ref  HOW  ARE  YOU  FEELING
+01m_catch-26.382-27.912 hyp  HOW  ARE  YOU  FEELING
+01m_catch-26.382-27.912 op    C    C    C      C   
+01m_catch-26.382-27.912 #csid 4 0 0 0
+01m_catch-28.573-30.021 ref  WAKE  UP
+01m_catch-28.573-30.021 hyp  WAKE  UP
+01m_catch-28.573-30.021 op     C    C
+01m_catch-28.573-30.021 #csid 2 0 0 0
+01m_catch-6.079-7.402 ref  HEY  MIRO
+01m_catch-6.079-7.402 hyp  HEY  MIRO
+01m_catch-6.079-7.402 op    C     C 
+01m_catch-6.079-7.402 #csid 2 0 0 0
+01m_catch-8.312-9.511 ref  ***  COME   HERE
+01m_catch-8.312-9.511 hyp   GO   TO   SLEEP
+01m_catch-8.312-9.511 op    I     S     S  
+01m_catch-8.312-9.511 #csid 0 2 1 0
+02m_catch-0.455-2.068 ref  HELLO  MIRO
+02m_catch-0.455-2.068 hyp  HELLO  MIRO
+02m_catch-0.455-2.068 op     C      C 
+02m_catch-0.455-2.068 #csid 2 0 0 0
+02m_catch-10.503-11.992 ref  WAG  YOUR  TAIL
+02m_catch-10.503-11.992 hyp  WAG  YOUR  TAIL
+02m_catch-10.503-11.992 op    C     C     C 
+02m_catch-10.503-11.992 #csid 3 0 0 0
+02m_catch-12.488-13.853 ref  NOD  YOUR  HEAD
+02m_catch-12.488-13.853 hyp  NOD  YOUR  HEAD
+02m_catch-12.488-13.853 op    C     C     C 
+02m_catch-12.488-13.853 #csid 3 0 0 0
+02m_catch-14.721-16.127 ref  GO  TO  SLEEP
+02m_catch-14.721-16.127 hyp  GO  TO  SLEEP
+02m_catch-14.721-16.127 op    C   C    C  
+02m_catch-14.721-16.127 #csid 3 0 0 0
+02m_catch-16.582-17.905 ref  ARE  YOU  HAPPY
+02m_catch-16.582-17.905 hyp  ARE  YOU  HAPPY
+02m_catch-16.582-17.905 op    C    C     C  
+02m_catch-16.582-17.905 #csid 3 0 0 0
+02m_catch-18.153-19.642 ref  ARE  YOU  SAD
+02m_catch-18.153-19.642 hyp  ARE  YOU  SAD
+02m_catch-18.153-19.642 op    C    C    C 
+02m_catch-18.153-19.642 #csid 3 0 0 0
+02m_catch-2.895-4.383 ref    HI   MIRO
+02m_catch-2.895-4.383 hyp  HELLO  MIRO
+02m_catch-2.895-4.383 op     S      C 
+02m_catch-2.895-4.383 #csid 1 1 0 0
+02m_catch-20.221-21.875 ref  HOW  ARE  YOU  FEELING
+02m_catch-20.221-21.875 hyp  HOW  ARE  YOU  FEELING
+02m_catch-20.221-21.875 op    C    C    C      C   
+02m_catch-20.221-21.875 #csid 4 0 0 0
+02m_catch-22.412-23.570 ref  WAKE  UP
+02m_catch-22.412-23.570 hyp  WAKE  UP
+02m_catch-22.412-23.570 op     C    C
+02m_catch-22.412-23.570 #csid 2 0 0 0
+02m_catch-4.921-6.120 ref  HEY  MIRO
+02m_catch-4.921-6.120 hyp  HEY  MIRO
+02m_catch-4.921-6.120 op    C     C 
+02m_catch-4.921-6.120 #csid 2 0 0 0
+02m_catch-6.823-8.022 ref  COME  HERE
+02m_catch-6.823-8.022 hyp  COME  HERE
+02m_catch-6.823-8.022 op     C     C 
+02m_catch-6.823-8.022 #csid 2 0 0 0
+02m_catch-8.684-9.883 ref  STAY  THERE
+02m_catch-8.684-9.883 hyp  STAY  THERE
+02m_catch-8.684-9.883 op     C     C  
+02m_catch-8.684-9.883 #csid 2 0 0 0
+03f_catch-10.104-12.000 ref  COME  HERE
+03f_catch-10.104-12.000 hyp  COME  HERE
+03f_catch-10.104-12.000 op     C     C 
+03f_catch-10.104-12.000 #csid 2 0 0 0
+03f_catch-12.131-13.995 ref  STAY  THERE
+03f_catch-12.131-13.995 hyp   ***   !SIL
+03f_catch-12.131-13.995 op     D     S  
+03f_catch-12.131-13.995 #csid 0 1 0 1
+03f_catch-14.256-15.989 ref  WAG  YOUR  TAIL
+03f_catch-14.256-15.989 hyp  ***   ***  !SIL
+03f_catch-14.256-15.989 op    D     D     S 
+03f_catch-14.256-15.989 #csid 0 1 0 2
+03f_catch-15.989-17.722 ref  NOD  YOUR  HEAD
+03f_catch-15.989-17.722 hyp  ***   ***  !SIL
+03f_catch-15.989-17.722 op    D     D     S 
+03f_catch-15.989-17.722 #csid 0 1 0 2
+03f_catch-17.755-19.717 ref  GO  TO  SLEEP
+03f_catch-17.755-19.717 hyp  GO  TO  SLEEP
+03f_catch-17.755-19.717 op    C   C    C  
+03f_catch-17.755-19.717 #csid 3 0 0 0
+03f_catch-19.717-22.169 ref  ARE  YOU  HAPPY
+03f_catch-19.717-22.169 hyp  ARE  YOU   SAD 
+03f_catch-19.717-22.169 op    C    C     S  
+03f_catch-19.717-22.169 #csid 2 1 0 0
+03f_catch-22.169-24.196 ref  ARE  YOU   SAD
+03f_catch-22.169-24.196 hyp  ***   HI  MIRO
+03f_catch-22.169-24.196 op    D    S     S 
+03f_catch-22.169-24.196 #csid 0 2 0 1
+03f_catch-24.196-26.223 ref  HOW  ARE  YOU  FEELING
+03f_catch-24.196-26.223 hyp  ***  ARE  YOU    SAD  
+03f_catch-24.196-26.223 op    D    C    C      S   
+03f_catch-24.196-26.223 #csid 2 1 0 1
+03f_catch-26.223-28.251 ref  WAKE  UP
+03f_catch-26.223-28.251 hyp  WAKE  UP
+03f_catch-26.223-28.251 op     C    C
+03f_catch-26.223-28.251 #csid 2 0 0 0
+03f_catch-4.316-6.311 ref  HELLO  MIRO
+03f_catch-4.316-6.311 hyp   ***   !SIL
+03f_catch-4.316-6.311 op     D      S 
+03f_catch-4.316-6.311 #csid 0 1 0 1
+03f_catch-6.441-8.240 ref  HI  MIRO
+03f_catch-6.441-8.240 hyp  HI  MIRO
+03f_catch-6.441-8.240 op    C    C 
+03f_catch-6.441-8.240 #csid 2 0 0 0
+03f_catch-8.371-10.104 ref  HEY  MIRO
+03f_catch-8.371-10.104 hyp  ***  !SIL
+03f_catch-8.371-10.104 op    D     S 
+03f_catch-8.371-10.104 #csid 0 1 0 1
+04m_catch-0.785-2.093 ref  HELLO  MIRO
+04m_catch-0.785-2.093 hyp  HELLO  MIRO
+04m_catch-0.785-2.093 op     C      C 
+04m_catch-0.785-2.093 #csid 2 0 0 0
+04m_catch-10.725-11.869 ref  GO  TO  SLEEP
+04m_catch-10.725-11.869 hyp  GO  TO  SLEEP
+04m_catch-10.725-11.869 op    C   C    C  
+04m_catch-10.725-11.869 #csid 3 0 0 0
+04m_catch-11.902-13.700 ref  ARE  YOU  HAPPY
+04m_catch-11.902-13.700 hyp  ARE  YOU  HAPPY
+04m_catch-11.902-13.700 op    C    C     C  
+04m_catch-11.902-13.700 #csid 3 0 0 0
+04m_catch-13.798-15.139 ref  ARE  YOU  SAD
+04m_catch-13.798-15.139 hyp  ARE  YOU  SAD
+04m_catch-13.798-15.139 op    C    C    C 
+04m_catch-13.798-15.139 #csid 3 0 0 0
+04m_catch-15.204-16.512 ref  HOW  ARE  YOU  FEELING
+04m_catch-15.204-16.512 hyp  HOW  ARE  YOU  FEELING
+04m_catch-15.204-16.512 op    C    C    C      C   
+04m_catch-15.204-16.512 #csid 4 0 0 0
+04m_catch-16.512-17.886 ref  WAKE  UP
+04m_catch-16.512-17.886 hyp  WAKE  UP
+04m_catch-16.512-17.886 op     C    C
+04m_catch-16.512-17.886 #csid 2 0 0 0
+04m_catch-2.256-3.433 ref  HI  MIRO
+04m_catch-2.256-3.433 hyp  HI  MIRO
+04m_catch-2.256-3.433 op    C    C 
+04m_catch-2.256-3.433 #csid 2 0 0 0
+04m_catch-3.466-5.035 ref  HEY  MIRO
+04m_catch-3.466-5.035 hyp  HEY  MIRO
+04m_catch-3.466-5.035 op    C     C 
+04m_catch-3.466-5.035 #csid 2 0 0 0
+04m_catch-5.101-6.114 ref  COME  HERE
+04m_catch-5.101-6.114 hyp  COME  HERE
+04m_catch-5.101-6.114 op     C     C 
+04m_catch-5.101-6.114 #csid 2 0 0 0
+04m_catch-6.147-7.553 ref  STAY  THERE
+04m_catch-6.147-7.553 hyp  STAY  THERE
+04m_catch-6.147-7.553 op     C     C  
+04m_catch-6.147-7.553 #csid 2 0 0 0
+04m_catch-7.619-9.025 ref  WAG  YOUR  TAIL
+04m_catch-7.619-9.025 hyp  WAG  YOUR  TAIL
+04m_catch-7.619-9.025 op    C     C     C 
+04m_catch-7.619-9.025 #csid 3 0 0 0
+04m_catch-9.025-10.627 ref  NOD  YOUR  HEAD
+04m_catch-9.025-10.627 hyp  NOD  YOUR  HEAD
+04m_catch-9.025-10.627 op    C     C     C 
+04m_catch-9.025-10.627 #csid 3 0 0 0
+05m_catch-0.589-2.158 ref  HELLO  MIRO
+05m_catch-0.589-2.158 hyp  HELLO  MIRO
+05m_catch-0.589-2.158 op     C      C 
+05m_catch-0.589-2.158 #csid 2 0 0 0
+05m_catch-10.005-12.294 ref  STAY  THERE
+05m_catch-10.005-12.294 hyp  STAY  THERE
+05m_catch-10.005-12.294 op     C     C  
+05m_catch-10.005-12.294 #csid 2 0 0 0
+05m_catch-12.621-14.420 ref  WAG  YOUR  TAIL
+05m_catch-12.621-14.420 hyp  WAG  YOUR  TAIL
+05m_catch-12.621-14.420 op    C     C     C 
+05m_catch-12.621-14.420 #csid 3 0 0 0
+05m_catch-14.812-16.643 ref  NOD  YOUR  HEAD
+05m_catch-14.812-16.643 hyp  NOD  YOUR  HEAD
+05m_catch-14.812-16.643 op    C     C     C 
+05m_catch-14.812-16.643 #csid 3 0 0 0
+05m_catch-16.905-18.899 ref  GO  TO  SLEEP
+05m_catch-16.905-18.899 hyp  GO  TO  SLEEP
+05m_catch-16.905-18.899 op    C   C    C  
+05m_catch-16.905-18.899 #csid 3 0 0 0
+05m_catch-19.095-20.763 ref  ARE  YOU  HAPPY
+05m_catch-19.095-20.763 hyp  ARE  YOU  HAPPY
+05m_catch-19.095-20.763 op    C    C     C  
+05m_catch-19.095-20.763 #csid 3 0 0 0
+05m_catch-2.616-4.872 ref    HI   MIRO
+05m_catch-2.616-4.872 hyp  HELLO  MIRO
+05m_catch-2.616-4.872 op     S      C 
+05m_catch-2.616-4.872 #csid 1 1 0 0
+05m_catch-21.123-22.823 ref  ARE  YOU  SAD
+05m_catch-21.123-22.823 hyp  ARE  YOU  SAD
+05m_catch-21.123-22.823 op    C    C    C 
+05m_catch-21.123-22.823 #csid 3 0 0 0
+05m_catch-23.019-24.883 ref  HOW  ARE  YOU  FEELING
+05m_catch-23.019-24.883 hyp  HOW  ARE  YOU  FEELING
+05m_catch-23.019-24.883 op    C    C    C      C   
+05m_catch-23.019-24.883 #csid 4 0 0 0
+05m_catch-25.014-26.550 ref  WAKE  UP
+05m_catch-25.014-26.550 hyp  WAKE  UP
+05m_catch-25.014-26.550 op     C    C
+05m_catch-25.014-26.550 #csid 2 0 0 0
+05m_catch-5.134-6.866 ref  HEY  MIRO
+05m_catch-5.134-6.866 hyp  HEY  MIRO
+05m_catch-5.134-6.866 op    C     C 
+05m_catch-5.134-6.866 #csid 2 0 0 0
+05m_catch-7.357-9.580 ref   COME  HERE
+05m_catch-7.357-9.580 hyp  HELLO  MIRO
+05m_catch-7.357-9.580 op     S      S 
+05m_catch-7.357-9.580 #csid 0 2 0 0
+06m_catch-0.098-1.144 ref  HELLO  MIRO
+06m_catch-0.098-1.144 hyp  HELLO  MIRO
+06m_catch-0.098-1.144 op     C      C 
+06m_catch-0.098-1.144 #csid 2 0 0 0
+06m_catch-1.275-2.518 ref  ***   HI  MIRO
+06m_catch-1.275-2.518 hyp  ARE  YOU   SAD
+06m_catch-1.275-2.518 op    I    S     S 
+06m_catch-1.275-2.518 #csid 0 2 1 0
+06m_catch-10.561-12.000 ref  ARE  YOU  HAPPY
+06m_catch-10.561-12.000 hyp  ARE  YOU  HAPPY
+06m_catch-10.561-12.000 op    C    C     C  
+06m_catch-10.561-12.000 #csid 3 0 0 0
+06m_catch-12.000-13.210 ref  ARE  YOU  SAD
+06m_catch-12.000-13.210 hyp  ARE  YOU  SAD
+06m_catch-12.000-13.210 op    C    C    C 
+06m_catch-12.000-13.210 #csid 3 0 0 0
+06m_catch-13.569-14.812 ref  HOW  ARE  YOU  FEELING
+06m_catch-13.569-14.812 hyp  HOW  ARE  YOU  FEELING
+06m_catch-13.569-14.812 op    C    C    C      C   
+06m_catch-13.569-14.812 #csid 4 0 0 0
+06m_catch-14.845-16.251 ref  WAKE  UP
+06m_catch-14.845-16.251 hyp  WAKE  UP
+06m_catch-14.845-16.251 op     C    C
+06m_catch-14.845-16.251 #csid 2 0 0 0
+06m_catch-2.518-3.924 ref  ***  HEY   MIRO
+06m_catch-2.518-3.924 hyp   GO   TO  SLEEP
+06m_catch-2.518-3.924 op    I    S     S  
+06m_catch-2.518-3.924 #csid 0 2 1 0
+06m_catch-3.924-5.232 ref  COME  HERE
+06m_catch-3.924-5.232 hyp  COME  HERE
+06m_catch-3.924-5.232 op     C     C 
+06m_catch-3.924-5.232 #csid 2 0 0 0
+06m_catch-5.232-6.507 ref  STAY  THERE
+06m_catch-5.232-6.507 hyp  STAY  THERE
+06m_catch-5.232-6.507 op     C     C  
+06m_catch-5.232-6.507 #csid 2 0 0 0
+06m_catch-6.540-7.847 ref  WAG  YOUR  TAIL
+06m_catch-6.540-7.847 hyp  WAG  YOUR  TAIL
+06m_catch-6.540-7.847 op    C     C     C 
+06m_catch-6.540-7.847 #csid 3 0 0 0
+06m_catch-7.847-9.123 ref  NOD   YOUR  HEAD
+06m_catch-7.847-9.123 hyp  ***  HELLO  MIRO
+06m_catch-7.847-9.123 op    D     S      S 
+06m_catch-7.847-9.123 #csid 0 2 0 1
+06m_catch-9.123-10.463 ref  GO  TO  SLEEP
+06m_catch-9.123-10.463 hyp  GO  TO  SLEEP
+06m_catch-9.123-10.463 op    C   C    C  
+06m_catch-9.123-10.463 #csid 3 0 0 0
+07f_catch-1.210-3.172 ref  HELLO  MIRO
+07f_catch-1.210-3.172 hyp  HELLO  MIRO
+07f_catch-1.210-3.172 op     C      C 
+07f_catch-1.210-3.172 #csid 2 0 0 0
+07f_catch-12.719-15.302 ref  COME  HERE
+07f_catch-12.719-15.302 hyp  COME  HERE
+07f_catch-12.719-15.302 op     C     C 
+07f_catch-12.719-15.302 #csid 2 0 0 0
+07f_catch-17.134-19.226 ref  STAY  THERE
+07f_catch-17.134-19.226 hyp  WAKE    UP 
+07f_catch-17.134-19.226 op     S     S  
+07f_catch-17.134-19.226 #csid 0 2 0 0
+07f_catch-20.926-23.281 ref  WAG  YOUR  TAIL
+07f_catch-20.926-23.281 hyp  WAG  YOUR  TAIL
+07f_catch-20.926-23.281 op    C     C     C 
+07f_catch-20.926-23.281 #csid 3 0 0 0
+07f_catch-25.504-28.283 ref  NOD  YOUR  HEAD
+07f_catch-25.504-28.283 hyp  NOD  YOUR  HEAD
+07f_catch-25.504-28.283 op    C     C     C 
+07f_catch-25.504-28.283 #csid 3 0 0 0
+07f_catch-30.572-33.351 ref  GO  TO  SLEEP
+07f_catch-30.572-33.351 hyp  GO  TO  SLEEP
+07f_catch-30.572-33.351 op    C   C    C  
+07f_catch-30.572-33.351 #csid 3 0 0 0
+07f_catch-34.986-37.602 ref  ARE  YOU  HAPPY
+07f_catch-34.986-37.602 hyp  ARE  YOU  HAPPY
+07f_catch-34.986-37.602 op    C    C     C  
+07f_catch-34.986-37.602 #csid 3 0 0 0
+07f_catch-38.583-41.068 ref  ARE   YOU  SAD
+07f_catch-38.583-41.068 hyp  ***  WAKE   UP
+07f_catch-38.583-41.068 op    D     S    S 
+07f_catch-38.583-41.068 #csid 0 2 0 1
+07f_catch-42.343-45.384 ref  HOW  ARE  YOU  FEELING
+07f_catch-42.343-45.384 hyp  HOW  ARE  YOU  FEELING
+07f_catch-42.343-45.384 op    C    C    C      C   
+07f_catch-42.343-45.384 #csid 4 0 0 0
+07f_catch-46.038-47.869 ref  WAKE  UP
+07f_catch-46.038-47.869 hyp  WAKE  UP
+07f_catch-46.038-47.869 op     C    C
+07f_catch-46.038-47.869 #csid 2 0 0 0
+07f_catch-5.199-7.128 ref  HI  MIRO
+07f_catch-5.199-7.128 hyp  HI  MIRO
+07f_catch-5.199-7.128 op    C    C 
+07f_catch-5.199-7.128 #csid 2 0 0 0
+07f_catch-9.155-11.313 ref  HEY  MIRO
+07f_catch-9.155-11.313 hyp  HEY  MIRO
+07f_catch-9.155-11.313 op    C     C 
+07f_catch-9.155-11.313 #csid 2 0 0 0
+08f_catch-0.131-2.158 ref  HELLO  MIRO
+08f_catch-0.131-2.158 hyp  HELLO  MIRO
+08f_catch-0.131-2.158 op     C      C 
+08f_catch-0.131-2.158 #csid 2 0 0 0
+08f_catch-10.790-12.850 ref  WAG  YOUR  TAIL
+08f_catch-10.790-12.850 hyp  ARE   YOU   SAD
+08f_catch-10.790-12.850 op    S     S     S 
+08f_catch-10.790-12.850 #csid 0 3 0 0
+08f_catch-13.504-16.120 ref  NOD   YOUR  HEAD
+08f_catch-13.504-16.120 hyp  ***  HELLO  MIRO
+08f_catch-13.504-16.120 op    D     S      S 
+08f_catch-13.504-16.120 #csid 0 2 0 1
+08f_catch-16.480-18.670 ref  GO  TO  SLEEP
+08f_catch-16.480-18.670 hyp  GO  TO  SLEEP
+08f_catch-16.480-18.670 op    C   C    C  
+08f_catch-16.480-18.670 #csid 3 0 0 0
+08f_catch-18.932-21.351 ref  ARE  YOU  HAPPY
+08f_catch-18.932-21.351 hyp  ARE  YOU  HAPPY
+08f_catch-18.932-21.351 op    C    C     C  
+08f_catch-18.932-21.351 #csid 3 0 0 0
+08f_catch-2.256-3.826 ref    HI   MIRO
+08f_catch-2.256-3.826 hyp  HELLO  MIRO
+08f_catch-2.256-3.826 op     S      C 
+08f_catch-2.256-3.826 #csid 1 1 0 0
+08f_catch-21.351-23.019 ref  ARE  YOU  SAD
+08f_catch-21.351-23.019 hyp  ARE  YOU  SAD
+08f_catch-21.351-23.019 op    C    C    C 
+08f_catch-21.351-23.019 #csid 3 0 0 0
+08f_catch-23.444-25.798 ref  HOW  ARE  YOU  FEELING
+08f_catch-23.444-25.798 hyp  HOW  ARE  YOU  FEELING
+08f_catch-23.444-25.798 op    C    C    C      C   
+08f_catch-23.444-25.798 #csid 4 0 0 0
+08f_catch-25.831-27.368 ref  WAKE  UP
+08f_catch-25.831-27.368 hyp  WAKE  UP
+08f_catch-25.831-27.368 op     C    C
+08f_catch-25.831-27.368 #csid 2 0 0 0
+08f_catch-4.153-6.016 ref   HEY   MIRO
+08f_catch-4.153-6.016 hyp  HELLO  MIRO
+08f_catch-4.153-6.016 op     S      C 
+08f_catch-4.153-6.016 #csid 1 1 0 0
+08f_catch-6.278-7.978 ref  COME  HERE
+08f_catch-6.278-7.978 hyp   ***  !SIL
+08f_catch-6.278-7.978 op     D     S 
+08f_catch-6.278-7.978 #csid 0 1 0 1
+08f_catch-8.240-10.332 ref  STAY  THERE
+08f_catch-8.240-10.332 hyp  STAY  THERE
+08f_catch-8.240-10.332 op     C     C  
+08f_catch-8.240-10.332 #csid 2 0 0 0

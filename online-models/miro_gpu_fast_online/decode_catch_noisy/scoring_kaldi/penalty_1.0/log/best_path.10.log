@@ -1,0 +1,204 @@
+# lattice-scale --inv-acoustic-scale=10 "ark:gunzip -c exp_augmented/nnet2_online/nnet_a_gpu_fast_online/decode_catch_noisy/lat.*.gz|" ark:- | lattice-add-penalty --word-ins-penalty=1.0 ark:- ark:- | lattice-best-path --word-symbol-table=exp_augmented/tri4a/miro_grammar_graph/words.txt ark:- ark,t:- | utils/int2sym.pl -f 2- exp_augmented/tri4a/miro_grammar_graph/words.txt | local/wer_hyp_filter > exp_augmented/nnet2_online/nnet_a_gpu_fast_online/decode_catch_noisy/scoring_kaldi/penalty_1.0/10.txt 
+# Started at Mon Feb 27 09:44:35 GMT 2017
+#
+lattice-scale --inv-acoustic-scale=10 'ark:gunzip -c exp_augmented/nnet2_online/nnet_a_gpu_fast_online/decode_catch_noisy/lat.*.gz|' ark:- 
+lattice-best-path --word-symbol-table=exp_augmented/tri4a/miro_grammar_graph/words.txt ark:- ark,t:- 
+lattice-add-penalty --word-ins-penalty=1.0 ark:- ark:- 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 01m_catch-0.496-2.068, best cost 12.9544 + -56.2397 = -43.2853 over 155 frames.
+01m_catch-0.496-2.068 HELLO MIRO 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 01m_catch-10.875-12.405, best cost 12.233 + -49.4549 = -37.2219 over 151 frames.
+01m_catch-10.875-12.405 STAY THERE 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 01m_catch-13.480-15.134, best cost 12.6816 + -44.1663 = -31.4847 over 163 frames.
+01m_catch-13.480-15.134 WAKE UP 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 01m_catch-16.127-17.285, best cost 13.9488 + -40.1896 = -26.2408 over 114 frames.
+01m_catch-16.127-17.285 NOD YOUR HEAD 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 01m_catch-18.608-20.096, best cost 14.4511 + -55.7731 = -41.322 over 147 frames.
+01m_catch-18.608-20.096 GO TO SLEEP 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 01m_catch-2.564-4.176, best cost 13.1069 + -51.0278 = -37.9209 over 159 frames.
+01m_catch-2.564-4.176 HELLO MIRO 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 01m_catch-21.709-23.156, best cost 15.2408 + -50.0024 = -34.7616 over 143 frames.
+01m_catch-21.709-23.156 ARE YOU HAPPY 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 01m_catch-23.901-25.348, best cost 13.988 + -45.0523 = -31.0643 over 143 frames.
+01m_catch-23.901-25.348 ARE YOU SAD 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 01m_catch-26.382-27.912, best cost 16.9657 + -42.8891 = -25.9234 over 151 frames.
+01m_catch-26.382-27.912 HOW ARE YOU FEELING 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 01m_catch-28.573-30.021, best cost 12.3404 + -50.63 = -38.2895 over 143 frames.
+01m_catch-28.573-30.021 WAKE UP 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 01m_catch-6.079-7.402, best cost 12.1787 + -31.572 = -19.3933 over 130 frames.
+01m_catch-6.079-7.402 HEY MIRO 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 01m_catch-8.312-9.511, best cost 13.3967 + -32.6739 = -19.2772 over 118 frames.
+01m_catch-8.312-9.511 GO TO SLEEP 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 02m_catch-0.455-2.068, best cost 13.5155 + -48.3696 = -34.8541 over 159 frames.
+02m_catch-0.455-2.068 HELLO MIRO 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 02m_catch-10.503-11.992, best cost 14.9525 + -36.6179 = -21.6655 over 147 frames.
+02m_catch-10.503-11.992 WAG YOUR TAIL 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 02m_catch-12.488-13.853, best cost 14.4988 + -28.867 = -14.3681 over 135 frames.
+02m_catch-12.488-13.853 NOD YOUR HEAD 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 02m_catch-14.721-16.127, best cost 14.0745 + -46.0876 = -32.013 over 139 frames.
+02m_catch-14.721-16.127 GO TO SLEEP 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 02m_catch-16.582-17.905, best cost 13.8725 + -28.2756 = -14.4031 over 130 frames.
+02m_catch-16.582-17.905 ARE YOU HAPPY 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 02m_catch-18.153-19.642, best cost 13.7038 + -21.658 = -7.95423 over 147 frames.
+02m_catch-18.153-19.642 ARE YOU SAD 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 02m_catch-2.895-4.383, best cost 12.7112 + -44.255 = -31.5438 over 147 frames.
+02m_catch-2.895-4.383 HELLO MIRO 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 02m_catch-20.221-21.875, best cost 17.0962 + -42.0514 = -24.9552 over 163 frames.
+02m_catch-20.221-21.875 HOW ARE YOU FEELING 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 02m_catch-22.412-23.570, best cost 10.9174 + -33.1103 = -22.1929 over 114 frames.
+02m_catch-22.412-23.570 WAKE UP 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 02m_catch-4.921-6.120, best cost 11.7114 + -33.015 = -21.3036 over 118 frames.
+02m_catch-4.921-6.120 HEY MIRO 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 02m_catch-6.823-8.022, best cost 11.4853 + -16.8085 = -5.32315 over 118 frames.
+02m_catch-6.823-8.022 COME HERE 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 02m_catch-8.684-9.883, best cost 10.7561 + -24.2929 = -13.5368 over 118 frames.
+02m_catch-8.684-9.883 STAY THERE 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 03f_catch-10.104-12.000, best cost 14.8822 + -63.8276 = -48.9454 over 188 frames.
+03f_catch-10.104-12.000 COME HERE 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 03f_catch-12.131-13.995, best cost 9.98719 + -61.3078 = -51.3206 over 184 frames.
+03f_catch-12.131-13.995 !SIL 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 03f_catch-14.256-15.989, best cost 9.61321 + -49.9962 = -40.383 over 171 frames.
+03f_catch-14.256-15.989 !SIL 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 03f_catch-15.989-17.722, best cost 9.61321 + -50.1164 = -40.5032 over 171 frames.
+03f_catch-15.989-17.722 !SIL 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 03f_catch-17.755-19.717, best cost 14.4025 + -53.4119 = -39.0094 over 194 frames.
+03f_catch-17.755-19.717 HELLO MIRO 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 03f_catch-19.717-22.169, best cost 18.9761 + -82.7455 = -63.7693 over 243 frames.
+03f_catch-19.717-22.169 ARE YOU SAD 
+LOG (lattice-scale:main():lattice-scale.cc:90) Done 96 lattices.
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 03f_catch-22.169-24.196, best cost 14.9395 + -59.3304 = -44.3909 over 201 frames.
+03f_catch-22.169-24.196 HI MIRO 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 03f_catch-24.196-26.223, best cost 17.5844 + -63.6996 = -46.1151 over 201 frames.
+03f_catch-24.196-26.223 ARE YOU SAD 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 03f_catch-26.223-28.251, best cost 14.1213 + -72.2071 = -58.0858 over 201 frames.
+03f_catch-26.223-28.251 WAKE UP 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 03f_catch-4.316-6.311, best cost 10.3899 + -62.7451 = -52.3552 over 198 frames.
+03f_catch-4.316-6.311 !SIL 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 03f_catch-6.441-8.240, best cost 13.3963 + -59.0364 = -45.6401 over 178 frames.
+03f_catch-6.441-8.240 HI MIRO 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 03f_catch-8.371-10.104, best cost 9.61321 + -55.253 = -45.6398 over 171 frames.
+03f_catch-8.371-10.104 !SIL 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 04m_catch-0.785-2.093, best cost 12.4353 + -40.4275 = -27.9922 over 129 frames.
+04m_catch-0.785-2.093 HELLO MIRO 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 04m_catch-10.725-11.869, best cost 12.9624 + -32.8233 = -19.8609 over 112 frames.
+04m_catch-10.725-11.869 GO TO SLEEP 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 04m_catch-11.902-13.700, best cost 15.7365 + -53.7486 = -38.0121 over 178 frames.
+04m_catch-11.902-13.700 ARE YOU HAPPY 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 04m_catch-13.798-15.139, best cost 13.2766 + -43.644 = -30.3673 over 132 frames.
+04m_catch-13.798-15.139 ARE YOU SAD 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 04m_catch-15.204-16.512, best cost 16.2715 + -34.8793 = -18.6078 over 129 frames.
+04m_catch-15.204-16.512 HOW ARE YOU FEELING 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 04m_catch-16.512-17.886, best cost 11.6329 + -49.1123 = -37.4794 over 135 frames.
+04m_catch-16.512-17.886 WAKE UP 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 04m_catch-2.256-3.433, best cost 11.3727 + -33.4246 = -22.0518 over 116 frames.
+04m_catch-2.256-3.433 HI MIRO 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 04m_catch-3.466-5.035, best cost 12.8455 + -51.3032 = -38.4577 over 155 frames.
+04m_catch-3.466-5.035 HEY MIRO 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 04m_catch-5.101-6.114, best cost 10.489 + -19.7692 = -9.2802 over 99 frames.
+04m_catch-5.101-6.114 COME HERE 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 04m_catch-6.147-7.553, best cost 13.5436 + -38.9945 = -25.4509 over 139 frames.
+04m_catch-6.147-7.553 STAY THERE 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 04m_catch-7.619-9.025, best cost 15.0832 + -35.7946 = -20.7114 over 139 frames.
+04m_catch-7.619-9.025 WAG YOUR TAIL 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 04m_catch-9.025-10.627, best cost 15.1547 + -60.2776 = -45.123 over 158 frames.
+04m_catch-9.025-10.627 NOD YOUR HEAD 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 05m_catch-0.589-2.158, best cost 12.7088 + -50.1109 = -37.4021 over 155 frames.
+05m_catch-0.589-2.158 HELLO MIRO 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 05m_catch-10.005-12.294, best cost 17.7209 + -73.9992 = -56.2783 over 227 frames.
+05m_catch-10.005-12.294 STAY THERE 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 05m_catch-12.621-14.420, best cost 16.5405 + -59.5305 = -42.99 over 178 frames.
+05m_catch-12.621-14.420 WAG YOUR TAIL 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 05m_catch-14.812-16.643, best cost 15.6491 + -35.4137 = -19.7646 over 181 frames.
+05m_catch-14.812-16.643 NOD YOUR HEAD 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 05m_catch-16.905-18.899, best cost 16.0833 + -66.7203 = -50.6371 over 197 frames.
+05m_catch-16.905-18.899 GO TO SLEEP 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 05m_catch-19.095-20.763, best cost 15.2348 + -53.9773 = -38.7425 over 165 frames.
+05m_catch-19.095-20.763 ARE YOU HAPPY 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 05m_catch-2.616-4.872, best cost 15.9233 + -65.5495 = -49.6262 over 224 frames.
+05m_catch-2.616-4.872 HELLO MIRO 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 05m_catch-21.123-22.823, best cost 14.8688 + -28.5793 = -13.7106 over 168 frames.
+05m_catch-21.123-22.823 ARE YOU SAD 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 05m_catch-23.019-24.883, best cost 18.0278 + -56.1171 = -38.0893 over 184 frames.
+05m_catch-23.019-24.883 HOW ARE YOU FEELING 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 05m_catch-25.014-26.550, best cost 12.3724 + -51.5034 = -39.1311 over 152 frames.
+05m_catch-25.014-26.550 WAKE UP 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 05m_catch-5.134-6.866, best cost 13.5297 + -53.8232 = -40.2935 over 171 frames.
+05m_catch-5.134-6.866 HEY MIRO 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 05m_catch-7.357-9.580, best cost 15.9636 + -46.441 = -30.4774 over 220 frames.
+05m_catch-7.357-9.580 HELLO MIRO 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 06m_catch-0.098-1.144, best cost 11.4937 + -19.0341 = -7.54033 over 103 frames.
+06m_catch-0.098-1.144 HELLO MIRO 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 06m_catch-1.275-2.518, best cost 13.4461 + -26.41 = -12.9639 over 122 frames.
+06m_catch-1.275-2.518 ARE YOU SAD 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 06m_catch-10.561-12.000, best cost 14.2914 + -44.4116 = -30.1202 over 142 frames.
+06m_catch-10.561-12.000 ARE YOU HAPPY 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 06m_catch-12.000-13.210, best cost 13.0463 + -31.7397 = -18.6935 over 119 frames.
+06m_catch-12.000-13.210 ARE YOU SAD 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 06m_catch-13.569-14.812, best cost 15.3083 + -33.2819 = -17.9736 over 122 frames.
+06m_catch-13.569-14.812 HOW ARE YOU FEELING 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 06m_catch-14.845-16.251, best cost 11.7717 + -48.083 = -36.3112 over 139 frames.
+06m_catch-14.845-16.251 WAKE UP 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 06m_catch-2.518-3.924, best cost 14.2202 + -32.6973 = -18.4771 over 139 frames.
+06m_catch-2.518-3.924 GO TO SLEEP 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 06m_catch-3.924-5.232, best cost 11.4936 + -34.0336 = -22.54 over 129 frames.
+06m_catch-3.924-5.232 COME HERE 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 06m_catch-5.232-6.507, best cost 11.597 + -39.6055 = -28.0085 over 126 frames.
+06m_catch-5.232-6.507 STAY THERE 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 06m_catch-6.540-7.847, best cost 13.8698 + -37.6244 = -23.7546 over 129 frames.
+06m_catch-6.540-7.847 WAG YOUR TAIL 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 06m_catch-7.847-9.123, best cost 11.5143 + -32.2329 = -20.7186 over 126 frames.
+06m_catch-7.847-9.123 HELLO MIRO 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 06m_catch-9.123-10.463, best cost 13.5154 + -42.8184 = -29.303 over 132 frames.
+06m_catch-9.123-10.463 GO TO SLEEP 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 07f_catch-1.210-3.172, best cost 14.5295 + -71.196 = -56.6666 over 194 frames.
+07f_catch-1.210-3.172 HELLO MIRO 
+LOG (lattice-add-penalty:main():lattice-add-penalty.cc:62) Done adding word insertion penalty to 96 lattices.
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 07f_catch-12.719-15.302, best cost 16.6123 + -77.5477 = -60.9354 over 256 frames.
+07f_catch-12.719-15.302 COME HERE 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 07f_catch-17.134-19.226, best cost 14.2867 + -57.5419 = -43.2552 over 207 frames.
+07f_catch-17.134-19.226 WAKE UP 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 07f_catch-20.926-23.281, best cost 18.213 + -62.2973 = -44.0844 over 234 frames.
+07f_catch-20.926-23.281 WAG YOUR TAIL 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 07f_catch-25.504-28.283, best cost 19.9918 + -76.3897 = -56.3979 over 276 frames.
+07f_catch-25.504-28.283 NOD YOUR HEAD 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 07f_catch-30.572-33.351, best cost 19.9391 + -92.8199 = -72.8808 over 276 frames.
+07f_catch-30.572-33.351 GO TO SLEEP 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 07f_catch-34.986-37.602, best cost 19.1193 + -61.0312 = -41.9119 over 260 frames.
+07f_catch-34.986-37.602 ARE YOU HAPPY 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 07f_catch-38.583-41.068, best cost 16.534 + -57.7982 = -41.2642 over 247 frames.
+07f_catch-38.583-41.068 WAKE UP 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 07f_catch-42.343-45.384, best cost 23.0538 + -84.1671 = -61.1134 over 302 frames.
+07f_catch-42.343-45.384 HOW ARE YOU FEELING 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 07f_catch-46.038-47.869, best cost 13.6358 + -54.5061 = -40.8704 over 181 frames.
+07f_catch-46.038-47.869 WAKE UP 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 07f_catch-5.199-7.128, best cost 13.796 + -49.8021 = -36.0061 over 191 frames.
+07f_catch-5.199-7.128 HI MIRO 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 07f_catch-9.155-11.313, best cost 14.6391 + -53.9658 = -39.3267 over 214 frames.
+07f_catch-9.155-11.313 HEY MIRO 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 08f_catch-0.131-2.158, best cost 14.6627 + -50.6655 = -36.0028 over 201 frames.
+08f_catch-0.131-2.158 HELLO MIRO 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 08f_catch-10.790-12.850, best cost 18.068 + -56.4154 = -38.3474 over 204 frames.
+08f_catch-10.790-12.850 ARE YOU SAD 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 08f_catch-13.504-16.120, best cost 17.3258 + -70.7263 = -53.4005 over 260 frames.
+08f_catch-13.504-16.120 HELLO MIRO 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 08f_catch-16.480-18.670, best cost 18.0727 + -70.7159 = -52.6433 over 217 frames.
+08f_catch-16.480-18.670 GO TO SLEEP 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 08f_catch-18.932-21.351, best cost 18.092 + -62.7127 = -44.6207 over 240 frames.
+08f_catch-18.932-21.351 ARE YOU HAPPY 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 08f_catch-2.256-3.826, best cost 13.1333 + -49.4097 = -36.2764 over 155 frames.
+08f_catch-2.256-3.826 HELLO MIRO 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 08f_catch-21.351-23.019, best cost 14.3648 + -39.917 = -25.5522 over 165 frames.
+08f_catch-21.351-23.019 ARE YOU SAD 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 08f_catch-23.444-25.798, best cost 20.4108 + -69.2435 = -48.8328 over 233 frames.
+08f_catch-23.444-25.798 HOW ARE YOU FEELING 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 08f_catch-25.831-27.368, best cost 12.9653 + -41.3904 = -28.4251 over 152 frames.
+08f_catch-25.831-27.368 WAKE UP 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 08f_catch-4.153-6.016, best cost 14.4319 + -48.1462 = -33.7143 over 184 frames.
+08f_catch-4.153-6.016 HELLO MIRO 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 08f_catch-6.278-7.978, best cost 9.5269 + -38.1163 = -28.5894 over 168 frames.
+08f_catch-6.278-7.978 !SIL 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance 08f_catch-8.240-10.332, best cost 15.2613 + -51.0681 = -35.8069 over 207 frames.
+08f_catch-8.240-10.332 HEY MIRO 
+LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall cost per frame is -0.204353 = 0.0844387 [graph] + -0.288792 [acoustic] over 16248 frames.
+LOG (lattice-best-path:main():lattice-best-path.cc:128) Done 96 lattices, failed for 0
+# Accounting: time=1 threads=1
+# Ended (code 0) at Mon Feb 27 09:44:36 GMT 2017, elapsed time 1 seconds

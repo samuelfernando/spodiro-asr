@@ -1,0 +1,11 @@
+nohup: ignoring input
+steps/online/prepare_online_decoding.sh /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_augmented/tri2a /home/samuel/wsj-pf-data/exp_augmented/tri2a_online
+steps/online/prepare_online_decoding.sh: feature type is delta
+Doing per-utterance adaptation for purposes of computing the basis.
+steps/online/prepare_online_decoding.sh: Accumulating statistics for basis-fMLLR computation
+steps/online/prepare_online_decoding.sh: computing the basis matrices.
+steps/online/prepare_online_decoding.sh: accumulating stats for online alignment model.
+steps/online/prepare_online_decoding.sh: preparing configuration files in /home/samuel/wsj-pf-data/exp_augmented/tri2a_online/conf
+steps/online/prepare_online_decoding.sh: creating /home/samuel/wsj-pf-data/exp_augmented/tri2a_online/conf/mfcc.conf
+steps/online/prepare_online_decoding.sh: enabling deltas
+steps/online/prepare_online_decoding.sh: created config file /home/samuel/wsj-pf-data/exp_augmented/tri2a_online/conf/online_decoding.conf

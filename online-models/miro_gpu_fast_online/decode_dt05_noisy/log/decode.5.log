@@ -1,0 +1,96 @@
+# online2-wav-nnet2-latgen-faster --online=true --do-endpointing=false --config=exp_augmented/nnet2_online/nnet_a_gpu_fast_online/conf/online_nnet2_decoding.conf --max-active=7000 --beam=15.0 --lattice-beam=6.0 --acoustic-scale=0.1 --word-symbol-table=exp_augmented/tri4a/graph/words.txt exp_augmented/nnet2_online/nnet_a_gpu_fast_online/final.mdl exp_augmented/tri4a/graph/HCLG.fst ark:data/new_robot/dev_augmented/split10/5/spk2utt "ark,s,cs:extract-segments scp,p:data/new_robot/dev_augmented/split10/5/wav.scp data/new_robot/dev_augmented/split10/5/segments ark:- |" "ark:|gzip -c > exp_augmented/nnet2_online/nnet_a_gpu_fast_online/decode_dt05_noisy/lat.5.gz" 
+# Started at Mon Feb 27 09:11:04 GMT 2017
+#
+online2-wav-nnet2-latgen-faster --online=true --do-endpointing=false --config=exp_augmented/nnet2_online/nnet_a_gpu_fast_online/conf/online_nnet2_decoding.conf --max-active=7000 --beam=15.0 --lattice-beam=6.0 --acoustic-scale=0.1 --word-symbol-table=exp_augmented/tri4a/graph/words.txt exp_augmented/nnet2_online/nnet_a_gpu_fast_online/final.mdl exp_augmented/tri4a/graph/HCLG.fst ark:data/new_robot/dev_augmented/split10/5/spk2utt 'ark,s,cs:extract-segments scp,p:data/new_robot/dev_augmented/split10/5/wav.scp data/new_robot/dev_augmented/split10/5/segments ark:- |' 'ark:|gzip -c > exp_augmented/nnet2_online/nnet_a_gpu_fast_online/decode_dt05_noisy/lat.5.gz' 
+LOG (online2-wav-nnet2-latgen-faster:ComputeDerivedVars():ivector-extractor.cc:183) Computing derived variables for iVector extractor
+LOG (online2-wav-nnet2-latgen-faster:ComputeDerivedVars():ivector-extractor.cc:204) Done.
+extract-segments scp,p:data/new_robot/dev_augmented/split10/5/wav.scp data/new_robot/dev_augmented/split10/5/segments ark:- 
+22gc0101_noisy A LAW 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc0101_noisy
+22gc0102_noisy A LOT 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc0102_noisy
+22gc0103_noisy A LAW 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc0103_noisy
+22gc0104_noisy SHE SAYS 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc0104_noisy
+22gc0105_noisy BOTH 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc0105_noisy
+22gc0106_noisy GROWTH 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc0106_noisy
+22gc0107_noisy BOTH 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc0107_noisy
+22gc0108_noisy HOW THIN 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc0108_noisy
+22gc0109_noisy A I 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc0109_noisy
+22gc010a_noisy A LAW 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc010a_noisy
+22gc010b_noisy A LAW 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc010b_noisy
+22gc010c_noisy A LAW 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc010c_noisy
+22gc010d_noisy RATES OF GROWTH 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc010d_noisy
+22gc010e_noisy THE SOUTH 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc010e_noisy
+22gc010f_noisy BOTH TRIED TO REDUCE THE GROWTH OF DOLLARS OF BOTH 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc010f_noisy
+22gc010g_noisy TRADERS SAY BOTH OFFERS 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc010g_noisy
+22gc010h_noisy A LAW 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc010h_noisy
+22gc010i_noisy A LAW 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc010i_noisy
+22gc010j_noisy A LAW 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc010j_noisy
+22gc010k_noisy A LOT 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc010k_noisy
+22gc010l_noisy A LOT 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc010l_noisy
+22gc010m_noisy A LAW 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc010m_noisy
+22gc010n_noisy A LOT 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc010n_noisy
+22gc010o_noisy BOTH 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc010o_noisy
+22gc010p_noisy A LOT 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc010p_noisy
+22gc010q_noisy A I THINK 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc010q_noisy
+22gc010r_noisy THIN 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc010r_noisy
+22gc010s_noisy BOTH 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc010s_noisy
+22gc010t_noisy A I THOUGHT 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc010t_noisy
+22gc010u_noisy WATCH 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc010u_noisy
+22gc010v_noisy A LAW 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc010v_noisy
+22gc010w_noisy A LOT 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc010w_noisy
+22gc010x_noisy A LAW 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc010x_noisy
+22gc010y_noisy A LOT 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc010y_noisy
+22gc010z_noisy A LOT 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc010z_noisy
+22gc0110_noisy A LAW <UNK> 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc0110_noisy
+22gc0111_noisy A LOT 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc0111_noisy
+22gc0112_noisy A LAW 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc0112_noisy
+22gc0113_noisy A I 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc0113_noisy
+LOG (extract-segments:main():extract-segments.cc:194) Successfully processed 40 lines out of 40 in the segments file. 
+22gc0114_noisy A LAW 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 22gc0114_noisy
+LOG (online2-wav-nnet2-latgen-faster:Print():online-timing.cc:36) Timing stats: real-time factor was 1.18999 (note: this cannot be less than one.)
+LOG (online2-wav-nnet2-latgen-faster:Print():online-timing.cc:38) Average delay was 1.31442 seconds.
+LOG (online2-wav-nnet2-latgen-faster:Print():online-timing.cc:42) Percentage of time spent idling was 38.5831
+LOG (online2-wav-nnet2-latgen-faster:Print():online-timing.cc:44) Longest delay was 8.2037 seconds for utterance '22gc0101_noisy'
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:279) Decoded 40 utterances, 0 with errors.
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:281) Overall likelihood per frame was 0.357965 per frame over 27594 frames.
+# Accounting: time=229 threads=1
+# Ended (code 0) at Mon Feb 27 09:14:53 GMT 2017, elapsed time 229 seconds

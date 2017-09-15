@@ -1,0 +1,4 @@
+nohup: ignoring input
+steps/online/nnet2/decode.sh --cmd run.pl --mem 2G --nj 32 /home/samuel/wsj-pf-data/exp_augmented/tri4a/graph_wsj_pf_museum /home/samuel/museum-data/kaldi_data/0 /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_a_gpu_baseline_0.25_epoch_online/decode_museum_0_wsj_pf_museum
+local/score.sh --cmd run.pl --mem 2G /home/samuel/museum-data/kaldi_data/0 /home/samuel/wsj-pf-data/exp_augmented/tri4a/graph_wsj_pf_museum /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_a_gpu_baseline_0.25_epoch_online/decode_museum_0_wsj_pf_museum
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0

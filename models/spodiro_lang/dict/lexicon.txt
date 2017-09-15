@@ -1,0 +1,47 @@
+A	ah
+A	ax
+A	ey
+AM	ae m
+AND	ae n d
+AND	ax n
+AND	ax n d
+B	B IY
+BROCCOLI	b r oh k ax l iy
+BUTTER	b ah t ax
+BUTTER	b ah t ax r
+CARROTS	k ae r ax t s
+CHEESE	ch iy z
+CHICKEN	ch ih k ih n
+CHIPS	ch ih p s
+CHOCOLATE	ch oh k l ax t
+CREAM	k r iy m
+C	S IY
+CUCUMBER	k y uw k ah m b ax
+CUCUMBER	k y uw k ah m b ax r
+FISH	f ih sh
+FIVE	f ay v
+FORTY	f ao t iy
+HELLO	hh ax l ow
+I	ay
+ICE	ay s
+MILK	m ih l k
+ONE	w ah n
+PEPPERONI	P EH P ER OW N IY
+PIZZA	p iy t s ax
+PORK	p ao k
+PORTIONS	p ao sh n z
+PUDDING	p uh d ih ng
+RASPBERRY	r aa z b ax r iy
+READY	r eh d iy
+SEVENTEEN	s eh v n t iy n
+SIXTY	s ih k s t iy
+START	s t aa t
+STEAMED	s t iy m d
+TESTING	t eh s t ih ng
+THREE	th r iy
+TO	t ax
+TO	t uw
+TWO	t uw
+ZEENO	Z IY N OW
+!SIL	SIL
+!NOISE	NOISE

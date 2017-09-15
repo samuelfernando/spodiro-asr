@@ -1,0 +1,15 @@
+nohup: ignoring input
+steps/nnet2/decode.sh --nj 13 --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/exp_augmented/tri4a/graph /home/samuel/wsj-pf-data/data/wsj/head_eval_test/5dB /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_a_gpu_baseline_0.25_epoch/decode_head_5dB
+steps/nnet2/decode.sh: feature type is raw
+score best paths
+local/score.sh --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/wsj/head_eval_test/5dB /home/samuel/wsj-pf-data/exp_augmented/tri4a/graph /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_a_gpu_baseline_0.25_epoch/decode_head_5dB
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+score confidence and timing with sclite
+Decoding done.
+steps/nnet2/decode.sh --nj 60 --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/exp_augmented/tri4a/graph /home/samuel/wsj-pf-data/data/pf/head_test/clean /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_a_gpu_baseline_0.25_epoch/decode_pf_head_clean
+steps/nnet2/decode.sh: feature type is raw
+score best paths
+local/score.sh --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/pf/head_test/clean /home/samuel/wsj-pf-data/exp_augmented/tri4a/graph /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_a_gpu_baseline_0.25_epoch/decode_pf_head_clean
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+score confidence and timing with sclite
+Decoding done.

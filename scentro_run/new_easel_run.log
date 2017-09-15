@@ -1,0 +1,3 @@
+nohup: ignoring input
+steps/online/nnet2/decode.sh --do-endpointing true --nj 1 /home/samuel/wsj-pf-data/exp_augmented/tri4a/spodiro_graph /home/samuel/museum-data/kaldi_data/0 /home/samuel/wsj-pf-data/exp_augmented/nnet2_online_wsj_pf/nnet_a_online/decode_museum_spodiro
+run.pl: job failed, log is in /home/samuel/wsj-pf-data/exp_augmented/nnet2_online_wsj_pf/nnet_a_online/decode_museum_spodiro/log/decode.1.log

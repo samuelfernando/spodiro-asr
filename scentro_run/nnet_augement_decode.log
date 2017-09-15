@@ -1,0 +1,21 @@
+nohup: ignoring input
+steps/online/nnet2/extract_ivectors_online.sh --cmd run.pl --nj 13 /home/samuel/wsj-pf-data/data/wsj/head_eval_test/5dB_hires /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/extractor /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/ivectors_wsj_head_eval_test_5dB
+steps/online/nnet2/extract_ivectors_online.sh: extracting iVectors
+steps/online/nnet2/extract_ivectors_online.sh: combining iVectors across jobs
+steps/online/nnet2/extract_ivectors_online.sh --cmd run.pl --nj 40 /home/samuel/wsj-pf-data/data/pf/head_test/clean_hires /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/extractor /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/ivectors_pf_head_test_clean
+steps/online/nnet2/extract_ivectors_online.sh: extracting iVectors
+steps/online/nnet2/extract_ivectors_online.sh: combining iVectors across jobs
+steps/nnet2/decode.sh --nj 13 --cmd run.pl --mem 2G --online-ivector-dir /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/ivectors_wsj_head_eval_test_5dB /home/samuel/wsj-pf-data/exp_augmented/tri4a/graph /home/samuel/wsj-pf-data/data/wsj/head_eval_test/5dB_hires /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a/decode_head_5dB
+steps/nnet2/decode.sh: feature type is raw
+score best paths
+local/score.sh --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/wsj/head_eval_test/5dB_hires /home/samuel/wsj-pf-data/exp_augmented/tri4a/graph /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a/decode_head_5dB
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+score confidence and timing with sclite
+Decoding done.
+steps/nnet2/decode.sh --nj 60 --cmd run.pl --mem 2G --online-ivector-dir /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/ivectors_pf_head_test_clean /home/samuel/wsj-pf-data/exp_augmented/tri4a/graph /home/samuel/wsj-pf-data/data/pf/head_test/clean_hires /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a/decode_pf_head_clean
+steps/nnet2/decode.sh: feature type is raw
+score best paths
+local/score.sh --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/pf/head_test/clean_hires /home/samuel/wsj-pf-data/exp_augmented/tri4a/graph /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a/decode_pf_head_clean
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+score confidence and timing with sclite
+Decoding done.

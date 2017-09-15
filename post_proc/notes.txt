@@ -1,0 +1,15 @@
+Time robot speech issued (actual speech may have started a little later)
+Time robot speech ended
+Time human speech recognized
+
+TODO:
+	- Reset timer for each session
+	- Load initial time from "control" file to align with the WAV properly
+	- Result will be aligned with WAV file
+	- But segmentations will be different from TDF
+	- Will need to find the best matching segment in the TDF
+	- 
+	
+	
+Fisher bigram
+- Using threshold of 100

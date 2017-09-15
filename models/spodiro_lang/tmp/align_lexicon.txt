@@ -1,0 +1,48 @@
+A ah_S
+A ax_S
+A ey_S
+AM ae_B m_E
+AND ae_B n_I d_E
+AND ax_B n_E
+AND ax_B n_I d_E
+B B_B IY_E
+BROCCOLI b_B r_I oh_I k_I ax_I l_I iy_E
+BUTTER b_B ah_I t_I ax_E
+BUTTER b_B ah_I t_I ax_I r_E
+CARROTS k_B ae_I r_I ax_I t_I s_E
+CHEESE ch_B iy_I z_E
+CHICKEN ch_B ih_I k_I ih_I n_E
+CHIPS ch_B ih_I p_I s_E
+CHOCOLATE ch_B oh_I k_I l_I ax_I t_E
+CREAM k_B r_I iy_I m_E
+C S_B IY_E
+CUCUMBER k_B y_I uw_I k_I ah_I m_I b_I ax_E
+CUCUMBER k_B y_I uw_I k_I ah_I m_I b_I ax_I r_E
+FISH f_B ih_I sh_E
+FIVE f_B ay_I v_E
+FORTY f_B ao_I t_I iy_E
+HELLO hh_B ax_I l_I ow_E
+I ay_S
+ICE ay_B s_E
+MILK m_B ih_I l_I k_E
+ONE w_B ah_I n_E
+PEPPERONI P_B EH_I P_I ER_I OW_I N_I IY_E
+PIZZA p_B iy_I t_I s_I ax_E
+PORK p_B ao_I k_E
+PORTIONS p_B ao_I sh_I n_I z_E
+PUDDING p_B uh_I d_I ih_I ng_E
+RASPBERRY r_B aa_I z_I b_I ax_I r_I iy_E
+READY r_B eh_I d_I iy_E
+SEVENTEEN s_B eh_I v_I n_I t_I iy_I n_E
+SIXTY s_B ih_I k_I s_I t_I iy_E
+START s_B t_I aa_I t_E
+STEAMED s_B t_I iy_I m_I d_E
+TESTING t_B eh_I s_I t_I ih_I ng_E
+THREE th_B r_I iy_E
+TO t_B ax_E
+TO t_B uw_E
+TWO t_B uw_E
+ZEENO Z_B IY_I N_I OW_E
+!SIL SIL_S
+!NOISE NOISE_S
+<eps> SIL

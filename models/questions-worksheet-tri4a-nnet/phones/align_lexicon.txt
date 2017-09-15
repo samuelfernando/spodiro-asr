@@ -1,0 +1,86 @@
+!NOISE !NOISE NOISE_S
+!SIL !SIL SIL_S
+<eps> <eps> SIL
+A A ah_S
+A A ax_S
+A A ey_S
+AN AN ae_B n_E
+AN AN ax_B n_E
+AND AND ae_B n_I d_E
+AND AND ax_B n_E
+AND AND ax_B n_I d_E
+APPLE APPLE ae_B p_I l_E
+ARE ARE aa_B r_E
+ARE ARE aa_S
+AT AT ae_B t_E
+AT AT ax_B t_E
+AVERAGE AVERAGE ae_B v_I ax_I r_I ih_I jh_E
+B B B_B IY_E
+BURGER BURGER b_B er_I g_I ax_E
+BURGER BURGER b_B er_I g_I ax_I r_E
+C C S_B IY_E
+CHIPS CHIPS ch_B ih_I p_I s_E
+DID DID d_B ih_I d_E
+DO DO d_B uw_E
+DRINK DRINK d_B r_I ih_I ng_I k_E
+ENERGY ENERGY eh_B n_I ax_I jh_I iy_E
+EXERCISE EXERCISE eh_B k_I s_I ax_I s_I ay_I z_E
+EXERCISED EXERCISED eh_B k_I s_I ax_I s_I ay_I z_I d_E
+FIND FIND f_B ay_I n_I d_E
+FISH FISH f_B ih_I sh_E
+FOR FOR f_B ao_E
+FOR FOR f_B ao_I r_E
+FOR FOR f_B ax_E
+FOR FOR f_B ax_I r_E
+FOR FOR f_B er_E
+FRIES FRIES f_B r_I ay_I z_E
+GOODBYE GOODBYE g_B uh_I d_I b_I ay_E
+HELLO HELLO hh_B ax_I l_I ow_E
+HOW HOW hh_B aw_E
+I I ay_S
+IF IF ih_B f_E
+IN IN ih_B n_E
+IS IS ih_B z_E
+LONG LONG l_B oh_I ng_E
+MINUTES MINUTES m_B ih_I n_I ih_I t_I s_E
+MUCH MUCH m_B ah_I ch_E
+MY MY m_B ay_E
+NO NO n_B ow_E
+NOT NOT n_B oh_I t_E
+ONE ONE w_B ah_I n_E
+POWER POWER p_B aw_I ax_E
+POWER POWER p_B aw_I ax_I r_E
+RATE RATE r_B ey_I t_E
+READY READY r_B eh_I d_I iy_E
+RIGHT RIGHT r_B ay_I t_E
+ROBOT'S ROBOT'S r_B ow_I b_I oh_I t_I s_E
+SALAD SALAD s_B ae_I l_I ax_I d_E
+SAME SAME s_B ey_I m_E
+SESSION SESSION s_B eh_I sh_I n_E
+START START s_B t_I aa_I t_E
+TESTING TESTING t_B eh_I s_I t_I ih_I ng_E
+THANK THANK th_B ae_I ng_I k_E
+THAT'S THAT'S dh_B ae_I t_I s_E
+THAT'S THAT'S dh_B ax_I t_I s_E
+THE THE dh_B ax_E
+THE THE dh_B iy_E
+THEN THEN dh_B eh_I n_E
+THREE THREE th_B r_I iy_E
+TO TO t_B ax_E
+TO TO t_B uw_E
+TOTAL TOTAL t_B ow_I t_I l_E
+TWENTY TWENTY t_B w_I eh_I n_I t_I iy_E
+TWO TWO t_B uw_E
+USAGE USAGE y_B uw_I s_I ih_I jh_E
+USE USE y_B uw_I s_E
+USE USE y_B uw_I z_E
+WAS WAS w_B ax_I z_E
+WAS WAS w_B oh_I z_E
+WHAT WHAT w_B oh_I t_E
+WOULD WOULD w_B ax_I d_E
+WOULD WOULD w_B uh_I d_E
+WRONG WRONG r_B oh_I ng_E
+YES YES y_B eh_I s_E
+YOU YOU y_B ax_E
+YOU YOU y_B uw_E
+ZENO ZENO Z_B EY_I N_I OW_E

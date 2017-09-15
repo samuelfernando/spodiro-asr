@@ -1,0 +1,42 @@
+noisy-wsj-pf	GMM 10.00
+noisy-wsj-pf-augmented	GMM	6.48
+noisy-wsj-pf-augmented	DNN	6.60
++museum training data DNN 3.82
+	- ~/wsj-pf-data/exp_augmented/nnet2_online_wsj_pf/nnet_a_online/decode_museum_0_grammar
+	- ./retrain.sh
+	
+	
+We use the DNN model adapted to the museum data - cross-validation approach, using 80% of data for training and 20% for testing (split by speakers).
+Results (WER %):
+Museum grammar
+	- 2.35 (Don't know latency yet).
+WSJ + PF + museum
+	- 21.65
+
+WSJ + PF + museum + threaded
+	- 21.65
+
+	
+Acoustic model trained on WSJ+PF augmented with noise and speed variations
+Adapted to the museum data
+
+
+CHILD SPEECH Experiments on museum test data, trained on WSJ+PF+museum
+======================================================================
+
+LM							Threaded	Num Threads	Endpointing	Endpointing config	Jobs	WER		Real-time factor	Avg. delay	Longest delay
+WSJ+PF+museum				No			N/A			Yes			Orig				12		28.1	1.987				3.01		8.21
+WSJ+PF+museum				Yes			2			Yes			Orig				12		27.6	1.285				1.57		12.04
+WSJ+PF+museum				Yes			4			Yes			Orig				12		27.4	1.244				1.34		9.32
+WSJ+PF+museum				Yes			4			Yes			Orig				4		27.4	1.172				0.81		6.94
+WSJ+PF+museum				Yes			4			Yes			New_Sam				4		28.0	1.156				0.52		5.67
+WSJ+PF+museum-filtered		Yes			4			Yes			New_Sam				4		15.9	1.091				0.30		3.27
+Fisher-filtered				Yes			4			Yes			New_Sam				4		21.3	1.205				0.64		6.39
+Fisher-200-filter			Yes			4			Yes			New_Sam				4		18.5	1.16				0.53		10.28
+Healthy-Grammar				Yes			4			Yes			New_Sam				4		5.7		1.02				0.07		0.47
+Fisher-full-unk-dict		Yes			4			Yes			New_Sam				4		51.5	1.338				1.17		7.18
+Fisher-full-1000zeeno		Yes			4			Yes			New_Sam				4		17.7	1.186				0.62		6.81
+Fisher-full-1zeeno			Yes			4			Yes			New_Sam				4		37.9	1.313				1.13		6.13
+Fisher-10bigram-100zeeno	Yes			4			Yes			New_Sam				4		24.9	1.201				0.67		5.37
+
+ADULT SPEECH ex

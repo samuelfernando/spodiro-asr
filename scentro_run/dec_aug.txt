@@ -1,0 +1,13 @@
+nohup: ignoring input
+steps/decode_fmllr.sh --nj 32 --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/exp_augmented/tri4a/graph /home/samuel/wsj-pf-data/data/pf/head_test/clean /home/samuel/wsj-pf-data/exp_augmented/tri4a/decode_pf_clean
+steps/decode.sh --scoring-opts  --num-threads 1 --skip-scoring false --acwt 0.083333 --nj 32 --cmd run.pl --mem 2G --beam 10.0 --model /home/samuel/wsj-pf-data/exp_augmented/tri4a/final.alimdl --max-active 2000 /home/samuel/wsj-pf-data/exp_augmented/tri4a/graph /home/samuel/wsj-pf-data/data/pf/head_test/clean /home/samuel/wsj-pf-data/exp_augmented/tri4a/decode_pf_clean.si
+decode.sh: feature type is lda
+local/score.sh --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/pf/head_test/clean /home/samuel/wsj-pf-data/exp_augmented/tri4a/graph /home/samuel/wsj-pf-data/exp_augmented/tri4a/decode_pf_clean.si
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+steps/decode_fmllr.sh: feature type is lda
+steps/decode_fmllr.sh: getting first-pass fMLLR transforms.
+steps/decode_fmllr.sh: doing main lattice generation phase
+steps/decode_fmllr.sh: estimating fMLLR transforms a second time.
+steps/decode_fmllr.sh: doing a final pass of acoustic rescoring.
+local/score.sh --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/pf/head_test/clean /home/samuel/wsj-pf-data/exp_augmented/tri4a/graph /home/samuel/wsj-pf-data/exp_augmented/tri4a/decode_pf_clean
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0

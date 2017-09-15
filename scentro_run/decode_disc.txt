@@ -1,0 +1,13 @@
+nohup: ignoring input
+steps/online/nnet2/decode.sh --cmd run.pl --mem 2G --nj 8 --iter smbr_epoch1 /home/samuel/wsj-pf-data/exp_augmented/tri4a/graph /home/samuel/wsj-pf-data/data/pf/head_test/clean /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a_online/decode_smbr_epoch1
+local/score.sh --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/pf/head_test/clean /home/samuel/wsj-pf-data/exp_augmented/tri4a/graph /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a_online/decode_smbr_epoch1
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+steps/online/nnet2/decode.sh --cmd run.pl --mem 2G --nj 8 --iter smbr_epoch2 /home/samuel/wsj-pf-data/exp_augmented/tri4a/graph /home/samuel/wsj-pf-data/data/pf/head_test/clean /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a_online/decode_smbr_epoch2
+local/score.sh --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/pf/head_test/clean /home/samuel/wsj-pf-data/exp_augmented/tri4a/graph /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a_online/decode_smbr_epoch2
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+steps/online/nnet2/decode.sh --cmd run.pl --mem 2G --nj 8 --iter smbr_epoch3 /home/samuel/wsj-pf-data/exp_augmented/tri4a/graph /home/samuel/wsj-pf-data/data/pf/head_test/clean /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a_online/decode_smbr_epoch3
+local/score.sh --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/pf/head_test/clean /home/samuel/wsj-pf-data/exp_augmented/tri4a/graph /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a_online/decode_smbr_epoch3
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+steps/online/nnet2/decode.sh --cmd run.pl --mem 2G --nj 8 --iter smbr_epoch4 /home/samuel/wsj-pf-data/exp_augmented/tri4a/graph /home/samuel/wsj-pf-data/data/pf/head_test/clean /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a_online/decode_smbr_epoch4
+local/score.sh --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/pf/head_test/clean /home/samuel/wsj-pf-data/exp_augmented/tri4a/graph /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a_online/decode_smbr_epoch4
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0

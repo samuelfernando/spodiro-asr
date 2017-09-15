@@ -1,0 +1,8 @@
+nohup: ignoring input
+steps/nnet2/decode.sh --nj 13 --cmd run.pl --mem 2G --online-ivector-dir /home/samuel/wsj-pf-data/exp/nnet2_online/ivectors_wsj_head_eval_test_5dB /home/samuel/wsj-pf-data/exp/tri4a/graph /home/samuel/wsj-pf-data/data/wsj/head_eval_test/5dB_hires /home/samuel/wsj-pf-data/exp/nnet2_online/hidden5_nnet_ms_a_1epoch_learn4/decode_head_5dB
+steps/nnet2/decode.sh: feature type is raw
+score best paths
+local/score.sh --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/wsj/head_eval_test/5dB_hires /home/samuel/wsj-pf-data/exp/tri4a/graph /home/samuel/wsj-pf-data/exp/nnet2_online/hidden5_nnet_ms_a_1epoch_learn4/decode_head_5dB
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+score confidence and timing with sclite
+Decoding done.

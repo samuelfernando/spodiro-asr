@@ -1,0 +1,818 @@
+nohup: ignoring input
+steps/nnet2/train_multisplice_accel2.sh --stage -10 --exit-stage -100 --num-epochs 8 --num-jobs-initial 2 --num-jobs-final 8 --num-hidden-layers 4 --splice-indexes layer0/-1:0:1 layer1/-2:1 layer2/-4:2 --feat-type raw --online-ivector-dir /home/samuel/wsj-pf-data/exp/nnet2_online/ivectors_train --cmvn-opts --norm-means=false --norm-vars=false --num-threads 1 --minibatch-size 512 --parallel-opts --gpu 1 --io-opts --max-jobs-run 12 --initial-effective-lrate 0.005 --final-effective-lrate 0.0005 --cmd run.pl --mem 2G --pnorm-input-dim 2000 --pnorm-output-dim 250 --mix-up 12000 /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp/nnet2_online/tri4a_ali /home/samuel/wsj-pf-data/exp/nnet2_online/nnet_ms_a
+/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp/nnet2_online/tri4a_ali /home/samuel/wsj-pf-data/exp/nnet2_online/nnet_ms_a
+steps/nnet2/make_multisplice_configs.py contexts --splice-indexes layer0/-1:0:1 layer1/-2:1 layer2/-4:2 /home/samuel/wsj-pf-data/exp/nnet2_online/nnet_ms_a
+Namespace(bias_stddev=None, initial_learning_rate=None, ivector_dim=None, lda_dim=None, lda_mat=None, mode='contexts', num_hidden_layers=None, num_targets=None, online_preconditioning_opts=None, output_dir='/home/samuel/wsj-pf-data/exp/nnet2_online/nnet_ms_a', pnorm_input_dim=None, pnorm_output_dim=None, splice_indexes='layer0/-1:0:1 layer1/-2:1 layer2/-4:2', total_input_dim=None)
+['', '0/-1:0:1 ', '1/-2:1 ', '2/-4:2']
+[-7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4]
+nnet_left_context=7; nnet_right_context=4 first_left_context=1; first_right_context=1
+steps/nnet2/train_multisplice_accel2.sh: calling get_lda.sh
+steps/nnet2/get_lda.sh --cmvn-opts --norm-means=false --norm-vars=false --feat-type raw --online-ivector-dir /home/samuel/wsj-pf-data/exp/nnet2_online/ivectors_train --transform-dir /home/samuel/wsj-pf-data/exp/nnet2_online/tri4a_ali --left-context 1 --right-context 1 --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp/nnet2_online/tri4a_ali /home/samuel/wsj-pf-data/exp/nnet2_online/nnet_ms_a
+steps/nnet2/get_lda.sh: feature type is raw
+feat-to-dim 'ark,s,cs:utils/subset_scp.pl --quiet 250 /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/feats.scp | apply-cmvn --norm-means=false --norm-vars=false --utt2spk=ark:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/utt2spk scp:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/cmvn.scp scp:- ark:- |' - 
+apply-cmvn --norm-means=false --norm-vars=false --utt2spk=ark:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/utt2spk scp:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/cmvn.scp scp:- ark:- 
+WARNING (feat-to-dim:Close():kaldi-io.cc:500) Pipe utils/subset_scp.pl --quiet 250 /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/feats.scp | apply-cmvn --norm-means=false --norm-vars=false --utt2spk=ark:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/utt2spk scp:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/cmvn.scp scp:- ark:- | had nonzero return status 36096
+feat-to-dim scp:/home/samuel/wsj-pf-data/exp/nnet2_online/ivectors_train/ivector_online.scp - 
+feat-to-dim "ark,s,cs:utils/subset_scp.pl --quiet 250 /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/feats.scp | apply-cmvn --norm-means=false --norm-vars=false --utt2spk=ark:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/utt2spk scp:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/cmvn.scp scp:- ark:- | splice-feats --left-context=1 --right-context=1 ark:- ark:- | paste-feats --length-tolerance=10 ark:- 'ark,s,cs:utils/filter_scp.pl /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/utt2spk /home/samuel/wsj-pf-data/exp/nnet2_online/ivectors_train/ivector_online.scp | subsample-feats --n=-10 scp:- ark:- | ivector-randomize --randomize-prob=0.0 ark:- ark:- |' ark:- |" - 
+paste-feats --length-tolerance=10 ark:- 'ark,s,cs:utils/filter_scp.pl /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/utt2spk /home/samuel/wsj-pf-data/exp/nnet2_online/ivectors_train/ivector_online.scp | subsample-feats --n=-10 scp:- ark:- | ivector-randomize --randomize-prob=0.0 ark:- ark:- |' ark:- 
+apply-cmvn --norm-means=false --norm-vars=false --utt2spk=ark:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/utt2spk scp:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/cmvn.scp scp:- ark:- 
+splice-feats --left-context=1 --right-context=1 ark:- ark:- 
+subsample-feats --n=-10 scp:- ark:- 
+ivector-randomize --randomize-prob=0.0 ark:- ark:- 
+WARNING (feat-to-dim:Close():kaldi-io.cc:500) Pipe utils/subset_scp.pl --quiet 250 /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/feats.scp | apply-cmvn --norm-means=false --norm-vars=false --utt2spk=ark:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/utt2spk scp:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/cmvn.scp scp:- ark:- | splice-feats --left-context=1 --right-context=1 ark:- ark:- | paste-feats --length-tolerance=10 ark:- 'ark,s,cs:utils/filter_scp.pl /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/split40/1/utt2spk /home/samuel/wsj-pf-data/exp/nnet2_online/ivectors_train/ivector_online.scp | subsample-feats --n=-10 scp:- ark:- | ivector-randomize --randomize-prob=0.0 ark:- ark:- |' ark:- | had nonzero return status 36096
+steps/nnet2/get_lda.sh: Accumulating LDA statistics.
+steps/nnet2/get_lda.sh: Finished estimating LDA
+steps/nnet2/train_multisplice_accel2.sh: calling get_egs2.sh
+steps/nnet2/get_egs2.sh --cmvn-opts --norm-means=false --norm-vars=false --feat-type raw --online-ivector-dir /home/samuel/wsj-pf-data/exp/nnet2_online/ivectors_train --transform-dir /home/samuel/wsj-pf-data/exp/nnet2_online/tri4a_ali --left-context 7 --right-context 4 --samples-per-iter 400000 --stage 0 --io-opts --max-jobs-run 12 --cmd run.pl --mem 2G --frames-per-eg 8 /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires /home/samuel/wsj-pf-data/exp/nnet2_online/tri4a_ali /home/samuel/wsj-pf-data/exp/nnet2_online/nnet_ms_a/egs
+steps/nnet2/get_egs2.sh: feature type is raw
+feat-to-dim scp:/home/samuel/wsj-pf-data/exp/nnet2_online/ivectors_train/ivector_online.scp - 
+steps/nnet2/get_egs2.sh: working out number of frames of training data
+utils/data/get_utt2dur.sh: working out /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/utt2dur from /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/segments
+utils/data/get_utt2dur.sh: computed /home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/utt2dur
+feat-to-len scp:/home/samuel/wsj-pf-data/data/train-wsj-pf-inc-noise_hires/feats.scp ark,t:- 
+steps/nnet2/get_egs2.sh: creating 29 archives, each with 388620 egs, with
+steps/nnet2/get_egs2.sh:   8 labels per example, and (left,right) context = (7,4)
+steps/nnet2/get_egs2.sh: Getting validation and training subset examples.
+steps/nnet2/get_egs2.sh: ... extracting validation and training-subset alignments.
+copy-int-vector ark:- ark,t:- 
+LOG (copy-int-vector:main():copy-int-vector.cc:83) Copied 331151 vectors of int32.
+... Getting subsets of validation examples for diagnostics and combination.
+steps/nnet2/get_egs2.sh: Generating training examples on disk
+steps/nnet2/get_egs2.sh: recombining and shuffling order of archives on disk
+steps/nnet2/get_egs2.sh: removing temporary archives
+steps/nnet2/get_egs2.sh: Finished preparing training examples
+steps/nnet2/train_multisplice_accel2.sh: initializing neural net
+steps/nnet2/make_multisplice_configs.py --splice-indexes layer0/-1:0:1 layer1/-2:1 layer2/-4:2 --total-input-dim 140 --ivector-dim 100 --lda-mat /home/samuel/wsj-pf-data/exp/nnet2_online/nnet_ms_a/lda.mat --lda-dim 220 --pnorm-input-dim 2000 --pnorm-output-dim 250 --online-preconditioning-opts alpha=4.0 num-samples-history=2000 update-period=4 rank-in=20 rank-out=80 max-change-per-sample=0.075 --initial-learning-rate 0.01 --bias-stddev 0.5 --num-hidden-layers 4 --num-targets 3453 configs /home/samuel/wsj-pf-data/exp/nnet2_online/nnet_ms_a
+Namespace(bias_stddev=0.5, initial_learning_rate=0.01, ivector_dim=100, lda_dim='220', lda_mat='/home/samuel/wsj-pf-data/exp/nnet2_online/nnet_ms_a/lda.mat', mode='configs', num_hidden_layers=4, num_targets=3453, online_preconditioning_opts='alpha=4.0 num-samples-history=2000 update-period=4 rank-in=20 rank-out=80 max-change-per-sample=0.075', output_dir='/home/samuel/wsj-pf-data/exp/nnet2_online/nnet_ms_a', pnorm_input_dim=2000, pnorm_output_dim=250, splice_indexes='layer0/-1:0:1 layer1/-2:1 layer2/-4:2', total_input_dim=140)
+['', '0/-1:0:1 ', '1/-2:1 ', '2/-4:2']
+[-7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4]
+Training transition probabilities and setting priors
+prepare initial vector for FixedScaleComponent before softmax
+use priors^-0.25 and rescale to average 1
+insert an additional layer of FixedScaleComponent before softmax
+nnet-am-info /home/samuel/wsj-pf-data/exp/nnet2_online/nnet_ms_a/0.mdl 
+LOG (nnet-am-info:main():nnet-am-info.cc:76) Printed info about /home/samuel/wsj-pf-data/exp/nnet2_online/nnet_ms_a/0.mdl
+nnet-init /home/samuel/wsj-pf-data/exp/nnet2_online/nnet_ms_a/per_element.config - 
+nnet-insert --insert-at=6 --randomize-next-component=false /home/samuel/wsj-pf-data/exp/nnet2_online/nnet_ms_a/0.mdl - /home/samuel/wsj-pf-data/exp/nnet2_online/nnet_ms_a/0.mdl 
+LOG (nnet-init:main():nnet-init.cc:69) Initialized raw neural net and wrote it to -
+LOG (nnet-insert:main():nnet-insert.cc:106) Inserted 1 components at position 6
+LOG (nnet-insert:main():nnet-insert.cc:132) Write neural-net acoustic model to /home/samuel/wsj-pf-data/exp/nnet2_online/nnet_ms_a/0.mdl
+steps/nnet2/train_multisplice_accel2.sh: Will train for 8 epochs = 371 iterations
+steps/nnet2/train_multisplice_accel2.sh: Will not do mix up
+On iteration 0, learning rate is 0.01.
+Training neural net (pass 0)
+On iteration 1, learning rate is 0.00997521841780124.
+Training neural net (pass 1)
+On iteration 2, learning rate is 0.00995049824828411.
+Training neural net (pass 2)
+nnet-am-info /home/samuel/wsj-pf-data/exp/nnet2_online/nnet_ms_a/2.mdl 
+LOG (nnet-am-info:main():nnet-am-info.cc:76) Printed info about /home/samuel/wsj-pf-data/exp/nnet2_online/nnet_ms_a/2.mdl
+On iteration 3, learning rate is 0.00992583933925827.
+Training neural net (pass 3)
+On iteration 4, learning rate is 0.00990124153891052.
+Training neural net (pass 4)
+nnet-am-info /home/samuel/wsj-pf-data/exp/nnet2_online/nnet_ms_a/4.mdl 
+LOG (nnet-am-info:main():nnet-am-info.cc:76) Printed info about /home/samuel/wsj-pf-data/exp/nnet2_online/nnet_ms_a/4.mdl
+On iteration 5, learning rate is 0.00987670469580389.
+Training neural net (pass 5)
+On iteration 6, learning rate is 0.0098522286588767.
+Training neural net (pass 6)
+nnet-am-info /home/samuel/wsj-pf-data/exp/nnet2_online/nnet_ms_a/6.mdl 
+LOG (nnet-am-info:main():nnet-am-info.cc:76) Printed info about /home/samuel/wsj-pf-data/exp/nnet2_online/nnet_ms_a/6.mdl
+On iteration 7, learning rate is 0.00982781327744161.
+Training neural net (pass 7)
+On iteration 8, learning rate is 0.00980345840118472.
+Training neural net (pass 8)
+On iteration 9, learning rate is 0.00977916388016461.
+Training neural net (pass 9)
+On iteration 10, learning rate is 0.00975492956481147.
+Training neural net (pass 10)
+On iteration 11, learning rate is 0.00973075530592612.
+Training neural net (pass 11)
+On iteration 12, learning rate is 0.00970664095467914.
+Training neural net (pass 12)
+On iteration 13, learning rate is 0.00968258636260992.
+Training neural net (pass 13)
+On iteration 14, learning rate is 0.00965859138162577.
+Training neural net (pass 14)
+On iteration 15, learning rate is 0.00963465586400097.
+Training neural net (pass 15)
+On iteration 16, learning rate is 0.00961077966237592.
+Training neural net (pass 16)
+On iteration 17, learning rate is 0.00958696262975619.
+Training neural net (pass 17)
+On iteration 18, learning rate is 0.00956320461951162.
+Training neural net (pass 18)
+On iteration 19, learning rate is 0.00953950548537542.
+Training neural net (pass 19)
+On iteration 20, learning rate is 0.00951586508144329.
+Training neural net (pass 20)
+On iteration 21, learning rate is 0.00949228326217248.
+Training neural net (pass 21)
+On iteration 22, learning rate is 0.00946875988238094.
+Training neural net (pass 22)
+On iteration 23, learning rate is 0.00944529479724639.
+Training neural net (pass 23)
+On iteration 24, learning rate is 0.00942188786230544.
+Training neural net (pass 24)
+On iteration 25, learning rate is 0.00939853893345272.
+Training neural net (pass 25)
+On iteration 26, learning rate is 0.00937524786693997.
+Training neural net (pass 26)
+On iteration 27, learning rate is 0.00935201451937514.
+Training neural net (pass 27)
+On iteration 28, learning rate is 0.00932883874772155.
+Training neural net (pass 28)
+On iteration 29, learning rate is 0.00930572040929699.
+Training neural net (pass 29)
+On iteration 30, learning rate is 0.00928265936177283.
+Training neural net (pass 30)
+On iteration 31, learning rate is 0.0138894831947597.
+Training neural net (pass 31)
+On iteration 32, learning rate is 0.0138378846897005.
+Training neural net (pass 32)
+On iteration 33, learning rate is 0.0137864778696513.
+Training neural net (pass 33)
+On iteration 34, learning rate is 0.0137352620225149.
+Training neural net (pass 34)
+On iteration 35, learning rate is 0.0136842364388398.
+Training neural net (pass 35)
+On iteration 36, learning rate is 0.0136334004118099.
+Training neural net (pass 36)
+On iteration 37, learning rate is 0.0135827532372348.
+Training neural net (pass 37)
+On iteration 38, learning rate is 0.0135322942135402.
+Training neural net (pass 38)
+On iteration 39, learning rate is 0.0134820226417582.
+Training neural net (pass 39)
+On iteration 40, learning rate is 0.0134319378255175.
+Training neural net (pass 40)
+On iteration 41, learning rate is 0.0133820390710335.
+Training neural net (pass 41)
+On iteration 42, learning rate is 0.0133323256870992.
+Training neural net (pass 42)
+On iteration 43, learning rate is 0.0132827969850755.
+Training neural net (pass 43)
+On iteration 44, learning rate is 0.0132334522788813.
+Training neural net (pass 44)
+On iteration 45, learning rate is 0.0131842908849844.
+Training neural net (pass 45)
+On iteration 46, learning rate is 0.0131353121223917.
+Training neural net (pass 46)
+On iteration 47, learning rate is 0.0130865153126402.
+Training neural net (pass 47)
+On iteration 48, learning rate is 0.0130378997797872.
+Training neural net (pass 48)
+On iteration 49, learning rate is 0.012989464850401.
+Training neural net (pass 49)
+On iteration 50, learning rate is 0.0129412098535518.
+Training neural net (pass 50)
+On iteration 51, learning rate is 0.0128931341208023.
+Training neural net (pass 51)
+On iteration 52, learning rate is 0.0128452369861981.
+Training neural net (pass 52)
+On iteration 53, learning rate is 0.0127975177862592.
+Training neural net (pass 53)
+On iteration 54, learning rate is 0.0127499758599701.
+Training neural net (pass 54)
+On iteration 55, learning rate is 0.0127026105487709.
+Training neural net (pass 55)
+On iteration 56, learning rate is 0.0126554211965484.
+Training neural net (pass 56)
+On iteration 57, learning rate is 0.0126084071496267.
+Training neural net (pass 57)
+On iteration 58, learning rate is 0.0125615677567583.
+Training neural net (pass 58)
+On iteration 59, learning rate is 0.012514902369115.
+Training neural net (pass 59)
+On iteration 60, learning rate is 0.012468410340279.
+Training neural net (pass 60)
+On iteration 61, learning rate is 0.0124220910262338.
+Training neural net (pass 61)
+On iteration 62, learning rate is 0.0123759437853556.
+Training neural net (pass 62)
+On iteration 63, learning rate is 0.0123299679784039.
+Training neural net (pass 63)
+On iteration 64, learning rate is 0.0122841629685131.
+Training neural net (pass 64)
+On iteration 65, learning rate is 0.0122385281211836.
+Training neural net (pass 65)
+On iteration 66, learning rate is 0.0121930628042727.
+Training neural net (pass 66)
+On iteration 67, learning rate is 0.0121477663879863.
+Training neural net (pass 67)
+On iteration 68, learning rate is 0.0121026382448697.
+Training neural net (pass 68)
+On iteration 69, learning rate is 0.0120576777497994.
+Training neural net (pass 69)
+On iteration 70, learning rate is 0.0120128842799739.
+Training neural net (pass 70)
+On iteration 71, learning rate is 0.0119682572149058.
+Training neural net (pass 71)
+On iteration 72, learning rate is 0.0119237959364123.
+Training neural net (pass 72)
+On iteration 73, learning rate is 0.0118794998286073.
+Training neural net (pass 73)
+On iteration 74, learning rate is 0.0118353682778929.
+Training neural net (pass 74)
+On iteration 75, learning rate is 0.0117914006729503.
+Training neural net (pass 75)
+On iteration 76, learning rate is 0.0117475964047318.
+Training neural net (pass 76)
+On iteration 77, learning rate is 0.0117039548664526.
+Training neural net (pass 77)
+On iteration 78, learning rate is 0.0116604754535816.
+Training neural net (pass 78)
+On iteration 79, learning rate is 0.0116171575638339.
+Training neural net (pass 79)
+On iteration 80, learning rate is 0.0115740005971616.
+Training neural net (pass 80)
+On iteration 81, learning rate is 0.0115310039557464.
+Training neural net (pass 81)
+On iteration 82, learning rate is 0.0114881670439905.
+Training neural net (pass 82)
+On iteration 83, learning rate is 0.011445489268509.
+Training neural net (pass 83)
+On iteration 84, learning rate is 0.0114029700381212.
+Training neural net (pass 84)
+On iteration 85, learning rate is 0.0113606087638425.
+Training neural net (pass 85)
+On iteration 86, learning rate is 0.0113184048588766.
+Training neural net (pass 86)
+On iteration 87, learning rate is 0.011276357738607.
+Training neural net (pass 87)
+On iteration 88, learning rate is 0.011234466820589.
+Training neural net (pass 88)
+On iteration 89, learning rate is 0.0111927315245415.
+Training neural net (pass 89)
+On iteration 90, learning rate is 0.0111511512723394.
+Training neural net (pass 90)
+On iteration 91, learning rate is 0.011109725488005.
+Training neural net (pass 91)
+On iteration 92, learning rate is 0.0110684535977006.
+Training neural net (pass 92)
+On iteration 93, learning rate is 0.0147031133729601.
+Training neural net (pass 93)
+On iteration 94, learning rate is 0.0146303303861962.
+Training neural net (pass 94)
+On iteration 95, learning rate is 0.0145579076879663.
+Training neural net (pass 95)
+On iteration 96, learning rate is 0.0144858434947791.
+Training neural net (pass 96)
+On iteration 97, learning rate is 0.0144141360319717.
+Training neural net (pass 97)
+On iteration 98, learning rate is 0.0143427835336663.
+Training neural net (pass 98)
+On iteration 99, learning rate is 0.0142717842427265.
+Training neural net (pass 99)
+On iteration 100, learning rate is 0.0142011364107139.
+Training neural net (pass 100)
+On iteration 101, learning rate is 0.0141308382978452.
+Training neural net (pass 101)
+On iteration 102, learning rate is 0.0140608881729495.
+Training neural net (pass 102)
+On iteration 103, learning rate is 0.0139912843134253.
+Training neural net (pass 103)
+On iteration 104, learning rate is 0.0139220250051983.
+Training neural net (pass 104)
+On iteration 105, learning rate is 0.0138531085426793.
+Training neural net (pass 105)
+On iteration 106, learning rate is 0.013784533228722.
+Training neural net (pass 106)
+On iteration 107, learning rate is 0.0137162973745813.
+Training neural net (pass 107)
+On iteration 108, learning rate is 0.0136483992998715.
+Training neural net (pass 108)
+On iteration 109, learning rate is 0.0135808373325253.
+Training neural net (pass 109)
+On iteration 110, learning rate is 0.0135136098087525.
+Training neural net (pass 110)
+On iteration 111, learning rate is 0.0134467150729987.
+Training neural net (pass 111)
+On iteration 112, learning rate is 0.0133801514779049.
+Training neural net (pass 112)
+On iteration 113, learning rate is 0.0133139173842669.
+Training neural net (pass 113)
+On iteration 114, learning rate is 0.0132480111609947.
+Training neural net (pass 114)
+On iteration 115, learning rate is 0.0131824311850726.
+Training neural net (pass 115)
+On iteration 116, learning rate is 0.0131171758415191.
+Training neural net (pass 116)
+On iteration 117, learning rate is 0.013052243523347.
+Training neural net (pass 117)
+On iteration 118, learning rate is 0.0129876326315242.
+Training neural net (pass 118)
+On iteration 119, learning rate is 0.0129233415749339.
+Training neural net (pass 119)
+On iteration 120, learning rate is 0.0128593687703357.
+Training neural net (pass 120)
+On iteration 121, learning rate is 0.0127957126423265.
+Training neural net (pass 121)
+On iteration 122, learning rate is 0.0127323716233017.
+Training neural net (pass 122)
+On iteration 123, learning rate is 0.0126693441534166.
+Training neural net (pass 123)
+On iteration 124, learning rate is 0.012606628680548.
+Training neural net (pass 124)
+On iteration 125, learning rate is 0.0125442236602561.
+Training neural net (pass 125)
+On iteration 126, learning rate is 0.0124821275557463.
+Training neural net (pass 126)
+On iteration 127, learning rate is 0.0124203388378312.
+Training neural net (pass 127)
+On iteration 128, learning rate is 0.0123588559848935.
+Training neural net (pass 128)
+On iteration 129, learning rate is 0.0122976774828478.
+Training neural net (pass 129)
+On iteration 130, learning rate is 0.012236801825104.
+Training neural net (pass 130)
+On iteration 131, learning rate is 0.0121762275125297.
+Training neural net (pass 131)
+On iteration 132, learning rate is 0.0121159530534136.
+Training neural net (pass 132)
+On iteration 133, learning rate is 0.0120559769634285.
+Training neural net (pass 133)
+On iteration 134, learning rate is 0.0119962977655949.
+Training neural net (pass 134)
+On iteration 135, learning rate is 0.0119369139902446.
+Training neural net (pass 135)
+On iteration 136, learning rate is 0.0118778241749847.
+Training neural net (pass 136)
+On iteration 137, learning rate is 0.0118190268646612.
+Training neural net (pass 137)
+On iteration 138, learning rate is 0.0117605206113234.
+Training neural net (pass 138)
+On iteration 139, learning rate is 0.0117023039741883.
+Training neural net (pass 139)
+On iteration 140, learning rate is 0.0116443755196049.
+Training neural net (pass 140)
+On iteration 141, learning rate is 0.0115867338210191.
+Training neural net (pass 141)
+On iteration 142, learning rate is 0.0115293774589385.
+Training neural net (pass 142)
+On iteration 143, learning rate is 0.0114723050208974.
+Training neural net (pass 143)
+On iteration 144, learning rate is 0.011415515101422.
+Training neural net (pass 144)
+On iteration 145, learning rate is 0.0113590063019961.
+Training neural net (pass 145)
+On iteration 146, learning rate is 0.011302777231026.
+Training neural net (pass 146)
+On iteration 147, learning rate is 0.011246826503807.
+Training neural net (pass 147)
+On iteration 148, learning rate is 0.0111911527424887.
+Training neural net (pass 148)
+On iteration 149, learning rate is 0.0111357545760413.
+Training neural net (pass 149)
+On iteration 150, learning rate is 0.0110806306402221.
+Training neural net (pass 150)
+On iteration 151, learning rate is 0.0110257795775414.
+Training neural net (pass 151)
+On iteration 152, learning rate is 0.0109712000372292.
+Training neural net (pass 152)
+On iteration 153, learning rate is 0.0109168906752024.
+Training neural net (pass 153)
+On iteration 154, learning rate is 0.010862850154031.
+Training neural net (pass 154)
+On iteration 155, learning rate is 0.0135113464286323.
+Training neural net (pass 155)
+On iteration 156, learning rate is 0.013427793810322.
+Training neural net (pass 156)
+On iteration 157, learning rate is 0.0133447578718306.
+Training neural net (pass 157)
+On iteration 158, learning rate is 0.0132622354180694.
+Training neural net (pass 158)
+On iteration 159, learning rate is 0.0131802232737075.
+Training neural net (pass 159)
+On iteration 160, learning rate is 0.0130987182830502.
+Training neural net (pass 160)
+On iteration 161, learning rate is 0.0130177173099171.
+Training neural net (pass 161)
+On iteration 162, learning rate is 0.0129372172375215.
+Training neural net (pass 162)
+On iteration 163, learning rate is 0.0128572149683506.
+Training neural net (pass 163)
+On iteration 164, learning rate is 0.0127777074240463.
+Training neural net (pass 164)
+On iteration 165, learning rate is 0.0126986915452868.
+Training neural net (pass 165)
+On iteration 166, learning rate is 0.0126201642916687.
+Training neural net (pass 166)
+On iteration 167, learning rate is 0.01254212264159.
+Training neural net (pass 167)
+On iteration 168, learning rate is 0.0124645635921341.
+Training neural net (pass 168)
+On iteration 169, learning rate is 0.012387484158954.
+Training neural net (pass 169)
+On iteration 170, learning rate is 0.0123108813761577.
+Training neural net (pass 170)
+On iteration 171, learning rate is 0.0122347522961937.
+Training neural net (pass 171)
+On iteration 172, learning rate is 0.0121590939897381.
+Training neural net (pass 172)
+On iteration 173, learning rate is 0.0120839035455814.
+Training neural net (pass 173)
+On iteration 174, learning rate is 0.0120091780705167.
+Training neural net (pass 174)
+On iteration 175, learning rate is 0.0119349146892285.
+Training neural net (pass 175)
+On iteration 176, learning rate is 0.0118611105441818.
+Training neural net (pass 176)
+On iteration 177, learning rate is 0.0117877627955122.
+Training neural net (pass 177)
+On iteration 178, learning rate is 0.0117148686209169.
+Training neural net (pass 178)
+On iteration 179, learning rate is 0.0116424252155458.
+Training neural net (pass 179)
+On iteration 180, learning rate is 0.0115704297918936.
+Training neural net (pass 180)
+On iteration 181, learning rate is 0.0114988795796927.
+Training neural net (pass 181)
+On iteration 182, learning rate is 0.0114277718258065.
+Training neural net (pass 182)
+On iteration 183, learning rate is 0.0113571037941234.
+Training neural net (pass 183)
+On iteration 184, learning rate is 0.0112868727654518.
+Training neural net (pass 184)
+On iteration 185, learning rate is 0.0112170760374151.
+Training neural net (pass 185)
+On iteration 186, learning rate is 0.0111477109243479.
+Training neural net (pass 186)
+On iteration 187, learning rate is 0.0110787747571927.
+Training neural net (pass 187)
+On iteration 188, learning rate is 0.0110102648833971.
+Training neural net (pass 188)
+On iteration 189, learning rate is 0.0109421786668119.
+Training neural net (pass 189)
+On iteration 190, learning rate is 0.0108745134875893.
+Training neural net (pass 190)
+On iteration 191, learning rate is 0.0108072667420826.
+Training neural net (pass 191)
+On iteration 192, learning rate is 0.0107404358427456.
+Training neural net (pass 192)
+On iteration 193, learning rate is 0.0106740182180333.
+Training neural net (pass 193)
+On iteration 194, learning rate is 0.0106080113123026.
+Training neural net (pass 194)
+On iteration 195, learning rate is 0.0105424125857146.
+Training neural net (pass 195)
+On iteration 196, learning rate is 0.010477219514136.
+Training neural net (pass 196)
+On iteration 197, learning rate is 0.0104124295890429.
+Training neural net (pass 197)
+On iteration 198, learning rate is 0.0103480403174235.
+Training neural net (pass 198)
+On iteration 199, learning rate is 0.0102840492216827.
+Training neural net (pass 199)
+On iteration 200, learning rate is 0.0102204538395465.
+Training neural net (pass 200)
+On iteration 201, learning rate is 0.0101572517239672.
+Training neural net (pass 201)
+On iteration 202, learning rate is 0.0100944404430296.
+Training neural net (pass 202)
+On iteration 203, learning rate is 0.0100320175798569.
+Training neural net (pass 203)
+On iteration 204, learning rate is 0.00996998073251832.
+Training neural net (pass 204)
+On iteration 205, learning rate is 0.00990832751393603.
+Training neural net (pass 205)
+On iteration 206, learning rate is 0.0098470555517938.
+Training neural net (pass 206)
+On iteration 207, learning rate is 0.00978616248844549.
+Training neural net (pass 207)
+On iteration 208, learning rate is 0.00972564598082436.
+Training neural net (pass 208)
+On iteration 209, learning rate is 0.00966550370035295.
+Training neural net (pass 209)
+On iteration 210, learning rate is 0.00960573333285343.
+Training neural net (pass 210)
+On iteration 211, learning rate is 0.00954633257845859.
+Training neural net (pass 211)
+On iteration 212, learning rate is 0.00948729915152334.
+Training neural net (pass 212)
+On iteration 213, learning rate is 0.00942863078053677.
+Training neural net (pass 213)
+On iteration 214, learning rate is 0.00937032520803469.
+Training neural net (pass 214)
+On iteration 215, learning rate is 0.00931238019051286.
+Training neural net (pass 215)
+On iteration 216, learning rate is 0.00925479349834058.
+Training neural net (pass 216)
+On iteration 217, learning rate is 0.0110370754988099.
+Training neural net (pass 217)
+On iteration 218, learning rate is 0.0109552238176451.
+Training neural net (pass 218)
+On iteration 219, learning rate is 0.0108739791539561.
+Training neural net (pass 219)
+On iteration 220, learning rate is 0.0107933370060612.
+Training neural net (pass 220)
+On iteration 221, learning rate is 0.0107132929056634.
+Training neural net (pass 221)
+On iteration 222, learning rate is 0.0106338424176031.
+Training neural net (pass 222)
+On iteration 223, learning rate is 0.0105549811396118.
+Training neural net (pass 223)
+On iteration 224, learning rate is 0.0104767047020688.
+Training neural net (pass 224)
+On iteration 225, learning rate is 0.0103990087677586.
+Training neural net (pass 225)
+On iteration 226, learning rate is 0.010321889031631.
+Training neural net (pass 226)
+On iteration 227, learning rate is 0.0102453412205622.
+Training neural net (pass 227)
+On iteration 228, learning rate is 0.010169361093118.
+Training neural net (pass 228)
+On iteration 229, learning rate is 0.0100939444393193.
+Training neural net (pass 229)
+On iteration 230, learning rate is 0.0100190870804083.
+Training neural net (pass 230)
+On iteration 231, learning rate is 0.00994478486861711.
+Training neural net (pass 231)
+On iteration 232, learning rate is 0.00987103368693801.
+Training neural net (pass 232)
+On iteration 233, learning rate is 0.00979782944889528.
+Training neural net (pass 233)
+On iteration 234, learning rate is 0.0097251680983188.
+Training neural net (pass 234)
+On iteration 235, learning rate is 0.00965304560911923.
+Training neural net (pass 235)
+On iteration 236, learning rate is 0.00958145798506499.
+Training neural net (pass 236)
+On iteration 237, learning rate is 0.00951040125956084.
+Training neural net (pass 237)
+Warning: the mix up opertion is disabled!
+    Ignore mix up leaves number specified
+On iteration 238, learning rate is 0.00943987149542803.
+Training neural net (pass 238)
+On iteration 239, learning rate is 0.00936986478468623.
+Training neural net (pass 239)
+On iteration 240, learning rate is 0.00930037724833694.
+Training neural net (pass 240)
+On iteration 241, learning rate is 0.00923140503614853.
+Training neural net (pass 241)
+On iteration 242, learning rate is 0.009162944326443.
+Training neural net (pass 242)
+On iteration 243, learning rate is 0.00909499132588413.
+Training neural net (pass 243)
+On iteration 244, learning rate is 0.00902754226926734.
+Training neural net (pass 244)
+On iteration 245, learning rate is 0.00896059341931107.
+Training neural net (pass 245)
+On iteration 246, learning rate is 0.00889414106644965.
+Training neural net (pass 246)
+On iteration 247, learning rate is 0.00882818152862784.
+Training neural net (pass 247)
+On iteration 248, learning rate is 0.00876271115109675.
+Training neural net (pass 248)
+On iteration 249, learning rate is 0.00869772630621132.
+Training neural net (pass 249)
+On iteration 250, learning rate is 0.00863322339322938.
+Training neural net (pass 250)
+On iteration 251, learning rate is 0.0085691988381121.
+Training neural net (pass 251)
+On iteration 252, learning rate is 0.00850564909332593.
+Training neural net (pass 252)
+On iteration 253, learning rate is 0.0084425706376461.
+Training neural net (pass 253)
+On iteration 254, learning rate is 0.00837995997596144.
+Training neural net (pass 254)
+On iteration 255, learning rate is 0.00831781363908078.
+Training neural net (pass 255)
+On iteration 256, learning rate is 0.0082561281835407.
+Training neural net (pass 256)
+On iteration 257, learning rate is 0.00819490019141472.
+Training neural net (pass 257)
+On iteration 258, learning rate is 0.00813412627012393.
+Training neural net (pass 258)
+On iteration 259, learning rate is 0.00807380305224903.
+Training neural net (pass 259)
+On iteration 260, learning rate is 0.00801392719534369.
+Training neural net (pass 260)
+On iteration 261, learning rate is 0.00795449538174941.
+Training neural net (pass 261)
+On iteration 262, learning rate is 0.00789550431841165.
+Training neural net (pass 262)
+On iteration 263, learning rate is 0.00783695073669739.
+Training neural net (pass 263)
+On iteration 264, learning rate is 0.007778831392214.
+Training neural net (pass 264)
+On iteration 265, learning rate is 0.00772114306462949.
+Training neural net (pass 265)
+On iteration 266, learning rate is 0.00766388255749406.
+Training neural net (pass 266)
+On iteration 267, learning rate is 0.00760704669806298.
+Training neural net (pass 267)
+On iteration 268, learning rate is 0.00755063233712082.
+Training neural net (pass 268)
+On iteration 269, learning rate is 0.00749463634880695.
+Training neural net (pass 269)
+On iteration 270, learning rate is 0.0074390556304423.
+Training neural net (pass 270)
+On iteration 271, learning rate is 0.00738388710235748.
+Training neural net (pass 271)
+On iteration 272, learning rate is 0.00732912770772217.
+Training neural net (pass 272)
+On iteration 273, learning rate is 0.00727477441237565.
+Training neural net (pass 273)
+On iteration 274, learning rate is 0.00722082420465876.
+Training neural net (pass 274)
+On iteration 275, learning rate is 0.00716727409524703.
+Training neural net (pass 275)
+On iteration 276, learning rate is 0.00711412111698497.
+Training neural net (pass 276)
+On iteration 277, learning rate is 0.00706136232472174.
+Training neural net (pass 277)
+On iteration 278, learning rate is 0.00700899479514792.
+Training neural net (pass 278)
+On iteration 279, learning rate is 0.0081165182310725.
+Training neural net (pass 279)
+On iteration 280, learning rate is 0.00804633697864833.
+Training neural net (pass 280)
+On iteration 281, learning rate is 0.00797676256379312.
+Training neural net (pass 281)
+On iteration 282, learning rate is 0.00790778973935295.
+Training neural net (pass 282)
+On iteration 283, learning rate is 0.00783941330354452.
+Training neural net (pass 283)
+On iteration 284, learning rate is 0.00777162809956294.
+Training neural net (pass 284)
+On iteration 285, learning rate is 0.00770442901519273.
+Training neural net (pass 285)
+On iteration 286, learning rate is 0.0076378109824223.
+Training neural net (pass 286)
+On iteration 287, learning rate is 0.00757176897706175.
+Training neural net (pass 287)
+On iteration 288, learning rate is 0.00750629801836393.
+Training neural net (pass 288)
+On iteration 289, learning rate is 0.0074413931686488.
+Training neural net (pass 289)
+On iteration 290, learning rate is 0.00737704953293107.
+Training neural net (pass 290)
+On iteration 291, learning rate is 0.007313262258551.
+Training neural net (pass 291)
+On iteration 292, learning rate is 0.00725002653480844.
+Training neural net (pass 292)
+On iteration 293, learning rate is 0.00718733759260001.
+Training neural net (pass 293)
+On iteration 294, learning rate is 0.00712519070405944.
+Training neural net (pass 294)
+On iteration 295, learning rate is 0.00706358118220096.
+Training neural net (pass 295)
+On iteration 296, learning rate is 0.00700250438056589.
+Training neural net (pass 296)
+On iteration 297, learning rate is 0.00694195569287213.
+Training neural net (pass 297)
+On iteration 298, learning rate is 0.00688193055266685.
+Training neural net (pass 298)
+On iteration 299, learning rate is 0.00682242443298202.
+Training neural net (pass 299)
+On iteration 300, learning rate is 0.00676343284599304.
+Training neural net (pass 300)
+On iteration 301, learning rate is 0.00670495134268027.
+Training neural net (pass 301)
+On iteration 302, learning rate is 0.00664697551249351.
+Training neural net (pass 302)
+On iteration 303, learning rate is 0.00658950098301932.
+Training neural net (pass 303)
+On iteration 304, learning rate is 0.0065325234196513.
+Training neural net (pass 304)
+On iteration 305, learning rate is 0.00647603852526318.
+Training neural net (pass 305)
+On iteration 306, learning rate is 0.00642004203988473.
+Training neural net (pass 306)
+On iteration 307, learning rate is 0.00636452974038049.
+Training neural net (pass 307)
+On iteration 308, learning rate is 0.00630949744013125.
+Training neural net (pass 308)
+On iteration 309, learning rate is 0.00625494098871834.
+Training neural net (pass 309)
+On iteration 310, learning rate is 0.00620085627161058.
+Training neural net (pass 310)
+On iteration 311, learning rate is 0.00614723920985398.
+Training neural net (pass 311)
+On iteration 312, learning rate is 0.00609408575976415.
+Training neural net (pass 312)
+On iteration 313, learning rate is 0.00604139191262127.
+Training neural net (pass 313)
+On iteration 314, learning rate is 0.0059891536943678.
+Training neural net (pass 314)
+On iteration 315, learning rate is 0.00593736716530877.
+Training neural net (pass 315)
+On iteration 316, learning rate is 0.00588602841981463.
+Training neural net (pass 316)
+On iteration 317, learning rate is 0.00583513358602674.
+Training neural net (pass 317)
+On iteration 318, learning rate is 0.00578467882556529.
+Training neural net (pass 318)
+On iteration 319, learning rate is 0.00573466033323991.
+Training neural net (pass 319)
+On iteration 320, learning rate is 0.00568507433676259.
+Training neural net (pass 320)
+On iteration 321, learning rate is 0.00563591709646329.
+Training neural net (pass 321)
+On iteration 322, learning rate is 0.0055871849050078.
+Training neural net (pass 322)
+On iteration 323, learning rate is 0.00553887408711821.
+Training neural net (pass 323)
+On iteration 324, learning rate is 0.0054909809992957.
+Training neural net (pass 324)
+On iteration 325, learning rate is 0.00544350202954576.
+Training neural net (pass 325)
+On iteration 326, learning rate is 0.00539643359710579.
+Training neural net (pass 326)
+On iteration 327, learning rate is 0.00534977215217502.
+Training neural net (pass 327)
+On iteration 328, learning rate is 0.00530351417564683.
+Training neural net (pass 328)
+On iteration 329, learning rate is 0.00525765617884331.
+Training neural net (pass 329)
+On iteration 330, learning rate is 0.00521219470325217.
+Training neural net (pass 330)
+On iteration 331, learning rate is 0.00516712632026592.
+Training neural net (pass 331)
+On iteration 332, learning rate is 0.00512244763092325.
+Training neural net (pass 332)
+On iteration 333, learning rate is 0.00507815526565274.
+Training neural net (pass 333)
+On iteration 334, learning rate is 0.00503424588401869.
+Training neural net (pass 334)
+On iteration 335, learning rate is 0.00499071617446921.
+Training neural net (pass 335)
+On iteration 336, learning rate is 0.00494756285408646.
+Training neural net (pass 336)
+On iteration 337, learning rate is 0.00490478266833911.
+Training neural net (pass 337)
+On iteration 338, learning rate is 0.00486237239083679.
+Training neural net (pass 338)
+On iteration 339, learning rate is 0.00482032882308686.
+Training neural net (pass 339)
+On iteration 340, learning rate is 0.00477864879425313.
+Training neural net (pass 340)
+On iteration 341, learning rate is 0.00541409046961914.
+Training neural net (pass 341)
+On iteration 342, learning rate is 0.00536062174532127.
+Training neural net (pass 342)
+On iteration 343, learning rate is 0.00530768106991619.
+Training neural net (pass 343)
+On iteration 344, learning rate is 0.00525526322847432.
+Training neural net (pass 344)
+On iteration 345, learning rate is 0.0052033630575679.
+Training neural net (pass 345)
+On iteration 346, learning rate is 0.00515197544476237.
+Training neural net (pass 346)
+On iteration 347, learning rate is 0.00510109532811282.
+Training neural net (pass 347)
+On iteration 348, learning rate is 0.0050507176956653.
+Training neural net (pass 348)
+On iteration 349, learning rate is 0.00500083758496317.
+Training neural net (pass 349)
+On iteration 350, learning rate is 0.00495145008255824.
+Training neural net (pass 350)
+On iteration 351, learning rate is 0.00490255032352675.
+Training neural net (pass 351)
+On iteration 352, learning rate is 0.00485413349099023.
+Training neural net (pass 352)
+On iteration 353, learning rate is 0.00480619481564092.
+Training neural net (pass 353)
+On iteration 354, learning rate is 0.00475872957527203.
+Training neural net (pass 354)
+On iteration 355, learning rate is 0.00471173309431254.
+Training neural net (pass 355)
+On iteration 356, learning rate is 0.00466520074336667.
+Training neural net (pass 356)
+On iteration 357, learning rate is 0.00461912793875783.
+Training neural net (pass 357)
+On iteration 358, learning rate is 0.00457351014207712.
+Training neural net (pass 358)
+On iteration 359, learning rate is 0.00452834285973625.
+Training neural net (pass 359)
+On iteration 360, learning rate is 0.00448362164252495.
+Training neural net (pass 360)
+On iteration 361, learning rate is 0.00443934208517262.
+Training neural net (pass 361)
+On iteration 362, learning rate is 0.00439549982591448.
+Training neural net (pass 362)
+On iteration 363, learning rate is 0.00435209054606184.
+Training neural net (pass 363)
+On iteration 364, learning rate is 0.00430910996957673.
+Training neural net (pass 364)
+On iteration 365, learning rate is 0.00426655386265065.
+Training neural net (pass 365)
+On iteration 366, learning rate is 0.00422441803328758.
+Training neural net (pass 366)
+On iteration 367, learning rate is 0.00418269833089097.
+Training neural net (pass 367)
+On iteration 368, learning rate is 0.00414139064585493.
+Training neural net (pass 368)
+On iteration 369, learning rate is 0.00410049090915943.
+Training neural net (pass 369)
+On iteration 370, learning rate is 0.004.
+Training neural net (pass 370)
+Doing final combination to produce final.mdl
+Getting average posterior for purposes of adjusting the priors.
+Re-adjusting priors based on computed posteriors
+Done
+Cleaning up data
+steps/nnet2/remove_egs.sh: Finished deleting examples in /home/samuel/wsj-pf-data/exp/nnet2_online/nnet_ms_a/egs
+Removing most of the models

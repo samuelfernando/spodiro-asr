@@ -1,0 +1,224 @@
+nohup: ignoring input
+steps/nnet2/train_multisplice_accel2.sh --stage -10 --exit-stage -100 --num-epochs 1 --num-jobs-initial 2 --num-jobs-final 8 --num-hidden-layers 5 --splice-indexes layer0/-1:0:1 layer1/-2:1 layer2/-4:2 --feat-type raw --online-ivector-dir /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/ivectors_train --cmvn-opts --norm-means=false --norm-vars=false --num-threads 1 --minibatch-size 512 --parallel-opts --gpu 1 --io-opts --max-jobs-run 12 --initial-effective-lrate 0.005 --final-effective-lrate 0.0005 --cmd run.pl --mem 2G --pnorm-input-dim 2000 --pnorm-output-dim 250 --mix-up 12000 /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/tri4a_ali /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a
+/home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/tri4a_ali /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a
+steps/nnet2/make_multisplice_configs.py contexts --splice-indexes layer0/-1:0:1 layer1/-2:1 layer2/-4:2 /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a
+Namespace(bias_stddev=None, initial_learning_rate=None, ivector_dim=None, lda_dim=None, lda_mat=None, mode='contexts', num_hidden_layers=None, num_targets=None, online_preconditioning_opts=None, output_dir='/home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a', pnorm_input_dim=None, pnorm_output_dim=None, splice_indexes='layer0/-1:0:1 layer1/-2:1 layer2/-4:2', total_input_dim=None)
+['', '0/-1:0:1 ', '1/-2:1 ', '2/-4:2']
+[-7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4]
+nnet_left_context=7; nnet_right_context=4 first_left_context=1; first_right_context=1
+steps/nnet2/train_multisplice_accel2.sh: calling get_lda.sh
+steps/nnet2/get_lda.sh --cmvn-opts --norm-means=false --norm-vars=false --feat-type raw --online-ivector-dir /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/ivectors_train --transform-dir /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/tri4a_ali --left-context 1 --right-context 1 --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/tri4a_ali /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a
+steps/nnet2/get_lda.sh: feature type is raw
+feat-to-dim 'ark,s,cs:utils/subset_scp.pl --quiet 250 /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires/split40/1/feats.scp | apply-cmvn --norm-means=false --norm-vars=false --utt2spk=ark:/home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires/split40/1/utt2spk scp:/home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires/split40/1/cmvn.scp scp:- ark:- |' - 
+apply-cmvn --norm-means=false --norm-vars=false --utt2spk=ark:/home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires/split40/1/utt2spk scp:/home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires/split40/1/cmvn.scp scp:- ark:- 
+WARNING (feat-to-dim:Close():kaldi-io.cc:500) Pipe utils/subset_scp.pl --quiet 250 /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires/split40/1/feats.scp | apply-cmvn --norm-means=false --norm-vars=false --utt2spk=ark:/home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires/split40/1/utt2spk scp:/home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires/split40/1/cmvn.scp scp:- ark:- | had nonzero return status 36096
+feat-to-dim scp:/home/samuel/wsj-pf-data/exp_augmented/nnet2_online/ivectors_train/ivector_online.scp - 
+feat-to-dim "ark,s,cs:utils/subset_scp.pl --quiet 250 /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires/split40/1/feats.scp | apply-cmvn --norm-means=false --norm-vars=false --utt2spk=ark:/home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires/split40/1/utt2spk scp:/home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires/split40/1/cmvn.scp scp:- ark:- | splice-feats --left-context=1 --right-context=1 ark:- ark:- | paste-feats --length-tolerance=10 ark:- 'ark,s,cs:utils/filter_scp.pl /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires/split40/1/utt2spk /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/ivectors_train/ivector_online.scp | subsample-feats --n=-10 scp:- ark:- | ivector-randomize --randomize-prob=0.0 ark:- ark:- |' ark:- |" - 
+splice-feats --left-context=1 --right-context=1 ark:- ark:- 
+apply-cmvn --norm-means=false --norm-vars=false --utt2spk=ark:/home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires/split40/1/utt2spk scp:/home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires/split40/1/cmvn.scp scp:- ark:- 
+paste-feats --length-tolerance=10 ark:- 'ark,s,cs:utils/filter_scp.pl /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires/split40/1/utt2spk /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/ivectors_train/ivector_online.scp | subsample-feats --n=-10 scp:- ark:- | ivector-randomize --randomize-prob=0.0 ark:- ark:- |' ark:- 
+subsample-feats --n=-10 scp:- ark:- 
+ivector-randomize --randomize-prob=0.0 ark:- ark:- 
+WARNING (feat-to-dim:Close():kaldi-io.cc:500) Pipe utils/subset_scp.pl --quiet 250 /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires/split40/1/feats.scp | apply-cmvn --norm-means=false --norm-vars=false --utt2spk=ark:/home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires/split40/1/utt2spk scp:/home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires/split40/1/cmvn.scp scp:- ark:- | splice-feats --left-context=1 --right-context=1 ark:- ark:- | paste-feats --length-tolerance=10 ark:- 'ark,s,cs:utils/filter_scp.pl /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires/split40/1/utt2spk /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/ivectors_train/ivector_online.scp | subsample-feats --n=-10 scp:- ark:- | ivector-randomize --randomize-prob=0.0 ark:- ark:- |' ark:- | had nonzero return status 36096
+steps/nnet2/get_lda.sh: Accumulating LDA statistics.
+steps/nnet2/get_lda.sh: Finished estimating LDA
+steps/nnet2/train_multisplice_accel2.sh: calling get_egs2.sh
+steps/nnet2/get_egs2.sh --cmvn-opts --norm-means=false --norm-vars=false --feat-type raw --online-ivector-dir /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/ivectors_train --transform-dir /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/tri4a_ali --left-context 7 --right-context 4 --samples-per-iter 400000 --stage 0 --io-opts --max-jobs-run 12 --cmd run.pl --mem 2G --frames-per-eg 8 /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/tri4a_ali /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a/egs
+steps/nnet2/get_egs2.sh: feature type is raw
+feat-to-dim scp:/home/samuel/wsj-pf-data/exp_augmented/nnet2_online/ivectors_train/ivector_online.scp - 
+steps/nnet2/get_egs2.sh: working out number of frames of training data
+utils/data/get_utt2dur.sh: working out /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires/utt2dur from /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires/segments
+utils/data/get_utt2dur.sh: computed /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires/utt2dur
+feat-to-len scp:/home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires/feats.scp ark,t:- 
+steps/nnet2/get_egs2.sh: creating 42 archives, each with 392395 egs, with
+steps/nnet2/get_egs2.sh:   8 labels per example, and (left,right) context = (7,4)
+steps/nnet2/get_egs2.sh: Getting validation and training subset examples.
+steps/nnet2/get_egs2.sh: ... extracting validation and training-subset alignments.
+copy-int-vector ark:- ark,t:- 
+LOG (copy-int-vector:main():copy-int-vector.cc:83) Copied 707000 vectors of int32.
+... Getting subsets of validation examples for diagnostics and combination.
+steps/nnet2/get_egs2.sh: Generating training examples on disk
+steps/nnet2/get_egs2.sh: recombining and shuffling order of archives on disk
+steps/nnet2/get_egs2.sh: removing temporary archives
+steps/nnet2/get_egs2.sh: Finished preparing training examples
+steps/nnet2/train_multisplice_accel2.sh: initializing neural net
+steps/nnet2/make_multisplice_configs.py --splice-indexes layer0/-1:0:1 layer1/-2:1 layer2/-4:2 --total-input-dim 140 --ivector-dim 100 --lda-mat /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a/lda.mat --lda-dim 220 --pnorm-input-dim 2000 --pnorm-output-dim 250 --online-preconditioning-opts alpha=4.0 num-samples-history=2000 update-period=4 rank-in=20 rank-out=80 max-change-per-sample=0.075 --initial-learning-rate 0.01 --bias-stddev 0.5 --num-hidden-layers 5 --num-targets 3396 configs /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a
+Namespace(bias_stddev=0.5, initial_learning_rate=0.01, ivector_dim=100, lda_dim='220', lda_mat='/home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a/lda.mat', mode='configs', num_hidden_layers=5, num_targets=3396, online_preconditioning_opts='alpha=4.0 num-samples-history=2000 update-period=4 rank-in=20 rank-out=80 max-change-per-sample=0.075', output_dir='/home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a', pnorm_input_dim=2000, pnorm_output_dim=250, splice_indexes='layer0/-1:0:1 layer1/-2:1 layer2/-4:2', total_input_dim=140)
+['', '0/-1:0:1 ', '1/-2:1 ', '2/-4:2']
+[-7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4]
+Training transition probabilities and setting priors
+prepare initial vector for FixedScaleComponent before softmax
+use priors^-0.25 and rescale to average 1
+insert an additional layer of FixedScaleComponent before softmax
+nnet-am-info /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a/0.mdl 
+LOG (nnet-am-info:main():nnet-am-info.cc:76) Printed info about /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a/0.mdl
+nnet-insert --insert-at=6 --randomize-next-component=false /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a/0.mdl - /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a/0.mdl 
+nnet-init /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a/per_element.config - 
+LOG (nnet-init:main():nnet-init.cc:69) Initialized raw neural net and wrote it to -
+LOG (nnet-insert:main():nnet-insert.cc:106) Inserted 1 components at position 6
+LOG (nnet-insert:main():nnet-insert.cc:132) Write neural-net acoustic model to /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a/0.mdl
+steps/nnet2/train_multisplice_accel2.sh: Will train for 1 epochs = 67 iterations
+steps/nnet2/train_multisplice_accel2.sh: Will not do mix up
+On iteration 0, learning rate is 0.01.
+Training neural net (pass 0)
+On iteration 1, learning rate is 0.0098638763405737.
+Training neural net (pass 1)
+On iteration 2, learning rate is 0.00972960564621295.
+Training neural net (pass 2)
+nnet-am-info /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a/2.mdl 
+LOG (nnet-am-info:main():nnet-am-info.cc:76) Printed info about /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a/2.mdl
+On iteration 3, learning rate is 0.00959716269367922.
+Training neural net (pass 3)
+On iteration 4, learning rate is 0.0094665226030819.
+Training neural net (pass 4)
+nnet-am-info /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a/4.mdl 
+LOG (nnet-am-info:main():nnet-am-info.cc:76) Printed info about /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a/4.mdl
+On iteration 5, learning rate is 0.00933766083320457.
+Training neural net (pass 5)
+On iteration 6, learning rate is 0.0138158297653422.
+Training neural net (pass 6)
+nnet-am-info /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a/6.mdl 
+LOG (nnet-am-info:main():nnet-am-info.cc:76) Printed info about /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a/6.mdl
+On iteration 7, learning rate is 0.0135346927680573.
+Training neural net (pass 7)
+On iteration 8, learning rate is 0.0132592766006165.
+Training neural net (pass 8)
+nnet-am-info /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a/8.mdl 
+LOG (nnet-am-info:main():nnet-am-info.cc:76) Printed info about /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a/8.mdl
+On iteration 9, learning rate is 0.012989464850401.
+Training neural net (pass 9)
+On iteration 10, learning rate is 0.0127251434736611.
+Training neural net (pass 10)
+On iteration 11, learning rate is 0.0124662007473126.
+Training neural net (pass 11)
+On iteration 12, learning rate is 0.0122125272217136.
+Training neural net (pass 12)
+On iteration 13, learning rate is 0.0119640156744024.
+Training neural net (pass 13)
+On iteration 14, learning rate is 0.0117205610647771.
+Training neural net (pass 14)
+On iteration 15, learning rate is 0.0114820604896968.
+Training neural net (pass 15)
+On iteration 16, learning rate is 0.0112484131399868.
+Training neural net (pass 16)
+On iteration 17, learning rate is 0.0146926936771049.
+Training neural net (pass 17)
+On iteration 18, learning rate is 0.0142954115358837.
+Training neural net (pass 18)
+On iteration 19, learning rate is 0.0139088716794472.
+Training neural net (pass 19)
+On iteration 20, learning rate is 0.0135327836424801.
+Training neural net (pass 20)
+On iteration 21, learning rate is 0.0131668648136853.
+Training neural net (pass 21)
+On iteration 22, learning rate is 0.0128108402234155.
+Training neural net (pass 22)
+On iteration 23, learning rate is 0.0124644423370475.
+Training neural net (pass 23)
+On iteration 24, learning rate is 0.0121274108539433.
+Training neural net (pass 24)
+On iteration 25, learning rate is 0.0117994925118471.
+Training neural net (pass 25)
+On iteration 26, learning rate is 0.0114804408965715.
+Training neural net (pass 26)
+On iteration 27, learning rate is 0.0111700162568296.
+Training neural net (pass 27)
+On iteration 28, learning rate is 0.0135849816550925.
+Training neural net (pass 28)
+On iteration 29, learning rate is 0.0131273814178057.
+Training neural net (pass 29)
+On iteration 30, learning rate is 0.012685195112056.
+Training neural net (pass 30)
+On iteration 31, learning rate is 0.0122579035307582.
+Training neural net (pass 31)
+On iteration 32, learning rate is 0.0118450049559403.
+Training neural net (pass 32)
+On iteration 33, learning rate is 0.011446014569636.
+Training neural net (pass 33)
+On iteration 34, learning rate is 0.0110604638846198.
+Training neural net (pass 34)
+On iteration 35, learning rate is 0.0106879001943179.
+Training neural net (pass 35)
+On iteration 36, learning rate is 0.0103278860412488.
+Training neural net (pass 36)
+On iteration 37, learning rate is 0.00997999870336819.
+Training neural net (pass 37)
+On iteration 38, learning rate is 0.00964382969771689.
+Training neural net (pass 38)
+On iteration 39, learning rate is 0.00931898430078735.
+Training neural net (pass 39)
+On iteration 40, learning rate is 0.0108060973020559.
+Training neural net (pass 40)
+On iteration 41, learning rate is 0.0103707873891559.
+Training neural net (pass 41)
+On iteration 42, learning rate is 0.00995301338352858.
+Training neural net (pass 42)
+On iteration 43, learning rate is 0.00955206887340904.
+Training neural net (pass 43)
+Warning: the mix up opertion is disabled!
+    Ignore mix up leaves number specified
+On iteration 44, learning rate is 0.00916727590393357.
+Training neural net (pass 44)
+On iteration 45, learning rate is 0.00879798383078957.
+Training neural net (pass 45)
+On iteration 46, learning rate is 0.00844356822004467.
+Training neural net (pass 46)
+On iteration 47, learning rate is 0.00810342979229482.
+Training neural net (pass 47)
+On iteration 48, learning rate is 0.00777699340934605.
+Training neural net (pass 48)
+On iteration 49, learning rate is 0.00746370710171651.
+Training neural net (pass 49)
+On iteration 50, learning rate is 0.00716304113531423.
+Training neural net (pass 50)
+On iteration 51, learning rate is 0.00802023496833153.
+Training neural net (pass 51)
+On iteration 52, learning rate is 0.00764458226640038.
+Training neural net (pass 52)
+On iteration 53, learning rate is 0.00728652442958545.
+Training neural net (pass 53)
+On iteration 54, learning rate is 0.00694523734753995.
+Training neural net (pass 54)
+On iteration 55, learning rate is 0.00661993550969376.
+Training neural net (pass 55)
+On iteration 56, learning rate is 0.00630987019731255.
+Training neural net (pass 56)
+On iteration 57, learning rate is 0.00601432776023749.
+Training neural net (pass 57)
+On iteration 58, learning rate is 0.00573262797433922.
+Training neural net (pass 58)
+On iteration 59, learning rate is 0.0054641224759056.
+Training neural net (pass 59)
+On iteration 60, learning rate is 0.00520819326935971.
+Training neural net (pass 60)
+On iteration 61, learning rate is 0.00496425130487365.
+Training neural net (pass 61)
+On iteration 62, learning rate is 0.00540769728297614.
+Training neural net (pass 62)
+On iteration 63, learning rate is 0.00511920885599182.
+Training neural net (pass 63)
+On iteration 64, learning rate is 0.00484611063451436.
+Training neural net (pass 64)
+On iteration 65, learning rate is 0.00458758158586657.
+Training neural net (pass 65)
+On iteration 66, learning rate is 0.004.
+Training neural net (pass 66)
+Doing final combination to produce final.mdl
+Getting average posterior for purposes of adjusting the priors.
+Re-adjusting priors based on computed posteriors
+Done
+Cleaning up data
+steps/nnet2/remove_egs.sh: Finished deleting examples in /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a/egs
+Removing most of the models
+steps/online/nnet2/extract_ivectors_online.sh --cmd run.pl --nj /home/samuel/wsj-pf-data/data/wsj/head_eval_test/5dB_hires /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/extractor /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/ivectors_wsj_head_eval_test_5dB
+Usage: steps/online/nnet2/extract_ivectors_online.sh [options] <data> <extractor-dir> <ivector-dir>
+ e.g.: steps/online/nnet2/extract_ivectors_online.sh data/train exp/nnet2_online/extractor exp/nnet2_online/ivectors_train
+main options (for others, see top of script file)
+  --config <config-file>                           # config containing options
+  --cmd (utils/run.pl|utils/queue.pl <queue opts>) # how to run jobs.
+  --nj <n|10>                                      # Number of jobs
+  --stage <stage|0>                                # To control partial reruns
+  --num-gselect <n|5>                              # Number of Gaussians to select using
+                                                   # diagonal model.
+  --min-post <float;default=0.025>                 # Pruning threshold for posteriors
+  --ivector-period <int;default=10>                # How often to extract an iVector (frames)

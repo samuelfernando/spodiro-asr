@@ -1,0 +1,4 @@
+nohup: ignoring input
+steps/online/nnet2/extract_ivectors_online.sh --cmd run.pl --nj 13 /home/samuel/wsj-pf-data/data/wsj/head_eval_test/5dB_hires /home/samuel/wsj-pf-data/exp/nnet2_online/extractor /home/samuel/wsj-pf-data/exp/nnet2_online/ivectors_wsj_head_eval_test_5dB
+steps/online/nnet2/extract_ivectors_online.sh: extracting iVectors
+steps/online/nnet2/extract_ivectors_online.sh: combining iVectors across jobs

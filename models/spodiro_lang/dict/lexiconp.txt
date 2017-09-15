@@ -1,0 +1,47 @@
+A	1.0	ah
+A	1.0	ax
+A	1.0	ey
+AM	1.0	ae m
+AND	1.0	ae n d
+AND	1.0	ax n
+AND	1.0	ax n d
+B	1.0	B IY
+BROCCOLI	1.0	b r oh k ax l iy
+BUTTER	1.0	b ah t ax
+BUTTER	1.0	b ah t ax r
+CARROTS	1.0	k ae r ax t s
+CHEESE	1.0	ch iy z
+CHICKEN	1.0	ch ih k ih n
+CHIPS	1.0	ch ih p s
+CHOCOLATE	1.0	ch oh k l ax t
+CREAM	1.0	k r iy m
+C	1.0	S IY
+CUCUMBER	1.0	k y uw k ah m b ax
+CUCUMBER	1.0	k y uw k ah m b ax r
+FISH	1.0	f ih sh
+FIVE	1.0	f ay v
+FORTY	1.0	f ao t iy
+HELLO	1.0	hh ax l ow
+I	1.0	ay
+ICE	1.0	ay s
+MILK	1.0	m ih l k
+ONE	1.0	w ah n
+PEPPERONI	1.0	P EH P ER OW N IY
+PIZZA	1.0	p iy t s ax
+PORK	1.0	p ao k
+PORTIONS	1.0	p ao sh n z
+PUDDING	1.0	p uh d ih ng
+RASPBERRY	1.0	r aa z b ax r iy
+READY	1.0	r eh d iy
+SEVENTEEN	1.0	s eh v n t iy n
+SIXTY	1.0	s ih k s t iy
+START	1.0	s t aa t
+STEAMED	1.0	s t iy m d
+TESTING	1.0	t eh s t ih ng
+THREE	1.0	th r iy
+TO	1.0	t ax
+TO	1.0	t uw
+TWO	1.0	t uw
+ZEENO	1.0	Z IY N OW
+!SIL	1.0	SIL
+!NOISE	1.0	NOISE

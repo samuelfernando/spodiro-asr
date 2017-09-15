@@ -1,0 +1,40 @@
+# online2-wav-nnet2-latgen-faster --online=true --do-endpointing=false --config=exp_augmented/nnet2_online/nnet_a_gpu_fast_online/conf/online_nnet2_decoding.conf --max-active=7000 --beam=15.0 --lattice-beam=6.0 --acoustic-scale=0.1 --word-symbol-table=exp_augmented/tri4a/miro_grammar_graph/words.txt exp_augmented/nnet2_online/nnet_a_gpu_fast_online/final.mdl exp_augmented/tri4a/miro_grammar_graph/HCLG.fst ark:data/noisy_catch/split8/5/spk2utt "ark,s,cs:extract-segments scp,p:data/noisy_catch/split8/5/wav.scp data/noisy_catch/split8/5/segments ark:- |" "ark:|gzip -c > exp_augmented/nnet2_online/nnet_a_gpu_fast_online/decode_catch_noisy/lat.5.gz" 
+# Started at Mon Feb 27 09:44:26 GMT 2017
+#
+online2-wav-nnet2-latgen-faster --online=true --do-endpointing=false --config=exp_augmented/nnet2_online/nnet_a_gpu_fast_online/conf/online_nnet2_decoding.conf --max-active=7000 --beam=15.0 --lattice-beam=6.0 --acoustic-scale=0.1 --word-symbol-table=exp_augmented/tri4a/miro_grammar_graph/words.txt exp_augmented/nnet2_online/nnet_a_gpu_fast_online/final.mdl exp_augmented/tri4a/miro_grammar_graph/HCLG.fst ark:data/noisy_catch/split8/5/spk2utt 'ark,s,cs:extract-segments scp,p:data/noisy_catch/split8/5/wav.scp data/noisy_catch/split8/5/segments ark:- |' 'ark:|gzip -c > exp_augmented/nnet2_online/nnet_a_gpu_fast_online/decode_catch_noisy/lat.5.gz' 
+LOG (online2-wav-nnet2-latgen-faster:ComputeDerivedVars():ivector-extractor.cc:183) Computing derived variables for iVector extractor
+LOG (online2-wav-nnet2-latgen-faster:ComputeDerivedVars():ivector-extractor.cc:204) Done.
+extract-segments scp,p:data/noisy_catch/split8/5/wav.scp data/noisy_catch/split8/5/segments ark:- 
+05m_catch-0.589-2.158 HELLO MIRO 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 05m_catch-0.589-2.158
+05m_catch-10.005-12.294 STAY THERE 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 05m_catch-10.005-12.294
+05m_catch-12.621-14.420 WAG YOUR TAIL 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 05m_catch-12.621-14.420
+05m_catch-14.812-16.643 NOD YOUR HEAD 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 05m_catch-14.812-16.643
+05m_catch-16.905-18.899 GO TO SLEEP 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 05m_catch-16.905-18.899
+05m_catch-19.095-20.763 ARE YOU HAPPY 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 05m_catch-19.095-20.763
+05m_catch-2.616-4.872 HELLO MIRO 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 05m_catch-2.616-4.872
+05m_catch-21.123-22.823 ARE YOU SAD 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 05m_catch-21.123-22.823
+05m_catch-23.019-24.883 HOW ARE YOU FEELING 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 05m_catch-23.019-24.883
+05m_catch-25.014-26.550 WAKE UP 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 05m_catch-25.014-26.550
+05m_catch-5.134-6.866 HEY MIRO 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 05m_catch-5.134-6.866
+LOG (extract-segments:main():extract-segments.cc:194) Successfully processed 12 lines out of 12 in the segments file. 
+05m_catch-7.357-9.580 NOD YOUR HEAD 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:273) Decoded utterance 05m_catch-7.357-9.580
+LOG (online2-wav-nnet2-latgen-faster:Print():online-timing.cc:36) Timing stats: real-time factor was 1.0218 (note: this cannot be less than one.)
+LOG (online2-wav-nnet2-latgen-faster:Print():online-timing.cc:38) Average delay was 0.0408124 seconds.
+LOG (online2-wav-nnet2-latgen-faster:Print():online-timing.cc:42) Percentage of time spent idling was 80.0061
+LOG (online2-wav-nnet2-latgen-faster:Print():online-timing.cc:44) Longest delay was 0.0821588 seconds for utterance '05m_catch-7.357-9.580'
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:279) Decoded 12 utterances, 0 with errors.
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:281) Overall likelihood per frame was 0.219814 per frame over 2222 frames.
+# Accounting: time=6 threads=1
+# Ended (code 0) at Mon Feb 27 09:44:32 GMT 2017, elapsed time 6 seconds

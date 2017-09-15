@@ -1,0 +1,8 @@
+nohup: ignoring input
+./online_prep.sh: formatting combined model for online decoding.
+steps/online/nnet2/prepare_online_decoding_retrain.sh /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_a_gpu_baseline_0.25_epoch_online /home/samuel/wsj-pf-data/exp_augmented/nnet2_online_wsj_pf/nnet_a /home/samuel/wsj-pf-data/exp_augmented/nnet2_online_wsj_pf/nnet_a_online
+steps/online/nnet2/prepare_online_decoding_retrain.sh: warning: it's better if you add the new <lang> directory as the 2nd argument.
+cp: cannot stat '/home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_a_gpu_baseline_0.25_epoch_online/ivector_extractor/*': No such file or directory
+nnet-am-info /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_a_gpu_baseline_0.25_epoch_online/final.mdl 
+LOG (nnet-am-info:main():nnet-am-info.cc:76) Printed info about /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_a_gpu_baseline_0.25_epoch_online/final.mdl
+steps/online/nnet2/prepare_online_decoding_retrain.sh: formatted neural net for online decoding in /home/samuel/wsj-pf-data/exp_augmented/nnet2_online_wsj_pf/nnet_a_online

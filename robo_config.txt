@@ -1,0 +1,11 @@
+dummy
+--do-endpointing=true
+--config=online-models/yeti_zeno/tri4a_online_gmm/conf/online_decoding.conf
+--max-active=7000
+--beam=13.0
+--lattice-beam=6.0
+--acoustic-scale=0.083333
+--word-symbol-table=grammar/root_lang/words.txt
+online-models/graph-simple-yeti-zeno/HCLG.fst
+scp:wav.scp
+ark:|gzip -c > online-models/tri4a_online_gmm/lat.1.gz

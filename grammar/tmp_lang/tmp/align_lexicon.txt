@@ -1,0 +1,41 @@
+ANGLE ae_B ng_I g_I l_E
+CHANGE ch_B ey_I n_I jh_E
+EIGHTEEN ey_B t_I iy_I n_E
+EIGHT ey_B t_E
+EIGHTY ey_B t_I iy_E
+ELEVEN ih_B l_I eh_I v_I n_E
+FIFTEEN f_B ih_I f_I t_I iy_I n_E
+FIFTY f_B ih_I f_I t_I iy_E
+FIVE f_B ay_I v_E
+FORTY f_B ao_I t_I iy_E
+FOUR f_B ao_E
+FOUR f_B ao_I r_E
+FOURTEEN f_B ao_I t_I iy_I n_E
+JETSON jh_B eh_I t_I s_I ah_I n_E
+LISTENING l_B ih_I s_I n_I ih_I ng_E
+NINE n_B ay_I n_E
+NINETEEN n_B ay_I n_I t_I iy_I n_E
+NINETY n_B ay_I n_I t_I iy_E
+ONE w_B ah_I n_E
+SEVEN s_B eh_I v_I n_E
+SEVENTEEN s_B eh_I v_I n_I t_I iy_I n_E
+SEVENTY s_B eh_I v_I n_I t_I iy_E
+SIX s_B ih_I k_I s_E
+SIXTEEN s_B ih_I k_I s_I t_I iy_I n_E
+SIXTY s_B ih_I k_I s_I t_I iy_E
+SPEED s_B p_I iy_I d_E
+START s_B t_I aa_I t_E
+STOP s_B t_I oh_I p_E
+TEN t_B eh_I n_E
+THIRTEEN th_B er_I t_I iy_I n_E
+THIRTY th_B er_I t_I iy_E
+THREE th_B r_I iy_E
+TO t_B ax_E
+TO t_B uw_E
+TWELVE t_B w_I eh_I l_I v_E
+TWENTY t_B w_I eh_I n_I t_I iy_E
+TWO t_B uw_E
+ZERO z_B ia_I r_I ow_E
+!SIL SIL_S
+!NOISE NOISE_S
+<eps> SIL

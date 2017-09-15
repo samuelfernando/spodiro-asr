@@ -1,0 +1,215 @@
+nohup: ignoring input
+steps/train_mono.sh --nj 64 --cmd run.pl /home/samuel/wsj-pf-data/data/balanced /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_balanced/mono0a
+steps/train_mono.sh: Initializing monophone system.
+steps/train_mono.sh: Compiling training graphs
+steps/train_mono.sh: Aligning data equally (pass 0)
+steps/train_mono.sh: Pass 1
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 2
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 3
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 4
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 5
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 6
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 7
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 8
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 9
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 10
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 11
+steps/train_mono.sh: Pass 12
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 13
+steps/train_mono.sh: Pass 14
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 15
+steps/train_mono.sh: Pass 16
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 17
+steps/train_mono.sh: Pass 18
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 19
+steps/train_mono.sh: Pass 20
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 21
+steps/train_mono.sh: Pass 22
+steps/train_mono.sh: Pass 23
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 24
+steps/train_mono.sh: Pass 25
+steps/train_mono.sh: Pass 26
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 27
+steps/train_mono.sh: Pass 28
+steps/train_mono.sh: Pass 29
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 30
+steps/train_mono.sh: Pass 31
+steps/train_mono.sh: Pass 32
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 33
+steps/train_mono.sh: Pass 34
+steps/train_mono.sh: Pass 35
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 36
+steps/train_mono.sh: Pass 37
+steps/train_mono.sh: Pass 38
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 39
+25114 warnings in /home/samuel/wsj-pf-data/exp_balanced/mono0a/log/acc.*.*.log
+204725 warnings in /home/samuel/wsj-pf-data/exp_balanced/mono0a/log/align.*.*.log
+Done
+tree-info /home/samuel/wsj-pf-data/exp_balanced/mono0a/tree 
+tree-info /home/samuel/wsj-pf-data/exp_balanced/mono0a/tree 
+make-h-transducer --disambig-syms-out=/home/samuel/wsj-pf-data/exp_balanced/mono0a/graph/disambig_tid.int --transition-scale=1.0 /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval/tmp/ilabels_1_0 /home/samuel/wsj-pf-data/exp_balanced/mono0a/tree /home/samuel/wsj-pf-data/exp_balanced/mono0a/final.mdl 
+fsttablecompose /home/samuel/wsj-pf-data/exp_balanced/mono0a/graph/Ha.fst /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval/tmp/CLG_1_0.fst 
+fstminimizeencoded 
+fstdeterminizestar --use-log=true 
+fstrmepslocal 
+fstrmsymbols /home/samuel/wsj-pf-data/exp_balanced/mono0a/graph/disambig_tid.int 
+WARNING (fsttablecompose:main():fsttablecompose.cc:132) The second FST is not ilabel sorted.
+fstisstochastic /home/samuel/wsj-pf-data/exp_balanced/mono0a/graph/HCLGa.fst 
+0.000839189 -1.60645
+HCLGa is not stochastic
+add-self-loops --self-loop-scale=0.1 --reorder=true /home/samuel/wsj-pf-data/exp_balanced/mono0a/final.mdl 
+steps/decode.sh --nj 32 --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/exp_balanced/mono0a/graph /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_balanced/mono0a/decode
+Refusing to split data because number of speakers 13 is less than the number of output .scp files 32 at utils/split_scp.pl line 114, <I> line 1239.
+steps/align_si.sh --nj 64 --cmd run.pl /home/samuel/wsj-pf-data/data/balanced /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_balanced/mono0a /home/samuel/wsj-pf-data/exp_balanced/mono0a_ali
+steps/align_si.sh: feature type is delta
+steps/align_si.sh: aligning data in /home/samuel/wsj-pf-data/data/balanced using model from /home/samuel/wsj-pf-data/exp_balanced/mono0a, putting alignments in /home/samuel/wsj-pf-data/exp_balanced/mono0a_ali
+steps/align_si.sh: done aligning data.
+steps/train_deltas.sh --cmd run.pl 2000 10000 /home/samuel/wsj-pf-data/data/balanced /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_balanced/mono0a_ali /home/samuel/wsj-pf-data/exp_balanced/tri1
+steps/train_deltas.sh: accumulating tree stats
+steps/train_deltas.sh: getting questions for tree-building, via clustering
+steps/train_deltas.sh: building the tree
+steps/train_deltas.sh: converting alignments from /home/samuel/wsj-pf-data/exp_balanced/mono0a_ali to use current tree
+steps/train_deltas.sh: compiling graphs of transcripts
+steps/train_deltas.sh: training pass 1
+steps/train_deltas.sh: training pass 2
+steps/train_deltas.sh: training pass 3
+steps/train_deltas.sh: training pass 4
+steps/train_deltas.sh: training pass 5
+steps/train_deltas.sh: training pass 6
+steps/train_deltas.sh: training pass 7
+steps/train_deltas.sh: training pass 8
+steps/train_deltas.sh: training pass 9
+steps/train_deltas.sh: training pass 10
+steps/train_deltas.sh: aligning data
+steps/train_deltas.sh: training pass 11
+steps/train_deltas.sh: training pass 12
+steps/train_deltas.sh: training pass 13
+steps/train_deltas.sh: training pass 14
+steps/train_deltas.sh: training pass 15
+steps/train_deltas.sh: training pass 16
+steps/train_deltas.sh: training pass 17
+steps/train_deltas.sh: training pass 18
+steps/train_deltas.sh: training pass 19
+steps/train_deltas.sh: training pass 20
+steps/train_deltas.sh: aligning data
+steps/train_deltas.sh: training pass 21
+steps/train_deltas.sh: training pass 22
+steps/train_deltas.sh: training pass 23
+steps/train_deltas.sh: training pass 24
+steps/train_deltas.sh: training pass 25
+steps/train_deltas.sh: training pass 26
+steps/train_deltas.sh: training pass 27
+steps/train_deltas.sh: training pass 28
+steps/train_deltas.sh: training pass 29
+steps/train_deltas.sh: training pass 30
+steps/train_deltas.sh: aligning data
+steps/train_deltas.sh: training pass 31
+steps/train_deltas.sh: training pass 32
+steps/train_deltas.sh: training pass 33
+steps/train_deltas.sh: training pass 34
+1 warnings in /home/samuel/wsj-pf-data/exp_balanced/tri1/log/build_tree.log
+14770 warnings in /home/samuel/wsj-pf-data/exp_balanced/tri1/log/acc.*.*.log
+17695 warnings in /home/samuel/wsj-pf-data/exp_balanced/tri1/log/align.*.*.log
+steps/train_deltas.sh: Done training system with delta+delta-delta features in /home/samuel/wsj-pf-data/exp_balanced/tri1
+tree-info /home/samuel/wsj-pf-data/exp_balanced/tri1/tree 
+tree-info /home/samuel/wsj-pf-data/exp_balanced/tri1/tree 
+make-h-transducer --disambig-syms-out=/home/samuel/wsj-pf-data/exp_balanced/tri1/graph/disambig_tid.int --transition-scale=1.0 /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval/tmp/ilabels_3_1 /home/samuel/wsj-pf-data/exp_balanced/tri1/tree /home/samuel/wsj-pf-data/exp_balanced/tri1/final.mdl 
+fsttablecomposefstrmsymbols /home/samuel/wsj-pf-data/exp_balanced/tri1/graph/disambig_tid.int 
+fstdeterminizestar --use-log=true 
+fstminimizeencoded 
+WARNING (fsttablecompose:main():fsttablecompose.cc:132) The second FST is not ilabel sorted.
+fstisstochastic /home/samuel/wsj-pf-data/exp_balanced/tri1/graph/HCLGa.fst 
+0.000886129 -1.60636
+HCLGa is not stochastic
+add-self-loops --self-loop-scale=0.1 --reorder=true /home/samuel/wsj-pf-data/exp_balanced/tri1/final.mdl 
+steps/decode.sh --nj 32 --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/exp_balanced/tri1/graph /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_balanced/tri1/decode
+Refusing to split data because number of speakers 13 is less than the number of output .scp files 32 at utils/split_scp.pl line 114, <I> line 1239.
+steps/align_si.sh --nj 64 --cmd run.pl /home/samuel/wsj-pf-data/data/balanced /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_balanced/tri1 /home/samuel/wsj-pf-data/exp_balanced/tri1_ali
+steps/align_si.sh: feature type is delta
+steps/align_si.sh: aligning data in /home/samuel/wsj-pf-data/data/balanced using model from /home/samuel/wsj-pf-data/exp_balanced/tri1, putting alignments in /home/samuel/wsj-pf-data/exp_balanced/tri1_ali
+steps/align_si.sh: done aligning data.
+steps/train_deltas.sh --cmd run.pl 2500 15000 /home/samuel/wsj-pf-data/data/balanced /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_balanced/tri1_ali /home/samuel/wsj-pf-data/exp_balanced/tri2a
+steps/train_deltas.sh: accumulating tree stats
+steps/train_deltas.sh: getting questions for tree-building, via clustering
+steps/train_deltas.sh: building the tree
+steps/train_deltas.sh: converting alignments from /home/samuel/wsj-pf-data/exp_balanced/tri1_ali to use current tree
+steps/train_deltas.sh: compiling graphs of transcripts
+steps/train_deltas.sh: training pass 1
+steps/train_deltas.sh: training pass 2
+steps/train_deltas.sh: training pass 3
+steps/train_deltas.sh: training pass 4
+steps/train_deltas.sh: training pass 5
+steps/train_deltas.sh: training pass 6
+steps/train_deltas.sh: training pass 7
+steps/train_deltas.sh: training pass 8
+steps/train_deltas.sh: training pass 9
+steps/train_deltas.sh: training pass 10
+steps/train_deltas.sh: aligning data
+steps/train_deltas.sh: training pass 11
+steps/train_deltas.sh: training pass 12
+steps/train_deltas.sh: training pass 13
+steps/train_deltas.sh: training pass 14
+steps/train_deltas.sh: training pass 15
+steps/train_deltas.sh: training pass 16
+steps/train_deltas.sh: training pass 17
+steps/train_deltas.sh: training pass 18
+steps/train_deltas.sh: training pass 19
+steps/train_deltas.sh: training pass 20
+steps/train_deltas.sh: aligning data
+steps/train_deltas.sh: training pass 21
+steps/train_deltas.sh: training pass 22
+steps/train_deltas.sh: training pass 23
+steps/train_deltas.sh: training pass 24
+steps/train_deltas.sh: training pass 25
+steps/train_deltas.sh: training pass 26
+steps/train_deltas.sh: training pass 27
+steps/train_deltas.sh: training pass 28
+steps/train_deltas.sh: training pass 29
+steps/train_deltas.sh: training pass 30
+steps/train_deltas.sh: aligning data
+steps/train_deltas.sh: training pass 31
+steps/train_deltas.sh: training pass 32
+steps/train_deltas.sh: training pass 33
+steps/train_deltas.sh: training pass 34
+1 warnings in /home/samuel/wsj-pf-data/exp_balanced/tri2a/log/init_model.log
+1 warnings in /home/samuel/wsj-pf-data/exp_balanced/tri2a/log/update.*.log
+10683 warnings in /home/samuel/wsj-pf-data/exp_balanced/tri2a/log/acc.*.*.log
+1 warnings in /home/samuel/wsj-pf-data/exp_balanced/tri2a/log/build_tree.log
+15209 warnings in /home/samuel/wsj-pf-data/exp_balanced/tri2a/log/align.*.*.log
+steps/train_deltas.sh: Done training system with delta+delta-delta features in /home/samuel/wsj-pf-data/exp_balanced/tri2a
+tree-info /home/samuel/wsj-pf-data/exp_balanced/tri2a/tree 
+tree-info /home/samuel/wsj-pf-data/exp_balanced/tri2a/tree 
+make-h-transducer --disambig-syms-out=/home/samuel/wsj-pf-data/exp_balanced/tri2a/graph/disambig_tid.int --transition-scale=1.0 /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval/tmp/ilabels_3_1 /home/samuel/wsj-pf-data/exp_balanced/tri2a/tree /home/samuel/wsj-pf-data/exp_balanced/tri2a/final.mdl 
+fsttablecompose /home/samuel/wsj-pf-data/exp_balanced/tri2a/graph/Ha.fst /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval/tmp/CLG_3_1.fst 
+fstrmsymbols /home/samuel/wsj-pf-data/exp_balanced/tri2a/graph/disambig_tid.int 
+fstminimizeencoded 
+fstdeterminizestar --use-log=true 
+fstrmepslocal 
+WARNING (fsttablecompose:main():fsttablecompose.cc:132) The second FST is not ilabel sorted.
+fstisstochastic /home/samuel/wsj-pf-data/exp_balanced/tri2a/graph/HCLGa.fst 
+0.000894868 -1.6065
+HCLGa is not stochastic
+add-self-loops --self-loop-scale=0.1 --reorder=true /home/samuel/wsj-pf-data/exp_balanced/tri2a/final.mdl 
+steps/decode.sh --nj 32 --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/exp_balanced/tri2a/graph /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_balanced/tri2a/decode
+Refusing to split data because number of speakers 13 is less than the number of output .scp files 32 at utils/split_scp.pl line 114, <I> line 1239.

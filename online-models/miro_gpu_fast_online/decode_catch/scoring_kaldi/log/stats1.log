@@ -1,0 +1,7 @@
+# cat exp_augmented/nnet2_online/nnet_a_gpu_fast_online/decode_catch/scoring_kaldi/penalty_1.0/15.txt | align-text --special-symbol='***' ark:exp_augmented/nnet2_online/nnet_a_gpu_fast_online/decode_catch/scoring_kaldi/test_filt.txt ark:- ark,t:- | utils/scoring/wer_per_utt_details.pl --special-symbol '***' | tee exp_augmented/nnet2_online/nnet_a_gpu_fast_online/decode_catch/scoring_kaldi/wer_details/per_utt | utils/scoring/wer_per_spk_details.pl data/catch_miro/utt2spk > exp_augmented/nnet2_online/nnet_a_gpu_fast_online/decode_catch/scoring_kaldi/wer_details/per_spk 
+# Started at Mon Feb 27 09:22:39 GMT 2017
+#
+align-text '--special-symbol=***' ark:exp_augmented/nnet2_online/nnet_a_gpu_fast_online/decode_catch/scoring_kaldi/test_filt.txt ark:- ark,t:- 
+LOG (align-text:main():align-text.cc:131) Done 96 sentences, failed for 0
+# Accounting: time=0 threads=1
+# Ended (code 0) at Mon Feb 27 09:22:39 GMT 2017, elapsed time 0 seconds

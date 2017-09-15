@@ -1,0 +1,8 @@
+nohup: ignoring input
+steps/nnet2/decode.sh --nj 32 --cmd run.pl --mem 2G /home/samuel/museum-data/healthy_graph /home/samuel/museum-data/kaldi_data/0 exp/nnet2_online/nnet_a_gpu_baseline/decode_museum_0_grammar
+steps/nnet2/decode.sh: feature type is raw
+score best paths
+local/score.sh --cmd run.pl --mem 2G /home/samuel/museum-data/kaldi_data/0 /home/samuel/museum-data/healthy_graph exp/nnet2_online/nnet_a_gpu_baseline/decode_museum_0_grammar
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+score confidence and timing with sclite
+Decoding done.

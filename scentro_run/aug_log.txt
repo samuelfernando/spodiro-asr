@@ -1,0 +1,51 @@
+nohup: ignoring input
+./retrain.sh: training 0-hidden-layer model on top of WSJ activations
+steps/align_fmllr.sh --nj 40 --cmd run.pl /home/samuel/museum-data/kaldi_data/1234 /home/samuel/museum-data/wsj-pfstar-with-museum /home/samuel/wsj-pf-data/exp_augmented/tri4a /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/tri4a_easel_ali
+steps/align_fmllr.sh: feature type is lda
+steps/align_fmllr.sh: compiling training graphs
+steps/align_fmllr.sh: aligning data in /home/samuel/museum-data/kaldi_data/1234 using /home/samuel/wsj-pf-data/exp_augmented/tri4a/final.alimdl and speaker-independent features.
+steps/align_fmllr.sh: computing fMLLR transforms
+steps/align_fmllr.sh: doing final alignment.
+steps/align_fmllr.sh: done aligning data.
+56 warnings in /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/tri4a_easel_ali/log/align_pass2.*.log
+128 warnings in /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/tri4a_easel_ali/log/align_pass1.*.log
+23 warnings in /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/tri4a_easel_ali/log/fmllr.*.log
+steps/nnet2/retrain_fast.sh --stage -10 --num-threads 1 --minibatch-size 512 --parallel-opts -l gpu=1 --cmd run.pl --mem 2G --num-jobs-nnet 4 --mix-up 4000 --initial-learning-rate 0.02 --final-learning-rate 0.004 /home/samuel/wsj-pf-data/exp_augmented/nnet2_online_wsj_pf/wsj_activations_train/data /home/samuel/museum-data/wsj-pfstar-with-museum /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/tri4a_easel_ali /home/samuel/wsj-pf-data/exp_augmented/nnet2_online_wsj_pf/nnet_a
+steps/nnet2/retrain_fast.sh: calling get_egs.sh
+steps/nnet2/get_egs.sh --feat-type raw --cmvn-opts --norm-means=false --norm-vars=false --samples-per-iter 200000 --left-context 0 --right-context 0 --num-jobs-nnet 4 --stage 0 --cmd run.pl --mem 2G --io-opts -tc 5 /home/samuel/wsj-pf-data/exp_augmented/nnet2_online_wsj_pf/wsj_activations_train/data /home/samuel/museum-data/wsj-pfstar-with-museum /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/tri4a_easel_ali /home/samuel/wsj-pf-data/exp_augmented/nnet2_online_wsj_pf/nnet_a
+steps/nnet2/get_egs.sh: feature type is raw
+steps/nnet2/get_egs.sh: working out number of frames of training data
+feat-to-len scp:/home/samuel/wsj-pf-data/exp_augmented/nnet2_online_wsj_pf/wsj_activations_train/data/feats.scp ark,t:- 
+steps/nnet2/get_egs.sh: Every epoch, splitting the data up into 1 iterations,
+steps/nnet2/get_egs.sh: giving samples-per-iteration of 180869 (you requested 200000).
+Getting validation and training subset examples.
+steps/nnet2/get_egs.sh: extracting validation and training-subset alignments.
+copy-int-vector ark:- ark,t:- 
+LOG (copy-int-vector:main():copy-int-vector.cc:83) Copied 2648 vectors of int32.
+Getting subsets of validation examples for diagnostics and combination.
+Creating training examples
+Generating training examples on disk
+steps/nnet2/get_egs.sh: rearranging examples into parts for different parallel jobs
+steps/nnet2/get_egs.sh: Since iters-per-epoch == 1, just concatenating the data.
+Shuffling the order of training examples
+(in order to avoid stressing the disk, these won't all run at once).
+steps/nnet2/get_egs.sh: Finished preparing training examples
+steps/nnet2/retrain_fast.sh: initializing neural net
+feat-to-dim scp:/home/samuel/wsj-pf-data/exp_augmented/nnet2_online_wsj_pf/wsj_activations_train/data/feats.scp - 
+Training transition probabilities and setting priors
+steps/nnet2/retrain_fast.sh: Will train for 4 + 1 epochs, equalling 
+steps/nnet2/retrain_fast.sh: 4 + 1 = 5 iterations, 
+steps/nnet2/retrain_fast.sh: (while reducing learning rate) + (with constant learning rate).
+Training neural net (pass 0)
+Training neural net (pass 1)
+Training neural net (pass 2)
+Mixing up from 3396 to 4000 components
+Training neural net (pass 3)
+Training neural net (pass 4)
+Setting num_iters_final=1
+Doing final combination to produce final.mdl
+Getting average posterior for purposes of adjusting the priors.
+Re-adjusting priors based on computed posteriors
+Done
+Cleaning up data
+steps/nnet2/remove_egs.sh: Finished deleting examples in /home/samuel/wsj-pf-data/exp_augmented/nnet2_online_wsj_pf/nnet_a/egs

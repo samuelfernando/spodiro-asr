@@ -1,0 +1,38 @@
+ANGLE	ae ng g l
+CHANGE	ch ey n jh
+EIGHT	ey t
+EIGHTEEN	ey t iy n
+EIGHTY	ey t iy
+ELEVEN	ih l eh v n
+FIFTEEN	f ih f t iy n
+FIFTY	f ih f t iy
+FIVE	f ay v
+FORTY	f ao t iy
+FOUR	f ao
+FOUR	f ao r
+FOURTEEN	f ao t iy n
+JETSON	jh eh t s ah n
+LISTENING	l ih s n ih ng
+NINE	n ay n
+NINETEEN	n ay n t iy n
+NINETY	n ay n t iy
+ONE	w ah n
+SEVEN	s eh v n
+SEVENTEEN	s eh v n t iy n
+SEVENTY	s eh v n t iy
+SIX	s ih k s
+SIXTEEN	s ih k s t iy n
+SIXTY	s ih k s t iy
+SPEED	s p iy d
+START	s t aa t
+STOP	s t oh p
+TEN	t eh n
+THIRTEEN	th er t iy n
+THIRTY	th er t iy
+THREE	th r iy
+TO	t ax
+TO	t uw
+TWELVE	t w eh l v
+TWENTY	t w eh n t iy
+TWO	t uw
+ZERO	z ia r ow

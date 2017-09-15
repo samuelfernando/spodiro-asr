@@ -1,0 +1,268 @@
+nohup: ignoring input
+steps/decode.sh --nj 13 --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/exp_balanced/mono0a/graph /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_balanced/mono0a/decode
+decode.sh: feature type is delta
+local/score.sh --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_balanced/mono0a/graph /home/samuel/wsj-pf-data/exp_balanced/mono0a/decode
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+steps/decode.sh --nj 13 --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/exp_balanced/tri1/graph /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_balanced/tri1/decode
+decode.sh: feature type is delta
+local/score.sh --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_balanced/tri1/graph /home/samuel/wsj-pf-data/exp_balanced/tri1/decode
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+steps/decode.sh --nj 13 --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/exp_balanced/tri2a/graph /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_balanced/tri2a/decode
+decode.sh: feature type is delta
+local/score.sh --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_balanced/tri2a/graph /home/samuel/wsj-pf-data/exp_balanced/tri2a/decode
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+steps/align_si.sh --nj 64 --cmd run.pl /home/samuel/wsj-pf-data/data/balanced /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_balanced/tri2a /home/samuel/wsj-pf-data/exp_balanced/tri2a_ali
+steps/align_si.sh: feature type is delta
+steps/align_si.sh: aligning data in /home/samuel/wsj-pf-data/data/balanced using model from /home/samuel/wsj-pf-data/exp_balanced/tri2a, putting alignments in /home/samuel/wsj-pf-data/exp_balanced/tri2a_ali
+steps/align_si.sh: done aligning data.
+steps/train_lda_mllt.sh --cmd run.pl --splice-opts --left-context=3 --right-context=3 2500 15000 /home/samuel/wsj-pf-data/data/balanced /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_balanced/tri2a_ali /home/samuel/wsj-pf-data/exp_balanced/tri2b
+Accumulating LDA statistics.
+Accumulating tree stats
+Getting questions for tree clustering.
+Building the tree
+steps/train_lda_mllt.sh: Initializing the model
+Converting alignments from /home/samuel/wsj-pf-data/exp_balanced/tri2a_ali to use current tree
+Compiling graphs of transcripts
+Training pass 1
+Training pass 2
+Estimating MLLT
+Training pass 3
+Training pass 4
+Estimating MLLT
+Training pass 5
+Training pass 6
+Estimating MLLT
+Training pass 7
+Training pass 8
+Training pass 9
+Training pass 10
+Aligning data
+Training pass 11
+Training pass 12
+Estimating MLLT
+Training pass 13
+Training pass 14
+Training pass 15
+Training pass 16
+Training pass 17
+Training pass 18
+Training pass 19
+Training pass 20
+Aligning data
+Training pass 21
+Training pass 22
+Training pass 23
+Training pass 24
+Training pass 25
+Training pass 26
+Training pass 27
+Training pass 28
+Training pass 29
+Training pass 30
+Aligning data
+Training pass 31
+Training pass 32
+Training pass 33
+Training pass 34
+1 warnings in /home/samuel/wsj-pf-data/exp_balanced/tri2b/log/init_model.log
+282 warnings in /home/samuel/wsj-pf-data/exp_balanced/tri2b/log/lda_acc.*.log
+16133 warnings in /home/samuel/wsj-pf-data/exp_balanced/tri2b/log/align.*.*.log
+13048 warnings in /home/samuel/wsj-pf-data/exp_balanced/tri2b/log/acc.*.*.log
+1 warnings in /home/samuel/wsj-pf-data/exp_balanced/tri2b/log/build_tree.log
+Done training system with LDA+MLLT features in /home/samuel/wsj-pf-data/exp_balanced/tri2b
+tree-info /home/samuel/wsj-pf-data/exp_balanced/tri2b/tree 
+tree-info /home/samuel/wsj-pf-data/exp_balanced/tri2b/tree 
+make-h-transducer --disambig-syms-out=/home/samuel/wsj-pf-data/exp_balanced/tri2b/graph/disambig_tid.int --transition-scale=1.0 /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval/tmp/ilabels_3_1 /home/samuel/wsj-pf-data/exp_balanced/tri2b/tree /home/samuel/wsj-pf-data/exp_balanced/tri2b/final.mdl 
+fsttablecompose /home/samuel/wsj-pf-data/exp_balanced/tri2b/graph/Ha.fst /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval/tmp/CLG_3_1.fst 
+fstminimizeencoded 
+fstdeterminizestar --use-log=true 
+fstrmsymbols /home/samuel/wsj-pf-data/exp_balanced/tri2b/graph/disambig_tid.int 
+fstrmepslocal 
+WARNING (fsttablecompose:main():fsttablecompose.cc:132) The second FST is not ilabel sorted.
+fstisstochastic /home/samuel/wsj-pf-data/exp_balanced/tri2b/graph/HCLGa.fst 
+0.000894868 -1.60601
+HCLGa is not stochastic
+add-self-loops --self-loop-scale=0.1 --reorder=true /home/samuel/wsj-pf-data/exp_balanced/tri2b/final.mdl 
+steps/decode.sh --nj 13 --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/exp_balanced/tri2b/graph /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_balanced/tri2b/decode
+decode.sh: feature type is lda
+local/score.sh --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_balanced/tri2b/graph /home/samuel/wsj-pf-data/exp_balanced/tri2b/decode
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+steps/align_si.sh --nj 64 --cmd run.pl --use-graphs true /home/samuel/wsj-pf-data/data/balanced /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_balanced/tri2b /home/samuel/wsj-pf-data/exp_balanced/tri2b_ali
+steps/align_si.sh: feature type is lda
+steps/align_si.sh: aligning data in /home/samuel/wsj-pf-data/data/balanced using model from /home/samuel/wsj-pf-data/exp_balanced/tri2b, putting alignments in /home/samuel/wsj-pf-data/exp_balanced/tri2b_ali
+steps/align_si.sh: done aligning data.
+steps/train_sat.sh --cmd run.pl 2500 15000 /home/samuel/wsj-pf-data/data/balanced /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_balanced/tri2b_ali /home/samuel/wsj-pf-data/exp_balanced/tri3b
+steps/train_sat.sh: feature type is lda
+steps/train_sat.sh: obtaining initial fMLLR transforms since not present in /home/samuel/wsj-pf-data/exp_balanced/tri2b_ali
+steps/train_sat.sh: Accumulating tree stats
+steps/train_sat.sh: Getting questions for tree clustering.
+steps/train_sat.sh: Building the tree
+steps/train_sat.sh: Initializing the model
+steps/train_sat.sh: Converting alignments from /home/samuel/wsj-pf-data/exp_balanced/tri2b_ali to use current tree
+steps/train_sat.sh: Compiling graphs of transcripts
+Pass 1
+Pass 2
+Estimating fMLLR transforms
+Pass 3
+Pass 4
+Estimating fMLLR transforms
+Pass 5
+Pass 6
+Estimating fMLLR transforms
+Pass 7
+Pass 8
+Pass 9
+Pass 10
+Aligning data
+Pass 11
+Pass 12
+Estimating fMLLR transforms
+Pass 13
+Pass 14
+Pass 15
+Pass 16
+Pass 17
+Pass 18
+Pass 19
+Pass 20
+Aligning data
+Pass 21
+Pass 22
+Pass 23
+Pass 24
+Pass 25
+Pass 26
+Pass 27
+Pass 28
+Pass 29
+Pass 30
+Aligning data
+Pass 31
+Pass 32
+Pass 33
+Pass 34
+11772 warnings in /home/samuel/wsj-pf-data/exp_balanced/tri3b/log/acc.*.*.log
+1 warnings in /home/samuel/wsj-pf-data/exp_balanced/tri3b/log/init_model.log
+1748 warnings in /home/samuel/wsj-pf-data/exp_balanced/tri3b/log/fmllr.*.*.log
+13300 warnings in /home/samuel/wsj-pf-data/exp_balanced/tri3b/log/align.*.*.log
+1 warnings in /home/samuel/wsj-pf-data/exp_balanced/tri3b/log/build_tree.log
+steps/train_sat.sh: Likelihood evolution:
+-47.6352 -47.7312 -47.5816 -47.4834 -46.9649 -46.4564 -46.1983 -46.0594 -45.9588 -45.5857 -45.4712 -45.333 -45.2632 -45.2096 -45.1596 -45.1139 -45.0724 -45.0319 -44.9912 -44.8922 -44.8367 -44.8031 -44.7738 -44.7466 -44.7208 -44.6961 -44.6724 -44.6492 -44.6266 -44.5675 -44.5327 -44.5152 -44.5029 -44.494 
+Done
+tree-info /home/samuel/wsj-pf-data/exp_balanced/tri3b/tree 
+tree-info /home/samuel/wsj-pf-data/exp_balanced/tri3b/tree 
+make-h-transducer --disambig-syms-out=/home/samuel/wsj-pf-data/exp_balanced/tri3b/graph/disambig_tid.int --transition-scale=1.0 /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval/tmp/ilabels_3_1 /home/samuel/wsj-pf-data/exp_balanced/tri3b/tree /home/samuel/wsj-pf-data/exp_balanced/tri3b/final.mdl 
+fstrmsymbols /home/samuel/wsj-pf-data/exp_balanced/tri3b/graph/disambig_tid.int 
+fstdeterminizestar --use-log=true 
+fstrmepslocal 
+fstminimizeencoded 
+WARNING (fsttablecompose:main():fsttablecompose.cc:132) The second FST is not ilabel sorted.
+fstisstochastic /home/samuel/wsj-pf-data/exp_balanced/tri3b/graph/HCLGa.fst 
+0.000894868 -1.60606
+HCLGa is not stochastic
+add-self-loops --self-loop-scale=0.1 --reorder=true /home/samuel/wsj-pf-data/exp_balanced/tri3b/final.mdl 
+steps/decode_fmllr.sh --nj 13 --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/exp_balanced/tri3b/graph /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_balanced/tri3b/decode
+steps/decode.sh --scoring-opts  --num-threads 1 --skip-scoring false --acwt 0.083333 --nj 13 --cmd run.pl --mem 2G --beam 10.0 --model /home/samuel/wsj-pf-data/exp_balanced/tri3b/final.alimdl --max-active 2000 /home/samuel/wsj-pf-data/exp_balanced/tri3b/graph /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_balanced/tri3b/decode.si
+decode.sh: feature type is lda
+local/score.sh --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_balanced/tri3b/graph /home/samuel/wsj-pf-data/exp_balanced/tri3b/decode.si
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+steps/decode_fmllr.sh: feature type is lda
+steps/decode_fmllr.sh: getting first-pass fMLLR transforms.
+steps/decode_fmllr.sh: doing main lattice generation phase
+steps/decode_fmllr.sh: estimating fMLLR transforms a second time.
+steps/decode_fmllr.sh: doing a final pass of acoustic rescoring.
+local/score.sh --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_balanced/tri3b/graph /home/samuel/wsj-pf-data/exp_balanced/tri3b/decode
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+steps/align_fmllr.sh --nj 64 --cmd run.pl /home/samuel/wsj-pf-data/data/balanced /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_balanced/tri3b /home/samuel/wsj-pf-data/exp_balanced/tri3b_ali
+steps/align_fmllr.sh: feature type is lda
+steps/align_fmllr.sh: compiling training graphs
+steps/align_fmllr.sh: aligning data in /home/samuel/wsj-pf-data/data/balanced using /home/samuel/wsj-pf-data/exp_balanced/tri3b/final.alimdl and speaker-independent features.
+steps/align_fmllr.sh: computing fMLLR transforms
+steps/align_fmllr.sh: doing final alignment.
+steps/align_fmllr.sh: done aligning data.
+4121 warnings in /home/samuel/wsj-pf-data/exp_balanced/tri3b_ali/log/align_pass1.*.log
+3521 warnings in /home/samuel/wsj-pf-data/exp_balanced/tri3b_ali/log/align_pass2.*.log
+297 warnings in /home/samuel/wsj-pf-data/exp_balanced/tri3b_ali/log/fmllr.*.log
+steps/train_sat.sh --cmd run.pl 4200 40000 /home/samuel/wsj-pf-data/data/balanced /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_balanced/tri3b_ali /home/samuel/wsj-pf-data/exp_balanced/tri4a
+steps/train_sat.sh: feature type is lda
+steps/train_sat.sh: Using transforms from /home/samuel/wsj-pf-data/exp_balanced/tri3b_ali
+steps/train_sat.sh: Accumulating tree stats
+steps/train_sat.sh: Getting questions for tree clustering.
+steps/train_sat.sh: Building the tree
+steps/train_sat.sh: Initializing the model
+steps/train_sat.sh: Converting alignments from /home/samuel/wsj-pf-data/exp_balanced/tri3b_ali to use current tree
+steps/train_sat.sh: Compiling graphs of transcripts
+Pass 1
+Pass 2
+Estimating fMLLR transforms
+Pass 3
+Pass 4
+Estimating fMLLR transforms
+Pass 5
+Pass 6
+Estimating fMLLR transforms
+Pass 7
+Pass 8
+Pass 9
+Pass 10
+Aligning data
+Pass 11
+Pass 12
+Estimating fMLLR transforms
+Pass 13
+Pass 14
+Pass 15
+Pass 16
+Pass 17
+Pass 18
+Pass 19
+Pass 20
+Aligning data
+Pass 21
+Pass 22
+Pass 23
+Pass 24
+Pass 25
+Pass 26
+Pass 27
+Pass 28
+Pass 29
+Pass 30
+Aligning data
+Pass 31
+Pass 32
+Pass 33
+Pass 34
+11558 warnings in /home/samuel/wsj-pf-data/exp_balanced/tri4a/log/acc.*.*.log
+1 warnings in /home/samuel/wsj-pf-data/exp_balanced/tri4a/log/init_model.log
+11670 warnings in /home/samuel/wsj-pf-data/exp_balanced/tri4a/log/align.*.*.log
+1263 warnings in /home/samuel/wsj-pf-data/exp_balanced/tri4a/log/fmllr.*.*.log
+1 warnings in /home/samuel/wsj-pf-data/exp_balanced/tri4a/log/build_tree.log
+steps/train_sat.sh: Likelihood evolution:
+-47.1703 -47.2894 -47.248 -47.1523 -46.599 -46.0124 -45.7372 -45.5666 -45.4023 -45.1318 -45.0183 -44.8456 -44.7692 -44.7062 -44.6448 -44.5867 -44.5321 -44.4825 -44.4369 -44.3392 -44.2775 -44.237 -44.2012 -44.1689 -44.1382 -44.1084 -44.0792 -44.0507 -44.0234 -43.9645 -43.9254 -43.9061 -43.8927 -43.8826 
+Done
+tree-info /home/samuel/wsj-pf-data/exp_balanced/tri4a/tree 
+tree-info /home/samuel/wsj-pf-data/exp_balanced/tri4a/tree 
+make-h-transducer --disambig-syms-out=/home/samuel/wsj-pf-data/exp_balanced/tri4a/graph/disambig_tid.int --transition-scale=1.0 /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval/tmp/ilabels_3_1 /home/samuel/wsj-pf-data/exp_balanced/tri4a/tree /home/samuel/wsj-pf-data/exp_balanced/tri4a/final.mdl 
+fstrmepslocal 
+fsttablecompose /home/samuel/wsj-pf-data/exp_balanced/tri4a/graph/Ha.fst /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval/tmp/CLG_3_1.fst 
+fstdeterminizestar --use-log=true 
+fstrmsymbols /home/samuel/wsj-pf-data/exp_balanced/tri4a/graph/disambig_tid.int 
+fstminimizeencoded 
+WARNING (fsttablecompose:main():fsttablecompose.cc:132) The second FST is not ilabel sorted.
+fstisstochastic /home/samuel/wsj-pf-data/exp_balanced/tri4a/graph/HCLGa.fst 
+0.000894868 -1.60613
+HCLGa is not stochastic
+add-self-loops --self-loop-scale=0.1 --reorder=true /home/samuel/wsj-pf-data/exp_balanced/tri4a/final.mdl 
+steps/decode_fmllr.sh --nj 13 --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/exp_balanced/tri4a/graph /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_balanced/tri4a/decode
+steps/decode.sh --scoring-opts  --num-threads 1 --skip-scoring false --acwt 0.083333 --nj 13 --cmd run.pl --mem 2G --beam 10.0 --model /home/samuel/wsj-pf-data/exp_balanced/tri4a/final.alimdl --max-active 2000 /home/samuel/wsj-pf-data/exp_balanced/tri4a/graph /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_balanced/tri4a/decode.si
+decode.sh: feature type is lda
+local/score.sh --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_balanced/tri4a/graph /home/samuel/wsj-pf-data/exp_balanced/tri4a/decode.si
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+steps/decode_fmllr.sh: feature type is lda
+steps/decode_fmllr.sh: getting first-pass fMLLR transforms.
+steps/decode_fmllr.sh: doing main lattice generation phase
+steps/decode_fmllr.sh: estimating fMLLR transforms a second time.
+steps/decode_fmllr.sh: doing a final pass of acoustic rescoring.
+local/score.sh --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_balanced/tri4a/graph /home/samuel/wsj-pf-data/exp_balanced/tri4a/decode
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0

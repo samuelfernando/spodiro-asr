@@ -1,0 +1,98 @@
+nohup: ignoring input
+utils/copy_data_dir.sh: copied data from /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf to /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires
+utils/validate_data_dir.sh: Successfully validated data-directory /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires
+steps/make_mfcc.sh --nj 40 --mfcc-config conf/mfcc_hires.conf --cmd run.pl /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires /home/samuel/wsj-pf-data/exp_augmented/make_hires/augmented /home/samuel/wsj-pf-data/exp_augmented/mfccs/hires_mfccs
+steps/make_mfcc.sh: moving /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires/feats.scp to /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires/.backup
+utils/validate_data_dir.sh: Successfully validated data-directory /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires
+steps/make_mfcc.sh [info]: segments file exists: using that.
+Succeeded creating MFCC features for augmented-train-wsj-pf_hires
+steps/compute_cmvn_stats.sh /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires /home/samuel/wsj-pf-data/exp_augmented/make_hires/augmented /home/samuel/wsj-pf-data/exp_augmented/mfccs/hires_mfccs
+Succeeded creating CMVN stats for augmented-train-wsj-pf_hires
+steps/align_fmllr.sh --nj 40 --cmd run.pl /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_augmented/tri4a /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/tri4a_ali
+steps/align_fmllr.sh: feature type is lda
+steps/align_fmllr.sh: compiling training graphs
+steps/align_fmllr.sh: aligning data in /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf using /home/samuel/wsj-pf-data/exp_augmented/tri4a/final.alimdl and speaker-independent features.
+steps/align_fmllr.sh: computing fMLLR transforms
+steps/align_fmllr.sh: doing final alignment.
+steps/align_fmllr.sh: done aligning data.
+14523 warnings in /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/tri4a_ali/log/align_pass1.*.log
+13101 warnings in /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/tri4a_ali/log/align_pass2.*.log
+1279 warnings in /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/tri4a_ali/log/fmllr.*.log
+steps/train_lda_mllt.sh --cmd run.pl --num-iters 13 --realign-iters  --splice-opts --left-context=3 --right-context=3 5000 10000 /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/tri4a_ali /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/tri5b
+Accumulating LDA statistics.
+Accumulating tree stats
+Getting questions for tree clustering.
+Building the tree
+steps/train_lda_mllt.sh: Initializing the model
+Converting alignments from /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/tri4a_ali to use current tree
+Training pass 1
+Training pass 2
+Estimating MLLT
+Training pass 3
+Training pass 4
+Estimating MLLT
+Training pass 5
+Training pass 6
+Estimating MLLT
+Training pass 7
+Training pass 8
+Training pass 9
+Training pass 10
+Training pass 11
+Training pass 12
+Estimating MLLT
+1 warnings in /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/tri5b/log/build_tree.log
+1123 warnings in /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/tri5b/log/lda_acc.*.log
+13476 warnings in /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/tri5b/log/acc.*.*.log
+Done training system with LDA+MLLT features in /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/tri5b
+steps/online/nnet2/train_diag_ubm.sh --cmd run.pl --nj 30 --num-frames 400000 /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires 256 /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/tri5b /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/diag_ubm
+steps/online/nnet2/train_diag_ubm.sh: initializing model from E-M in memory, 
+steps/online/nnet2/train_diag_ubm.sh: starting from 128 Gaussians, reaching 256;
+steps/online/nnet2/train_diag_ubm.sh: for 20 iterations, using at most 400000 frames of data
+Getting Gaussian-selection info
+steps/online/nnet2/train_diag_ubm.sh: will train for 4 iterations, in parallel over
+steps/online/nnet2/train_diag_ubm.sh: 30 machines, parallelized with 'run.pl'
+steps/online/nnet2/train_diag_ubm.sh: Training pass 0
+steps/online/nnet2/train_diag_ubm.sh: Training pass 1
+steps/online/nnet2/train_diag_ubm.sh: Training pass 2
+steps/online/nnet2/train_diag_ubm.sh: Training pass 3
+steps/online/nnet2/train_ivector_extractor.sh --cmd run.pl --nj 10 /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/diag_ubm /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/extractor
+steps/online/nnet2/train_ivector_extractor.sh: doing Gaussian selection and posterior computation
+Accumulating stats (pass 0)
+Summing accs (pass 0)
+Updating model (pass 0)
+Accumulating stats (pass 1)
+Summing accs (pass 1)
+Updating model (pass 1)
+Accumulating stats (pass 2)
+Summing accs (pass 2)
+Updating model (pass 2)
+Accumulating stats (pass 3)
+Summing accs (pass 3)
+Updating model (pass 3)
+Accumulating stats (pass 4)
+Summing accs (pass 4)
+Updating model (pass 4)
+Accumulating stats (pass 5)
+Summing accs (pass 5)
+Updating model (pass 5)
+Accumulating stats (pass 6)
+Summing accs (pass 6)
+Updating model (pass 6)
+Accumulating stats (pass 7)
+Summing accs (pass 7)
+Updating model (pass 7)
+Accumulating stats (pass 8)
+Summing accs (pass 8)
+Updating model (pass 8)
+Accumulating stats (pass 9)
+Summing accs (pass 9)
+Updating model (pass 9)
+steps/online/nnet2/copy_data_dir.sh: mapping cmvn.scp, but you may want to recompute it if it's needed,
+ as it would probably change.
+steps/online/nnet2/copy_data_dir.sh: copied data from /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires to /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires_max2, with --utts-per-spk-max 2
+utils/validate_data_dir.sh: Successfully validated data-directory /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires_max2
+steps/online/nnet2/extract_ivectors_online.sh --cmd run.pl --nj 30 /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires_max2 /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/extractor /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/ivectors_train
+filter_scps.pl: warning: some input lines were output to multiple files
+steps/online/nnet2/extract_ivectors_online.sh: extracting iVectors
+steps/online/nnet2/extract_ivectors_online.sh: combining iVectors across jobs

@@ -1,0 +1,4 @@
+compute-wer --text --mode=present ark:exp_augmented/nnet2_online/nnet_a_gpu_fast_online/decode_catch_noisy/scoring_kaldi/test_filt.txt ark,p:- 
+%WER 21.77 [ 54 / 248, 4 ins, 13 del, 37 sub ]
+%SER 25.00 [ 24 / 96 ]
+Scored 96 sentences, 0 not present in hyp.

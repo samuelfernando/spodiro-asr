@@ -1,0 +1,40 @@
+ANGLE	1.0	ae ng g l
+CHANGE	1.0	ch ey n jh
+EIGHTEEN	1.0	ey t iy n
+EIGHT	1.0	ey t
+EIGHTY	1.0	ey t iy
+ELEVEN	1.0	ih l eh v n
+FIFTEEN	1.0	f ih f t iy n
+FIFTY	1.0	f ih f t iy
+FIVE	1.0	f ay v
+FORTY	1.0	f ao t iy
+FOUR	1.0	f ao
+FOUR	1.0	f ao r
+FOURTEEN	1.0	f ao t iy n
+JETSON	1.0	jh eh t s ah n
+LISTENING	1.0	l ih s n ih ng
+NINE	1.0	n ay n
+NINETEEN	1.0	n ay n t iy n
+NINETY	1.0	n ay n t iy
+ONE	1.0	w ah n
+SEVEN	1.0	s eh v n
+SEVENTEEN	1.0	s eh v n t iy n
+SEVENTY	1.0	s eh v n t iy
+SIX	1.0	s ih k s
+SIXTEEN	1.0	s ih k s t iy n
+SIXTY	1.0	s ih k s t iy
+SPEED	1.0	s p iy d
+START	1.0	s t aa t
+STOP	1.0	s t oh p
+TEN	1.0	t eh n
+THIRTEEN	1.0	th er t iy n
+THIRTY	1.0	th er t iy
+THREE	1.0	th r iy
+TO	1.0	t ax
+TO	1.0	t uw
+TWELVE	1.0	t w eh l v
+TWENTY	1.0	t w eh n t iy
+TWO	1.0	t uw
+ZERO	1.0	z ia r ow
+!SIL	1.0	SIL
+!NOISE	1.0	NOISE

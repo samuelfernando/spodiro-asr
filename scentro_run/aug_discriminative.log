@@ -1,0 +1,501 @@
+nohup: ignoring input
+steps/nnet2/make_denlats.sh --cmd run.pl --mem 2G -l mem_free=1G,ram_free=1G --nj 40 --sub-split 40 --num-threads 6 --parallel-opts -pe smp 6 --online-ivector-dir /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/ivectors_train /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a_denlats
+Compiling decoding graph in /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a_denlats/dengraph
+Making unigram grammar FST in /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a_denlats/wsj-pfstar-with-eval
+sym2int.pl: replacing HOWEVE(R)- with 2
+sym2int.pl: replacing HOWEVE(R)- with 2
+sym2int.pl: replacing HOWEVE(R)- with 2
+sym2int.pl: replacing HOWEVE(R)- with 2
+sym2int.pl: replacing HOWEVE(R)- with 2
+sym2int.pl: replacing HOWEVE(R)- with 2
+sym2int.pl: replacing HOWEVE(R)- with 2
+sym2int.pl: replacing HOWEVE(R)- with 2
+sym2int.pl: replacing GATES('S)- with 2
+sym2int.pl: replacing GATES('S)- with 2
+sym2int.pl: replacing GATES('S)- with 2
+sym2int.pl: replacing GATES('S)- with 2
+sym2int.pl: replacing GATES('S)- with 2
+sym2int.pl: replacing GATES('S)- with 2
+sym2int.pl: replacing GATES('S)- with 2
+sym2int.pl: replacing GATES('S)- with 2
+sym2int.pl: replacing EA(CH)- with 2
+sym2int.pl: replacing EA(CH)- with 2
+sym2int.pl: replacing EA(CH)- with 2
+sym2int.pl: replacing EA(CH)- with 2
+sym2int.pl: not warning for OOVs any more times
+** Replaced 1644 instances of OOVs with 2
+tree-info /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a/tree 
+tree-info /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a/tree 
+fsttablecompose /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a_denlats/wsj-pfstar-with-eval/L_disambig.fst /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a_denlats/wsj-pfstar-with-eval/G.fst 
+fstdeterminizestar --use-log=true 
+fstminimizeencoded 
+fstpushspecial 
+fstisstochastic /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a_denlats/wsj-pfstar-with-eval/tmp/LG.fst 
+-0.0554665 -0.0556055
+[info]: LG not stochastic.
+fstcomposecontext --context-size=3 --central-position=1 --read-disambig-syms=/home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a_denlats/wsj-pfstar-with-eval/phones/disambig.int --write-disambig-syms=/home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a_denlats/wsj-pfstar-with-eval/tmp/disambig_ilabels_3_1.int /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a_denlats/wsj-pfstar-with-eval/tmp/ilabels_3_1 
+fstisstochastic /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a_denlats/wsj-pfstar-with-eval/tmp/CLG_3_1.fst 
+0 -0.0556055
+[info]: CLG not stochastic.
+make-h-transducer --disambig-syms-out=/home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a_denlats/dengraph/disambig_tid.int --transition-scale=1.0 /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a_denlats/wsj-pfstar-with-eval/tmp/ilabels_3_1 /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a/tree /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a/final.mdl 
+fstminimizeencoded 
+fstdeterminizestar --use-log=true 
+fstrmepslocal 
+fstrmsymbols /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a_denlats/dengraph/disambig_tid.int 
+fstisstochastic /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a_denlats/dengraph/HCLGa.fst 
+0.000484943 -0.133251
+HCLGa is not stochastic
+add-self-loops --self-loop-scale=0.1 --reorder=true /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a/final.mdl 
+steps/nnet2/make_denlats.sh: feature type is raw
+filter_scps.pl: warning: some input lines were output to multiple files
+filter_scps.pl: warning: some input lines were output to multiple files
+filter_scps.pl: warning: some input lines were output to multiple files
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 1
+filter_scps.pl: warning: some input lines were output to multiple files
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 2
+filter_scps.pl: warning: some input lines were output to multiple files
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 3
+filter_scps.pl: warning: some input lines were output to multiple files
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 4
+filter_scps.pl: warning: some input lines were output to multiple files
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 5
+filter_scps.pl: warning: some input lines were output to multiple files
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 6
+filter_scps.pl: warning: some input lines were output to multiple files
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 7
+filter_scps.pl: warning: some input lines were output to multiple files
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 8
+filter_scps.pl: warning: some input lines were output to multiple files
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 9
+filter_scps.pl: warning: some input lines were output to multiple files
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 10
+filter_scps.pl: warning: some input lines were output to multiple files
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 11
+filter_scps.pl: warning: some input lines were output to multiple files
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 12
+filter_scps.pl: warning: some input lines were output to multiple files
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 13
+filter_scps.pl: warning: some input lines were output to multiple files
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 14
+filter_scps.pl: warning: some input lines were output to multiple files
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 15
+filter_scps.pl: warning: some input lines were output to multiple files
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 16
+filter_scps.pl: warning: some input lines were output to multiple files
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 17
+filter_scps.pl: warning: some input lines were output to multiple files
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 18
+filter_scps.pl: warning: some input lines were output to multiple files
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 19
+filter_scps.pl: warning: some input lines were output to multiple files
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 20
+filter_scps.pl: warning: some input lines were output to multiple files
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 21
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 22
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 23
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 24
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 25
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 26
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 27
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 28
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 29
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 30
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 31
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 32
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 33
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 34
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 35
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 36
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 37
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 38
+filter_scps.pl: warning: some input lines were output to multiple files
+Merging archives for data subset 39
+Merging archives for data subset 40
+steps/nnet2/make_denlats.sh: done generating denominator lattices.
+steps/nnet2/align.sh --cmd run.pl --mem 2G -l gpu=1 --online-ivector-dir /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/ivectors_train --use-gpu yes --nj 40 /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a_ali
+steps/nnet2/align.sh: feature type is raw
+steps/nnet2/align.sh: aligning data in /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires using model from /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a, putting alignments in /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a_ali
+steps/nnet2/align.sh: done aligning data.
+steps/nnet2/train_discriminative.sh --cmd run.pl --mem 2G --learning-rate 0.0002 --stage -10 --online-ivector-dir /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/ivectors_train --num-jobs-nnet 4 --num-threads 1 --parallel-opts -l gpu=1 /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a_ali /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a_denlats /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a/final.mdl /home/samuel/wsj-pf-data/exp_augmented/nnet2_online/nnet_ms_a_smbr
+feat-to-dim scp:/home/samuel/wsj-pf-data/exp_augmented/nnet2_online/ivectors_train/ivector_online.scp - 
+steps/nnet2/train_discriminative.sh: feature type is raw
+steps/nnet2/train_discriminative.sh: working out number of frames of training data
+feat-to-len scp:/home/samuel/wsj-pf-data/data/augmented-train-wsj-pf_hires/feats.scp ark,t:- 
+steps/nnet2/train_discriminative.sh: Every epoch, splitting the data up into 82 iterations,
+steps/nnet2/train_discriminative.sh: giving samples-per-iteration of 401966 (you requested 400000).
+steps/nnet2/train_discriminative.sh: Copying initial model and modifying preconditioning setup
+steps/nnet2/train_discriminative.sh: getting initial training examples by splitting lattices
+steps/nnet2/train_discriminative.sh: rearranging examples into parts for different parallel jobs
+Shuffling the order of training examples
+(in order to avoid stressing the disk, these won't all run at once).
+steps/nnet2/train_discriminative.sh: Will train for 4 epochs = 328 iterations
+Training neural net (pass 0)
+Training neural net (pass 1)
+Training neural net (pass 2)
+Training neural net (pass 3)
+Training neural net (pass 4)
+Training neural net (pass 5)
+Training neural net (pass 6)
+Training neural net (pass 7)
+Training neural net (pass 8)
+Training neural net (pass 9)
+Training neural net (pass 10)
+Training neural net (pass 11)
+Training neural net (pass 12)
+Training neural net (pass 13)
+Training neural net (pass 14)
+Training neural net (pass 15)
+Training neural net (pass 16)
+Training neural net (pass 17)
+Training neural net (pass 18)
+Training neural net (pass 19)
+Training neural net (pass 20)
+Training neural net (pass 21)
+Training neural net (pass 22)
+Training neural net (pass 23)
+Training neural net (pass 24)
+Training neural net (pass 25)
+Training neural net (pass 26)
+Training neural net (pass 27)
+Training neural net (pass 28)
+Training neural net (pass 29)
+Training neural net (pass 30)
+Training neural net (pass 31)
+Training neural net (pass 32)
+Training neural net (pass 33)
+Training neural net (pass 34)
+Training neural net (pass 35)
+Training neural net (pass 36)
+Training neural net (pass 37)
+Training neural net (pass 38)
+Training neural net (pass 39)
+Training neural net (pass 40)
+Training neural net (pass 41)
+Training neural net (pass 42)
+Training neural net (pass 43)
+Training neural net (pass 44)
+Training neural net (pass 45)
+Training neural net (pass 46)
+Training neural net (pass 47)
+Training neural net (pass 48)
+Training neural net (pass 49)
+Training neural net (pass 50)
+Training neural net (pass 51)
+Training neural net (pass 52)
+Training neural net (pass 53)
+Training neural net (pass 54)
+Training neural net (pass 55)
+Training neural net (pass 56)
+Training neural net (pass 57)
+Training neural net (pass 58)
+Training neural net (pass 59)
+Training neural net (pass 60)
+Training neural net (pass 61)
+Training neural net (pass 62)
+Training neural net (pass 63)
+Training neural net (pass 64)
+Training neural net (pass 65)
+Training neural net (pass 66)
+Training neural net (pass 67)
+Training neural net (pass 68)
+Training neural net (pass 69)
+Training neural net (pass 70)
+Training neural net (pass 71)
+Training neural net (pass 72)
+Training neural net (pass 73)
+Training neural net (pass 74)
+Training neural net (pass 75)
+Training neural net (pass 76)
+Training neural net (pass 77)
+Training neural net (pass 78)
+Training neural net (pass 79)
+Training neural net (pass 80)
+Training neural net (pass 81)
+Training neural net (pass 82)
+Training neural net (pass 83)
+Training neural net (pass 84)
+Training neural net (pass 85)
+Training neural net (pass 86)
+Training neural net (pass 87)
+Training neural net (pass 88)
+Training neural net (pass 89)
+Training neural net (pass 90)
+Training neural net (pass 91)
+Training neural net (pass 92)
+Training neural net (pass 93)
+Training neural net (pass 94)
+Training neural net (pass 95)
+Training neural net (pass 96)
+Training neural net (pass 97)
+Training neural net (pass 98)
+Training neural net (pass 99)
+Training neural net (pass 100)
+Training neural net (pass 101)
+Training neural net (pass 102)
+Training neural net (pass 103)
+Training neural net (pass 104)
+Training neural net (pass 105)
+Training neural net (pass 106)
+Training neural net (pass 107)
+Training neural net (pass 108)
+Training neural net (pass 109)
+Training neural net (pass 110)
+Training neural net (pass 111)
+Training neural net (pass 112)
+Training neural net (pass 113)
+Training neural net (pass 114)
+Training neural net (pass 115)
+Training neural net (pass 116)
+Training neural net (pass 117)
+Training neural net (pass 118)
+Training neural net (pass 119)
+Training neural net (pass 120)
+Training neural net (pass 121)
+Training neural net (pass 122)
+Training neural net (pass 123)
+Training neural net (pass 124)
+Training neural net (pass 125)
+Training neural net (pass 126)
+Training neural net (pass 127)
+Training neural net (pass 128)
+Training neural net (pass 129)
+Training neural net (pass 130)
+Training neural net (pass 131)
+Training neural net (pass 132)
+Training neural net (pass 133)
+Training neural net (pass 134)
+Training neural net (pass 135)
+Training neural net (pass 136)
+Training neural net (pass 137)
+Training neural net (pass 138)
+Training neural net (pass 139)
+Training neural net (pass 140)
+Training neural net (pass 141)
+Training neural net (pass 142)
+Training neural net (pass 143)
+Training neural net (pass 144)
+Training neural net (pass 145)
+Training neural net (pass 146)
+Training neural net (pass 147)
+Training neural net (pass 148)
+Training neural net (pass 149)
+Training neural net (pass 150)
+Training neural net (pass 151)
+Training neural net (pass 152)
+Training neural net (pass 153)
+Training neural net (pass 154)
+Training neural net (pass 155)
+Training neural net (pass 156)
+Training neural net (pass 157)
+Training neural net (pass 158)
+Training neural net (pass 159)
+Training neural net (pass 160)
+Training neural net (pass 161)
+Training neural net (pass 162)
+Training neural net (pass 163)
+Training neural net (pass 164)
+Training neural net (pass 165)
+Training neural net (pass 166)
+Training neural net (pass 167)
+Training neural net (pass 168)
+Training neural net (pass 169)
+Training neural net (pass 170)
+Training neural net (pass 171)
+Training neural net (pass 172)
+Training neural net (pass 173)
+Training neural net (pass 174)
+Training neural net (pass 175)
+Training neural net (pass 176)
+Training neural net (pass 177)
+Training neural net (pass 178)
+Training neural net (pass 179)
+Training neural net (pass 180)
+Training neural net (pass 181)
+Training neural net (pass 182)
+Training neural net (pass 183)
+Training neural net (pass 184)
+Training neural net (pass 185)
+Training neural net (pass 186)
+Training neural net (pass 187)
+Training neural net (pass 188)
+Training neural net (pass 189)
+Training neural net (pass 190)
+Training neural net (pass 191)
+Training neural net (pass 192)
+Training neural net (pass 193)
+Training neural net (pass 194)
+Training neural net (pass 195)
+Training neural net (pass 196)
+Training neural net (pass 197)
+Training neural net (pass 198)
+Training neural net (pass 199)
+Training neural net (pass 200)
+Training neural net (pass 201)
+Training neural net (pass 202)
+Training neural net (pass 203)
+Training neural net (pass 204)
+Training neural net (pass 205)
+Training neural net (pass 206)
+Training neural net (pass 207)
+Training neural net (pass 208)
+Training neural net (pass 209)
+Training neural net (pass 210)
+Training neural net (pass 211)
+Training neural net (pass 212)
+Training neural net (pass 213)
+Training neural net (pass 214)
+Training neural net (pass 215)
+Training neural net (pass 216)
+Training neural net (pass 217)
+Training neural net (pass 218)
+Training neural net (pass 219)
+Training neural net (pass 220)
+Training neural net (pass 221)
+Training neural net (pass 222)
+Training neural net (pass 223)
+Training neural net (pass 224)
+Training neural net (pass 225)
+Training neural net (pass 226)
+Training neural net (pass 227)
+Training neural net (pass 228)
+Training neural net (pass 229)
+Training neural net (pass 230)
+Training neural net (pass 231)
+Training neural net (pass 232)
+Training neural net (pass 233)
+Training neural net (pass 234)
+Training neural net (pass 235)
+Training neural net (pass 236)
+Training neural net (pass 237)
+Training neural net (pass 238)
+Training neural net (pass 239)
+Training neural net (pass 240)
+Training neural net (pass 241)
+Training neural net (pass 242)
+Training neural net (pass 243)
+Training neural net (pass 244)
+Training neural net (pass 245)
+Training neural net (pass 246)
+Training neural net (pass 247)
+Training neural net (pass 248)
+Training neural net (pass 249)
+Training neural net (pass 250)
+Training neural net (pass 251)
+Training neural net (pass 252)
+Training neural net (pass 253)
+Training neural net (pass 254)
+Training neural net (pass 255)
+Training neural net (pass 256)
+Training neural net (pass 257)
+Training neural net (pass 258)
+Training neural net (pass 259)
+Training neural net (pass 260)
+Training neural net (pass 261)
+Training neural net (pass 262)
+Training neural net (pass 263)
+Training neural net (pass 264)
+Training neural net (pass 265)
+Training neural net (pass 266)
+Training neural net (pass 267)
+Training neural net (pass 268)
+Training neural net (pass 269)
+Training neural net (pass 270)
+Training neural net (pass 271)
+Training neural net (pass 272)
+Training neural net (pass 273)
+Training neural net (pass 274)
+Training neural net (pass 275)
+Training neural net (pass 276)
+Training neural net (pass 277)
+Training neural net (pass 278)
+Training neural net (pass 279)
+Training neural net (pass 280)
+Training neural net (pass 281)
+Training neural net (pass 282)
+Training neural net (pass 283)
+Training neural net (pass 284)
+Training neural net (pass 285)
+Training neural net (pass 286)
+Training neural net (pass 287)
+Training neural net (pass 288)
+Training neural net (pass 289)
+Training neural net (pass 290)
+Training neural net (pass 291)
+Training neural net (pass 292)
+Training neural net (pass 293)
+Training neural net (pass 294)
+Training neural net (pass 295)
+Training neural net (pass 296)
+Training neural net (pass 297)
+Training neural net (pass 298)
+Training neural net (pass 299)
+Training neural net (pass 300)
+Training neural net (pass 301)
+Training neural net (pass 302)
+Training neural net (pass 303)
+Training neural net (pass 304)
+Training neural net (pass 305)
+Training neural net (pass 306)
+Training neural net (pass 307)
+Training neural net (pass 308)
+Training neural net (pass 309)
+Training neural net (pass 310)
+Training neural net (pass 311)
+Training neural net (pass 312)
+Training neural net (pass 313)
+Training neural net (pass 314)
+Training neural net (pass 315)
+Training neural net (pass 316)
+Training neural net (pass 317)
+Training neural net (pass 318)
+Training neural net (pass 319)
+Training neural net (pass 320)
+Training neural net (pass 321)
+Training neural net (pass 322)
+Training neural net (pass 323)
+Training neural net (pass 324)
+Training neural net (pass 325)
+Training neural net (pass 326)
+Training neural net (pass 327)
+Done
+Cleaning up data
+Removing training examples
+Removing most of the models

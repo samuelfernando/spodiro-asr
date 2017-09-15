@@ -1,0 +1,472 @@
+nohup: ignoring input
+steps/train_mono.sh --nj 64 --cmd run.pl /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_augmented/mono0a
+steps/train_mono.sh: Initializing monophone system.
+steps/train_mono.sh: Compiling training graphs
+steps/train_mono.sh: Aligning data equally (pass 0)
+steps/train_mono.sh: Pass 1
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 2
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 3
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 4
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 5
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 6
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 7
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 8
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 9
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 10
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 11
+steps/train_mono.sh: Pass 12
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 13
+steps/train_mono.sh: Pass 14
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 15
+steps/train_mono.sh: Pass 16
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 17
+steps/train_mono.sh: Pass 18
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 19
+steps/train_mono.sh: Pass 20
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 21
+steps/train_mono.sh: Pass 22
+steps/train_mono.sh: Pass 23
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 24
+steps/train_mono.sh: Pass 25
+steps/train_mono.sh: Pass 26
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 27
+steps/train_mono.sh: Pass 28
+steps/train_mono.sh: Pass 29
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 30
+steps/train_mono.sh: Pass 31
+steps/train_mono.sh: Pass 32
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 33
+steps/train_mono.sh: Pass 34
+steps/train_mono.sh: Pass 35
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 36
+steps/train_mono.sh: Pass 37
+steps/train_mono.sh: Pass 38
+steps/train_mono.sh: Aligning data
+steps/train_mono.sh: Pass 39
+708470 warnings in /home/samuel/wsj-pf-data/exp_augmented/mono0a/log/align.*.*.log
+99778 warnings in /home/samuel/wsj-pf-data/exp_augmented/mono0a/log/acc.*.*.log
+Done
+tree-info /home/samuel/wsj-pf-data/exp_augmented/mono0a/tree 
+tree-info /home/samuel/wsj-pf-data/exp_augmented/mono0a/tree 
+make-h-transducer --disambig-syms-out=/home/samuel/wsj-pf-data/exp_augmented/mono0a/graph/disambig_tid.int --transition-scale=1.0 /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval/tmp/ilabels_1_0 /home/samuel/wsj-pf-data/exp_augmented/mono0a/tree /home/samuel/wsj-pf-data/exp_augmented/mono0a/final.mdl 
+fsttablecompose /home/samuel/wsj-pf-data/exp_augmented/mono0a/graph/Ha.fst /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval/tmp/CLG_1_0.fst 
+fstrmsymbols /home/samuel/wsj-pf-data/exp_augmented/mono0a/graph/disambig_tid.int 
+fstminimizeencoded 
+fstrmepslocal 
+fstdeterminizestar --use-log=true 
+WARNING (fsttablecompose:main():fsttablecompose.cc:132) The second FST is not ilabel sorted.
+fstisstochastic /home/samuel/wsj-pf-data/exp_augmented/mono0a/graph/HCLGa.fst 
+0.000839189 -1.60645
+HCLGa is not stochastic
+add-self-loops --self-loop-scale=0.1 --reorder=true /home/samuel/wsj-pf-data/exp_augmented/mono0a/final.mdl 
+steps/decode.sh --nj 13 --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/exp_augmented/mono0a/graph /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_augmented/mono0a/decode
+decode.sh: feature type is delta
+local/score.sh --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_augmented/mono0a/graph /home/samuel/wsj-pf-data/exp_augmented/mono0a/decode
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+steps/align_si.sh --nj 64 --cmd run.pl /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_augmented/mono0a /home/samuel/wsj-pf-data/exp_augmented/mono0a_ali
+steps/align_si.sh: feature type is delta
+steps/align_si.sh: aligning data in /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf using model from /home/samuel/wsj-pf-data/exp_augmented/mono0a, putting alignments in /home/samuel/wsj-pf-data/exp_augmented/mono0a_ali
+steps/align_si.sh: done aligning data.
+steps/train_deltas.sh --cmd run.pl 2000 10000 /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_augmented/mono0a_ali /home/samuel/wsj-pf-data/exp_augmented/tri1
+steps/train_deltas.sh: accumulating tree stats
+steps/train_deltas.sh: getting questions for tree-building, via clustering
+steps/train_deltas.sh: building the tree
+steps/train_deltas.sh: converting alignments from /home/samuel/wsj-pf-data/exp_augmented/mono0a_ali to use current tree
+steps/train_deltas.sh: compiling graphs of transcripts
+steps/train_deltas.sh: training pass 1
+steps/train_deltas.sh: training pass 2
+steps/train_deltas.sh: training pass 3
+steps/train_deltas.sh: training pass 4
+steps/train_deltas.sh: training pass 5
+steps/train_deltas.sh: training pass 6
+steps/train_deltas.sh: training pass 7
+steps/train_deltas.sh: training pass 8
+steps/train_deltas.sh: training pass 9
+steps/train_deltas.sh: training pass 10
+steps/train_deltas.sh: aligning data
+steps/train_deltas.sh: training pass 11
+steps/train_deltas.sh: training pass 12
+steps/train_deltas.sh: training pass 13
+steps/train_deltas.sh: training pass 14
+steps/train_deltas.sh: training pass 15
+steps/train_deltas.sh: training pass 16
+steps/train_deltas.sh: training pass 17
+steps/train_deltas.sh: training pass 18
+steps/train_deltas.sh: training pass 19
+steps/train_deltas.sh: training pass 20
+steps/train_deltas.sh: aligning data
+steps/train_deltas.sh: training pass 21
+steps/train_deltas.sh: training pass 22
+steps/train_deltas.sh: training pass 23
+steps/train_deltas.sh: training pass 24
+steps/train_deltas.sh: training pass 25
+steps/train_deltas.sh: training pass 26
+steps/train_deltas.sh: training pass 27
+steps/train_deltas.sh: training pass 28
+steps/train_deltas.sh: training pass 29
+steps/train_deltas.sh: training pass 30
+steps/train_deltas.sh: aligning data
+steps/train_deltas.sh: training pass 31
+steps/train_deltas.sh: training pass 32
+steps/train_deltas.sh: training pass 33
+steps/train_deltas.sh: training pass 34
+1 warnings in /home/samuel/wsj-pf-data/exp_augmented/tri1/log/build_tree.log
+75687 warnings in /home/samuel/wsj-pf-data/exp_augmented/tri1/log/align.*.*.log
+88156 warnings in /home/samuel/wsj-pf-data/exp_augmented/tri1/log/acc.*.*.log
+steps/train_deltas.sh: Done training system with delta+delta-delta features in /home/samuel/wsj-pf-data/exp_augmented/tri1
+tree-info /home/samuel/wsj-pf-data/exp_augmented/tri1/tree 
+tree-info /home/samuel/wsj-pf-data/exp_augmented/tri1/tree 
+make-h-transducer --disambig-syms-out=/home/samuel/wsj-pf-data/exp_augmented/tri1/graph/disambig_tid.int --transition-scale=1.0 /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval/tmp/ilabels_3_1 /home/samuel/wsj-pf-data/exp_augmented/tri1/tree /home/samuel/wsj-pf-data/exp_augmented/tri1/final.mdl 
+fstrmepslocal 
+fstrmsymbols /home/samuel/wsj-pf-data/exp_augmented/tri1/graph/disambig_tid.int 
+fstminimizeencoded 
+fstdeterminizestar --use-log=true 
+WARNING (fsttablecompose:main():fsttablecompose.cc:132) The second FST is not ilabel sorted.
+fstisstochastic /home/samuel/wsj-pf-data/exp_augmented/tri1/graph/HCLGa.fst 
+0.000894868 -1.60659
+HCLGa is not stochastic
+add-self-loops --self-loop-scale=0.1 --reorder=true /home/samuel/wsj-pf-data/exp_augmented/tri1/final.mdl 
+steps/decode.sh --nj 13 --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/exp_augmented/tri1/graph /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_augmented/tri1/decode
+decode.sh: feature type is delta
+local/score.sh --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_augmented/tri1/graph /home/samuel/wsj-pf-data/exp_augmented/tri1/decode
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+steps/align_si.sh --nj 64 --cmd run.pl /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_augmented/tri1 /home/samuel/wsj-pf-data/exp_augmented/tri1_ali
+steps/align_si.sh: feature type is delta
+steps/align_si.sh: aligning data in /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf using model from /home/samuel/wsj-pf-data/exp_augmented/tri1, putting alignments in /home/samuel/wsj-pf-data/exp_augmented/tri1_ali
+steps/align_si.sh: done aligning data.
+steps/train_deltas.sh --cmd run.pl 2500 15000 /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_augmented/tri1_ali /home/samuel/wsj-pf-data/exp_augmented/tri2a
+steps/train_deltas.sh: accumulating tree stats
+steps/train_deltas.sh: getting questions for tree-building, via clustering
+steps/train_deltas.sh: building the tree
+steps/train_deltas.sh: converting alignments from /home/samuel/wsj-pf-data/exp_augmented/tri1_ali to use current tree
+steps/train_deltas.sh: compiling graphs of transcripts
+steps/train_deltas.sh: training pass 1
+steps/train_deltas.sh: training pass 2
+steps/train_deltas.sh: training pass 3
+steps/train_deltas.sh: training pass 4
+steps/train_deltas.sh: training pass 5
+steps/train_deltas.sh: training pass 6
+steps/train_deltas.sh: training pass 7
+steps/train_deltas.sh: training pass 8
+steps/train_deltas.sh: training pass 9
+steps/train_deltas.sh: training pass 10
+steps/train_deltas.sh: aligning data
+steps/train_deltas.sh: training pass 11
+steps/train_deltas.sh: training pass 12
+steps/train_deltas.sh: training pass 13
+steps/train_deltas.sh: training pass 14
+steps/train_deltas.sh: training pass 15
+steps/train_deltas.sh: training pass 16
+steps/train_deltas.sh: training pass 17
+steps/train_deltas.sh: training pass 18
+steps/train_deltas.sh: training pass 19
+steps/train_deltas.sh: training pass 20
+steps/train_deltas.sh: aligning data
+steps/train_deltas.sh: training pass 21
+steps/train_deltas.sh: training pass 22
+steps/train_deltas.sh: training pass 23
+steps/train_deltas.sh: training pass 24
+steps/train_deltas.sh: training pass 25
+steps/train_deltas.sh: training pass 26
+steps/train_deltas.sh: training pass 27
+steps/train_deltas.sh: training pass 28
+steps/train_deltas.sh: training pass 29
+steps/train_deltas.sh: training pass 30
+steps/train_deltas.sh: aligning data
+steps/train_deltas.sh: training pass 31
+steps/train_deltas.sh: training pass 32
+steps/train_deltas.sh: training pass 33
+steps/train_deltas.sh: training pass 34
+74634 warnings in /home/samuel/wsj-pf-data/exp_augmented/tri2a/log/align.*.*.log
+95536 warnings in /home/samuel/wsj-pf-data/exp_augmented/tri2a/log/acc.*.*.log
+1 warnings in /home/samuel/wsj-pf-data/exp_augmented/tri2a/log/build_tree.log
+steps/train_deltas.sh: Done training system with delta+delta-delta features in /home/samuel/wsj-pf-data/exp_augmented/tri2a
+tree-info /home/samuel/wsj-pf-data/exp_augmented/tri2a/tree 
+tree-info /home/samuel/wsj-pf-data/exp_augmented/tri2a/tree 
+make-h-transducer --disambig-syms-out=/home/samuel/wsj-pf-data/exp_augmented/tri2a/graph/disambig_tid.int --transition-scale=1.0 /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval/tmp/ilabels_3_1 /home/samuel/wsj-pf-data/exp_augmented/tri2a/tree /home/samuel/wsj-pf-data/exp_augmented/tri2a/final.mdl 
+fstrmepslocal 
+fstrmsymbols /home/samuel/wsj-pf-data/exp_augmented/tri2a/graph/disambig_tid.int 
+fstdeterminizestar --use-log=true 
+fsttablecompose /home/samuel/wsj-pf-data/exp_augmented/tri2a/graph/Ha.fst /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval/tmp/CLG_3_1.fst 
+WARNING (fsttablecompose:main():fsttablecompose.cc:132) The second FST is not ilabel sorted.
+fstisstochastic /home/samuel/wsj-pf-data/exp_augmented/tri2a/graph/HCLGa.fst 
+0.000894868 -1.60622
+HCLGa is not stochastic
+add-self-loops --self-loop-scale=0.1 --reorder=true /home/samuel/wsj-pf-data/exp_augmented/tri2a/final.mdl 
+steps/decode.sh --nj 13 --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/exp_augmented/tri2a/graph /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_augmented/tri2a/decode
+decode.sh: feature type is delta
+local/score.sh --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_augmented/tri2a/graph /home/samuel/wsj-pf-data/exp_augmented/tri2a/decode
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+steps/align_si.sh --nj 64 --cmd run.pl /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_augmented/tri2a /home/samuel/wsj-pf-data/exp_augmented/tri2a_ali
+steps/align_si.sh: feature type is delta
+steps/align_si.sh: aligning data in /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf using model from /home/samuel/wsj-pf-data/exp_augmented/tri2a, putting alignments in /home/samuel/wsj-pf-data/exp_augmented/tri2a_ali
+steps/align_si.sh: done aligning data.
+steps/train_lda_mllt.sh --cmd run.pl --splice-opts --left-context=3 --right-context=3 2500 15000 /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_augmented/tri2a_ali /home/samuel/wsj-pf-data/exp_augmented/tri2b
+Accumulating LDA statistics.
+Accumulating tree stats
+Getting questions for tree clustering.
+Building the tree
+steps/train_lda_mllt.sh: Initializing the model
+Converting alignments from /home/samuel/wsj-pf-data/exp_augmented/tri2a_ali to use current tree
+Compiling graphs of transcripts
+Training pass 1
+Training pass 2
+Estimating MLLT
+Training pass 3
+Training pass 4
+Estimating MLLT
+Training pass 5
+Training pass 6
+Estimating MLLT
+Training pass 7
+Training pass 8
+Training pass 9
+Training pass 10
+Aligning data
+Training pass 11
+Training pass 12
+Estimating MLLT
+Training pass 13
+Training pass 14
+Training pass 15
+Training pass 16
+Training pass 17
+Training pass 18
+Training pass 19
+Training pass 20
+Aligning data
+Training pass 21
+Training pass 22
+Training pass 23
+Training pass 24
+Training pass 25
+Training pass 26
+Training pass 27
+Training pass 28
+Training pass 29
+Training pass 30
+Aligning data
+Training pass 31
+Training pass 32
+Training pass 33
+Training pass 34
+2518 warnings in /home/samuel/wsj-pf-data/exp_augmented/tri2b/log/lda_acc.*.log
+90992 warnings in /home/samuel/wsj-pf-data/exp_augmented/tri2b/log/acc.*.*.log
+72262 warnings in /home/samuel/wsj-pf-data/exp_augmented/tri2b/log/align.*.*.log
+1 warnings in /home/samuel/wsj-pf-data/exp_augmented/tri2b/log/build_tree.log
+Done training system with LDA+MLLT features in /home/samuel/wsj-pf-data/exp_augmented/tri2b
+tree-info /home/samuel/wsj-pf-data/exp_augmented/tri2b/tree 
+tree-info /home/samuel/wsj-pf-data/exp_augmented/tri2b/tree 
+make-h-transducer --disambig-syms-out=/home/samuel/wsj-pf-data/exp_augmented/tri2b/graph/disambig_tid.int --transition-scale=1.0 /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval/tmp/ilabels_3_1 /home/samuel/wsj-pf-data/exp_augmented/tri2b/tree /home/samuel/wsj-pf-data/exp_augmented/tri2b/final.mdl 
+fstdeterminizestar --use-log=true 
+fstrmsymbols /home/samuel/wsj-pf-data/exp_augmented/tri2b/graph/disambig_tid.int 
+fstrmepslocal 
+fstminimizeencoded 
+fsttablecompose /home/samuel/wsj-pf-data/exp_augmented/tri2b/graph/Ha.fst /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval/tmp/CLG_3_1.fst 
+WARNING (fsttablecompose:main():fsttablecompose.cc:132) The second FST is not ilabel sorted.
+fstisstochastic /home/samuel/wsj-pf-data/exp_augmented/tri2b/graph/HCLGa.fst 
+0.000894868 -1.60661
+HCLGa is not stochastic
+add-self-loops --self-loop-scale=0.1 --reorder=true /home/samuel/wsj-pf-data/exp_augmented/tri2b/final.mdl 
+steps/decode.sh --nj 13 --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/exp_augmented/tri2b/graph /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_augmented/tri2b/decode
+decode.sh: feature type is lda
+local/score.sh --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_augmented/tri2b/graph /home/samuel/wsj-pf-data/exp_augmented/tri2b/decode
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+steps/align_si.sh --nj 64 --cmd run.pl --use-graphs true /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_augmented/tri2b /home/samuel/wsj-pf-data/exp_augmented/tri2b_ali
+steps/align_si.sh: feature type is lda
+steps/align_si.sh: aligning data in /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf using model from /home/samuel/wsj-pf-data/exp_augmented/tri2b, putting alignments in /home/samuel/wsj-pf-data/exp_augmented/tri2b_ali
+steps/align_si.sh: done aligning data.
+steps/train_sat.sh --cmd run.pl 2500 15000 /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_augmented/tri2b_ali /home/samuel/wsj-pf-data/exp_augmented/tri3b
+steps/train_sat.sh: feature type is lda
+steps/train_sat.sh: obtaining initial fMLLR transforms since not present in /home/samuel/wsj-pf-data/exp_augmented/tri2b_ali
+steps/train_sat.sh: Accumulating tree stats
+steps/train_sat.sh: Getting questions for tree clustering.
+steps/train_sat.sh: Building the tree
+steps/train_sat.sh: Initializing the model
+steps/train_sat.sh: Converting alignments from /home/samuel/wsj-pf-data/exp_augmented/tri2b_ali to use current tree
+steps/train_sat.sh: Compiling graphs of transcripts
+Pass 1
+Pass 2
+Estimating fMLLR transforms
+Pass 3
+Pass 4
+Estimating fMLLR transforms
+Pass 5
+Pass 6
+Estimating fMLLR transforms
+Pass 7
+Pass 8
+Pass 9
+Pass 10
+Aligning data
+Pass 11
+Pass 12
+Estimating fMLLR transforms
+Pass 13
+Pass 14
+Pass 15
+Pass 16
+Pass 17
+Pass 18
+Pass 19
+Pass 20
+Aligning data
+Pass 21
+Pass 22
+Pass 23
+Pass 24
+Pass 25
+Pass 26
+Pass 27
+Pass 28
+Pass 29
+Pass 30
+Aligning data
+Pass 31
+Pass 32
+Pass 33
+Pass 34
+70130 warnings in /home/samuel/wsj-pf-data/exp_augmented/tri3b/log/acc.*.*.log
+59516 warnings in /home/samuel/wsj-pf-data/exp_augmented/tri3b/log/align.*.*.log
+10083 warnings in /home/samuel/wsj-pf-data/exp_augmented/tri3b/log/fmllr.*.*.log
+1 warnings in /home/samuel/wsj-pf-data/exp_augmented/tri3b/log/build_tree.log
+steps/train_sat.sh: Likelihood evolution:
+-48.1841 -48.245 -48.0861 -47.9604 -47.4322 -46.9337 -46.6734 -46.527 -46.4243 -46.035 -45.9268 -45.7868 -45.7154 -45.6601 -45.607 -45.5589 -45.5167 -45.4777 -45.4394 -45.3327 -45.278 -45.2444 -45.2151 -45.1886 -45.1645 -45.142 -45.12 -45.0974 -45.0743 -45.0114 -44.9759 -44.9575 -44.9444 -44.9347 
+Done
+tree-info /home/samuel/wsj-pf-data/exp_augmented/tri3b/tree 
+tree-info /home/samuel/wsj-pf-data/exp_augmented/tri3b/tree 
+make-h-transducer --disambig-syms-out=/home/samuel/wsj-pf-data/exp_augmented/tri3b/graph/disambig_tid.int --transition-scale=1.0 /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval/tmp/ilabels_3_1 /home/samuel/wsj-pf-data/exp_augmented/tri3b/tree /home/samuel/wsj-pf-data/exp_augmented/tri3b/final.mdl 
+fstdeterminizestar --use-log=true 
+fstminimizeencoded 
+fstrmsymbols /home/samuel/wsj-pf-data/exp_augmented/tri3b/graph/disambig_tid.int 
+fsttablecompose /home/samuel/wsj-pf-data/exp_augmented/tri3b/graph/Ha.fst /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval/tmp/CLG_3_1.fst 
+fstrmepslocal 
+WARNING (fsttablecompose:main():fsttablecompose.cc:132) The second FST is not ilabel sorted.
+fstisstochastic /home/samuel/wsj-pf-data/exp_augmented/tri3b/graph/HCLGa.fst 
+0.000894868 -1.60665
+HCLGa is not stochastic
+add-self-loops --self-loop-scale=0.1 --reorder=true /home/samuel/wsj-pf-data/exp_augmented/tri3b/final.mdl 
+steps/decode_fmllr.sh --nj 13 --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/exp_augmented/tri3b/graph /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_augmented/tri3b/decode
+steps/decode.sh --scoring-opts  --num-threads 1 --skip-scoring false --acwt 0.083333 --nj 13 --cmd run.pl --mem 2G --beam 10.0 --model /home/samuel/wsj-pf-data/exp_augmented/tri3b/final.alimdl --max-active 2000 /home/samuel/wsj-pf-data/exp_augmented/tri3b/graph /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_augmented/tri3b/decode.si
+decode.sh: feature type is lda
+local/score.sh --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_augmented/tri3b/graph /home/samuel/wsj-pf-data/exp_augmented/tri3b/decode.si
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+steps/decode_fmllr.sh: feature type is lda
+steps/decode_fmllr.sh: getting first-pass fMLLR transforms.
+steps/decode_fmllr.sh: doing main lattice generation phase
+steps/decode_fmllr.sh: estimating fMLLR transforms a second time.
+steps/decode_fmllr.sh: doing a final pass of acoustic rescoring.
+local/score.sh --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_augmented/tri3b/graph /home/samuel/wsj-pf-data/exp_augmented/tri3b/decode
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+steps/align_fmllr.sh --nj 64 --cmd run.pl /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_augmented/tri3b /home/samuel/wsj-pf-data/exp_augmented/tri3b_ali
+steps/align_fmllr.sh: feature type is lda
+steps/align_fmllr.sh: compiling training graphs
+steps/align_fmllr.sh: aligning data in /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf using /home/samuel/wsj-pf-data/exp_augmented/tri3b/final.alimdl and speaker-independent features.
+steps/align_fmllr.sh: computing fMLLR transforms
+steps/align_fmllr.sh: doing final alignment.
+steps/align_fmllr.sh: done aligning data.
+17124 warnings in /home/samuel/wsj-pf-data/exp_augmented/tri3b_ali/log/align_pass1.*.log
+1544 warnings in /home/samuel/wsj-pf-data/exp_augmented/tri3b_ali/log/fmllr.*.log
+16055 warnings in /home/samuel/wsj-pf-data/exp_augmented/tri3b_ali/log/align_pass2.*.log
+steps/train_sat.sh --cmd run.pl 4200 40000 /home/samuel/wsj-pf-data/data/augmented-train-wsj-pf /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval /home/samuel/wsj-pf-data/exp_augmented/tri3b_ali /home/samuel/wsj-pf-data/exp_augmented/tri4a
+steps/train_sat.sh: feature type is lda
+steps/train_sat.sh: Using transforms from /home/samuel/wsj-pf-data/exp_augmented/tri3b_ali
+steps/train_sat.sh: Accumulating tree stats
+steps/train_sat.sh: Getting questions for tree clustering.
+steps/train_sat.sh: Building the tree
+steps/train_sat.sh: Initializing the model
+steps/train_sat.sh: Converting alignments from /home/samuel/wsj-pf-data/exp_augmented/tri3b_ali to use current tree
+steps/train_sat.sh: Compiling graphs of transcripts
+Pass 1
+Pass 2
+Estimating fMLLR transforms
+Pass 3
+Pass 4
+Estimating fMLLR transforms
+Pass 5
+Pass 6
+Estimating fMLLR transforms
+Pass 7
+Pass 8
+Pass 9
+Pass 10
+Aligning data
+Pass 11
+Pass 12
+Estimating fMLLR transforms
+Pass 13
+Pass 14
+Pass 15
+Pass 16
+Pass 17
+Pass 18
+Pass 19
+Pass 20
+Aligning data
+Pass 21
+Pass 22
+Pass 23
+Pass 24
+Pass 25
+Pass 26
+Pass 27
+Pass 28
+Pass 29
+Pass 30
+Aligning data
+Pass 31
+Pass 32
+Pass 33
+Pass 34
+53777 warnings in /home/samuel/wsj-pf-data/exp_augmented/tri4a/log/acc.*.*.log
+6352 warnings in /home/samuel/wsj-pf-data/exp_augmented/tri4a/log/fmllr.*.*.log
+49406 warnings in /home/samuel/wsj-pf-data/exp_augmented/tri4a/log/align.*.*.log
+1 warnings in /home/samuel/wsj-pf-data/exp_augmented/tri4a/log/build_tree.log
+steps/train_sat.sh: Likelihood evolution:
+-47.6498 -47.7564 -47.7107 -47.5772 -47.0221 -46.4841 -46.2061 -46.0189 -45.8471 -45.5579 -45.4393 -45.2706 -45.1995 -45.1412 -45.084 -45.0283 -44.9762 -44.9282 -44.8848 -44.7844 -44.7297 -44.6951 -44.6643 -44.6353 -44.6078 -44.5815 -44.5564 -44.5319 -44.5078 -44.4487 -44.414 -44.3955 -44.382 -44.3718 
+Done
+tree-info /home/samuel/wsj-pf-data/exp_augmented/tri4a/tree 
+tree-info /home/samuel/wsj-pf-data/exp_augmented/tri4a/tree 
+make-h-transducer --disambig-syms-out=/home/samuel/wsj-pf-data/exp_augmented/tri4a/graph/disambig_tid.int --transition-scale=1.0 /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval/tmp/ilabels_3_1 /home/samuel/wsj-pf-data/exp_augmented/tri4a/tree /home/samuel/wsj-pf-data/exp_augmented/tri4a/final.mdl 
+fsttablecompose /home/samuel/wsj-pf-data/exp_augmented/tri4a/graph/Ha.fst /home/samuel/wsj-pf-data/lang/wsj-pfstar-with-eval/tmp/CLG_3_1.fst 
+fstminimizeencoded 
+fstdeterminizestar --use-log=true 
+fstrmsymbols /home/samuel/wsj-pf-data/exp_augmented/tri4a/graph/disambig_tid.int 
+fstrmepslocal 
+WARNING (fsttablecompose:main():fsttablecompose.cc:132) The second FST is not ilabel sorted.
+fstisstochastic /home/samuel/wsj-pf-data/exp_augmented/tri4a/graph/HCLGa.fst 
+0.000894868 -1.60655
+HCLGa is not stochastic
+add-self-loops --self-loop-scale=0.1 --reorder=true /home/samuel/wsj-pf-data/exp_augmented/tri4a/final.mdl 
+steps/decode_fmllr.sh --nj 13 --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/exp_augmented/tri4a/graph /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_augmented/tri4a/decode
+steps/decode.sh --scoring-opts  --num-threads 1 --skip-scoring false --acwt 0.083333 --nj 13 --cmd run.pl --mem 2G --beam 10.0 --model /home/samuel/wsj-pf-data/exp_augmented/tri4a/final.alimdl --max-active 2000 /home/samuel/wsj-pf-data/exp_augmented/tri4a/graph /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_augmented/tri4a/decode.si
+decode.sh: feature type is lda
+local/score.sh --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_augmented/tri4a/graph /home/samuel/wsj-pf-data/exp_augmented/tri4a/decode.si
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+steps/decode_fmllr.sh: feature type is lda
+steps/decode_fmllr.sh: getting first-pass fMLLR transforms.
+steps/decode_fmllr.sh: doing main lattice generation phase
+steps/decode_fmllr.sh: estimating fMLLR transforms a second time.
+steps/decode_fmllr.sh: doing a final pass of acoustic rescoring.
+local/score.sh --cmd run.pl --mem 2G /home/samuel/wsj-pf-data/data/wsj/head_eval_test/clean /home/samuel/wsj-pf-data/exp_augmented/tri4a/graph /home/samuel/wsj-pf-data/exp_augmented/tri4a/decode
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
